@@ -30,7 +30,6 @@ import {
   CONFIDENCE,
   isSmartCall,
   legsState,
-  planUsesLegs,
   READINESS,
   todaysCall,
   type Choice,

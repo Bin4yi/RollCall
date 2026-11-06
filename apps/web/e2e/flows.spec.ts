@@ -15,7 +15,7 @@ async function noA11yProblems(page: Page, what: string): Promise<void> {
 
 async function startDemo(page: Page): Promise<void> {
   await page.goto('/');
-  await page.getByTestId('judge-mode').click();
+  await page.getByTestId('judge-coach').click();
   await expect(page.getByTestId('board-summary')).toBeVisible({ timeout: 30_000 });
 }
 
@@ -30,9 +30,15 @@ async function answerCheckin(page: Page): Promise<void> {
 test.describe('Judge Mode', () => {
   test('landing page explains itself and is accessible', async ({ page }, info) => {
     await page.goto('/');
-    await expect(page.getByRole('heading', { name: 'Every athlete, checked in by sunrise.' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Heart and legs, checked by sunrise.' })).toBeVisible();
     await expect(page.getByText('not a medical device')).toBeVisible();
-    // Let the logo finish fading in.
+    // Scroll through so lazy images load, then let the logo finish fading in.
+    const height = await page.evaluate(() => document.documentElement.scrollHeight);
+    for (let y = 0; y < height; y += 500) {
+      await page.evaluate((top) => window.scrollTo({ top, behavior: 'instant' }), y);
+      await page.waitForTimeout(100);
+    }
+    await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
     await page.waitForTimeout(800);
     await shot(page, 'landing', info.project.name);
     await noA11yProblems(page, 'landing');
@@ -41,12 +47,12 @@ test.describe('Judge Mode', () => {
   test('whole story: board → replayed check-in → coach swaps → athlete sees the message', async ({ page }, info) => {
     const project = info.project.name;
     await startDemo(page);
-    await expect(page.getByTestId('board-summary')).toHaveText('10 of 12 checked in, 2 to look at.');
+    await expect(page.getByTestId('board-summary')).toHaveText('9 of 12 checked in, 2 to look at.');
     await expect(page.getByText('DEMO DATA')).toBeVisible();
     const rows = page.getByTestId('board').locator('li');
     await expect(rows).toHaveCount(12);
-    await expect(rows.nth(0)).toContainText('Amara');
-    await expect(page.getByTestId('row-Amara').getByTestId('reasons')).toContainText(/above usual/);
+    await expect(rows.nth(0)).toContainText('Mei');
+    await expect(page.getByTestId('row-Mei').getByTestId('reasons')).toContainText(/above usual/);
     await expect(page.getByTestId('row-Tomasz')).toContainText('Maybe check in personally');
     await shot(page, 'board', project);
     await noA11yProblems(page, 'board');
@@ -75,25 +81,25 @@ test.describe('Judge Mode', () => {
 
     // The board picks it up.
     await page.goto('/coach');
-    await expect(page.getByTestId('board-summary')).toHaveText('11 of 12 checked in, 2 to look at.');
+    await expect(page.getByTestId('board-summary')).toHaveText('10 of 12 checked in, 2 to look at.');
 
-    // The coach opens Amara, swaps the session, edits the draft and sends.
-    await page.getByTestId('row-Amara').getByRole('link').click();
+    // The coach opens Mei, swaps the session, edits the draft and sends.
+    await page.getByTestId('row-Mei').getByRole('link').click();
     await expect(page.getByTestId('chart-pulse')).toBeVisible();
-    await expect(page.getByTestId('detail-plan')).toContainText('Track intervals');
+    await expect(page.getByTestId('detail-plan')).toContainText('Threshold set');
     await shot(page, 'detail', project);
     await noA11yProblems(page, 'athlete detail');
     await page.getByTestId('action-easy').click();
     const draft = page.getByTestId('draft');
-    await expect(draft).toHaveValue(/^Amara,/);
+    await expect(draft).toHaveValue(/^Mei,/);
     await expect(page.getByTestId('draft-source')).toContainText('template');
-    await draft.fill('Amara, easy run instead of intervals today. Your pulse is above your usual. Edited by coach.');
+    await draft.fill('Mei, easy swim instead of the threshold set today. Your pulse is above your usual. Edited by coach.');
     await shot(page, 'decide', project);
     await page.getByTestId('send').click();
     await expect(page.getByTestId('sent')).toBeVisible();
 
-    // Amara's phone gets exactly what the coach wrote, and the changed plan.
-    await page.goto('/a/demo-amara');
+    // Mei's phone gets exactly what the coach wrote, and the changed plan.
+    await page.goto('/a/demo-mei');
     await expect(page.getByTestId('inbox-message').first()).toContainText('Edited by coach');
     await expect(page.getByTestId('plan-title')).toContainText('Easy session');
     await expect(page.getByRole('heading', { name: 'Your coach has a note for you' })).toBeVisible();
@@ -153,9 +159,9 @@ test.describe('Judge Mode', () => {
     await page.getByTestId('style-direct').check();
     await shot(page, 'settings', info.project.name);
     await noA11yProblems(page, 'settings');
-    await page.goto('/coach/a/demo-amara');
+    await page.goto('/coach/a/demo-mei');
     await page.getByTestId('action-rest').click();
-    await expect(page.getByTestId('draft')).toHaveValue('Amara, rest day today. No training.');
+    await expect(page.getByTestId('draft')).toHaveValue('Mei, rest day today. No training.');
 
     await page.goto('/a/demo-noor?mode=sim&speed=20');
     await page.getByTestId('start-settle').click();

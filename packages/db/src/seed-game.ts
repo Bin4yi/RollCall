@@ -6,15 +6,19 @@ import { createLeague, settleLeague } from './game';
 import { toReading } from './read';
 import { athletes, checkins, plans, type Intensity } from './schema';
 import {
+  balanceTests,
   camps,
   crewInvites,
   crewMembers,
   crews,
+  dailyCalls,
+  jumps,
   leagues,
   legsDays,
   mapTiles,
   nudges,
   pointsLedger,
+  reps,
   seasons,
   sets,
   tileClaims,
@@ -88,9 +92,16 @@ export async function seedGame(db: Db, today: string): Promise<void> {
     await db.delete(leagues).where(eq(leagues.workspace, 'demo'));
   }
   const oldSessions = await db.select({ id: trainSessions.id }).from(trainSessions).where(inArray(trainSessions.athleteId, ids));
-  if (oldSessions.length) await db.delete(sets).where(inArray(sets.sessionId, oldSessions.map((s) => s.id)));
+  if (oldSessions.length) {
+    const oldSets = await db.select({ id: sets.id }).from(sets).where(inArray(sets.sessionId, oldSessions.map((s) => s.id)));
+    if (oldSets.length) await db.delete(reps).where(inArray(reps.setId, oldSets.map((s) => s.id)));
+    await db.delete(sets).where(inArray(sets.sessionId, oldSessions.map((s) => s.id)));
+  }
   await db.delete(trainSessions).where(inArray(trainSessions.athleteId, ids));
   await db.delete(legsDays).where(inArray(legsDays.athleteId, ids));
+  await db.delete(jumps).where(inArray(jumps.athleteId, ids));
+  await db.delete(balanceTests).where(inArray(balanceTests.athleteId, ids));
+  await db.delete(dailyCalls).where(inArray(dailyCalls.athleteId, ids));
   await db.delete(pointsLedger).where(inArray(pointsLedger.athleteId, ids));
   await db.delete(camps).where(inArray(camps.athleteId, ids));
   await db.delete(nudges).where(inArray(nudges.toId, ids));
