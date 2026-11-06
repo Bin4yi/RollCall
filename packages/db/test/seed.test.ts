@@ -34,12 +34,12 @@ describe('demo stories', () => {
     expect(board.rows.slice(0, 2).map((r) => r.name)).toEqual(['Mei', 'Tomasz']);
   });
 
-  it('Amara has not checked in yet: Judge Mode’s morning is hers', () => {
+  it('Amara has not checked in yet: Judge Mode’s morning starts here', () => {
     expect(row('Amara').status).toBe('waiting');
     expect(row('Amara').plan?.intensity).toBe('hard');
   });
 
-  it('Mei is off her usual today, with plain reasons and a hard session planned', () => {
+  it('Mei is off usual today, with plain reasons and a hard session planned', () => {
     const a = row('Mei');
     expect(a.status).toBe('check-in');
     expect(a.reasons.join(' ')).toMatch(/Pulse \d+ above usual/);

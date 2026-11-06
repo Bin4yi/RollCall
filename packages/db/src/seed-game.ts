@@ -23,7 +23,7 @@ import {
 
 /**
  * Judge Mode's Legs, Train and Crews story. All invented and labelled as demo data.
- * Amara's crew starts one tile behind, and her smart call this morning wins the contested tile.
+ * Amara's crew starts one tile behind, and Amara's smart call this morning wins the contested tile.
  */
 const LEAGUE = 'demo-league-dawn';
 const SEASON = 'demo-season-now';

@@ -93,7 +93,7 @@ describe('Judge Mode', () => {
     const res = await call('/api/demo/start', { method: 'POST' });
     expect(res.status).toBe(200);
     const board = await (await call('/api/coach/board', { as: 'demo' })).json() as { summary: string };
-    expect(board.summary).toBe('10 of 12 checked in, 2 to look at.');
+    expect(board.summary).toBe('9 of 12 checked in, 2 to look at.');
   });
 
   it('a real coach never sees demo athletes, and the other way round', async () => {

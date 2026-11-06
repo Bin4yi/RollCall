@@ -258,6 +258,12 @@ importers:
       '@fontsource-variable/inter':
         specifier: ^5.3.0
         version: 5.3.0
+      '@mediapipe/tasks-vision':
+        specifier: 1.2.2
+        version: 1.2.2
+      '@rollcall/pose':
+        specifier: workspace:*
+        version: link:../../packages/pose
       '@rollcall/readiness':
         specifier: workspace:*
         version: link:../../packages/readiness
@@ -314,11 +320,16 @@ importers:
         specifier: ^8.22.1
         version: 8.22.1
 
+  packages/crews: {}
+
   packages/db:
     dependencies:
       '@libsql/client':
         specifier: ^0.18.0
         version: 0.18.0
+      '@rollcall/crews':
+        specifier: workspace:*
+        version: link:../crews
       '@rollcall/readiness':
         specifier: workspace:*
         version: link:../readiness
@@ -337,6 +348,8 @@ importers:
       openai:
         specifier: ^7.52.0
         version: 7.52.0(ws@8.22.1)(zod@4.6.7)
+
+  packages/pose: {}
 
   packages/readiness:
     dependencies:
@@ -839,6 +852,9 @@ packages:
     resolution: {integrity: sha512-4/0CvEdhi6+KjMxMaVbFM2n2Z44escBRoEYpR+gZg64DdetzGnYm8mcNLcoySaDJZNaBd6wz5DNdgRmcI4hXcg==}
     cpu: [x64]
     os: [win32]
+
+  '@mediapipe/tasks-vision@1.2.2':
+    resolution: {integrity: sha512-Z7BikxnTvlKgc3d/Nw+LV6B0xyAACxYeAHHUu/xUhm1SV7jlExa9M37beiF/wZFoy0H+cs1PlIT2Z4km02UEHQ==}
 
   '@neon-rs/load@0.0.4':
     resolution: {integrity: sha512-kTPhdZyTQxB+2wpiRcFWrDcejc4JI6tkPuS7UZCG4l6Zvc5kU/gGQ/ozvHTh1XR5tS+UlfAfGuPajjzQjCiHCw==}
@@ -2862,6 +2878,8 @@ snapshots:
 
   '@libsql/win32-x64-msvc@0.5.29':
     optional: true
+
+  '@mediapipe/tasks-vision@1.2.2': {}
 
   '@neon-rs/load@0.0.4': {}
 

@@ -11,6 +11,17 @@ type Script = (body: BodyState, seconds: number) => void;
 
 const SESSIONS: Record<string, { seconds: number; seed: number; script: Script }> = {
   calm_seated_90s: { seconds: 90, seed: 11, script: () => undefined },
+  // Matches Amara's seeded usual, so the Judge Mode morning lands as Heart: Ready.
+  amara_morning_90s: {
+    seconds: 90,
+    seed: 16,
+    script: (b) => {
+      b.pulseBpm = 52;
+      b.rmssd = 68;
+      b.baevsky = 62;
+      b.breathBpm = 13;
+    },
+  },
   after_coffee_90s: {
     seconds: 90,
     seed: 12,

@@ -8,3 +8,4 @@ export * from './reps';
 export * from './format';
 export * from './sim';
 export * from './exercises';
+export * from './library';

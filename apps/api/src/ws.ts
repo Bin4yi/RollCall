@@ -2,7 +2,7 @@ import { randomUUID } from 'node:crypto';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import type { IncomingMessage, Server } from 'node:http';
 import { resolve } from 'node:path';
-import { athletes, checkins, type Db } from '@rollcall/db';
+import { athletes, awardPoints, checkins, crewMembers, crews, gameEvents, type Db } from '@rollcall/db';
 import { CheckinSession, type CheckinKind, type CheckinResult } from '@rollcall/readiness';
 import { Recorder, type VitalsFrame } from '@rollcall/signals';
 import { and, eq } from 'drizzle-orm';
@@ -81,18 +81,39 @@ function tickMessage(frame: VitalsFrame, session: CheckinSession) {
 export function attachSockets(server: Server, db: Db, env: Env, today: () => string): void {
   const control = new WebSocketServer({ noServer: true });
   const frames = new WebSocketServer({ noServer: true, maxPayload: 16e6 });
+  const crewSocket = new WebSocketServer({ noServer: true });
   const active = new Map<string, VitalsStream>();
 
   server.on('upgrade', (req: IncomingMessage, socket, head) => {
     const url = new URL(req.url ?? '/', 'http://localhost');
     if (url.pathname === '/ws/checkin') {
       control.handleUpgrade(req, socket, head, (ws) => void onControl(ws, url));
+    } else if (url.pathname === '/ws/crew') {
+      crewSocket.handleUpgrade(req, socket, head, (ws) => void onCrew(ws, url));
     } else if (url.pathname === '/ws/frames') {
       frames.handleUpgrade(req, socket, head, (ws) => onFrames(ws, url));
     } else {
       socket.destroy();
     }
   });
+
+  /** Tells a member's phone when their league changed. Carries no data: the phone fetches what it may see. */
+  async function onCrew(ws: WebSocket, url: URL): Promise<void> {
+    const [athlete] = await db.select().from(athletes).where(eq(athletes.token, url.searchParams.get('token') ?? ''));
+    if (!athlete) {
+      ws.close(4404);
+      return;
+    }
+    const listener = (leagueId: string): void => {
+      void (async () => {
+        const [member] = await db.select().from(crewMembers).where(eq(crewMembers.athleteId, athlete.id));
+        const [crew] = member ? await db.select().from(crews).where(eq(crews.id, member.crewId)) : [];
+        if (crew?.leagueId === leagueId) send(ws, { type: 'update' });
+      })();
+    };
+    gameEvents.on('league', listener);
+    ws.on('close', () => gameEvents.off('league', listener));
+  }
 
   function onFrames(ws: WebSocket, url: URL): void {
     const stream = active.get(url.searchParams.get('session') ?? '');
@@ -136,7 +157,8 @@ export function attachSockets(server: Server, db: Db, env: Env, today: () => str
     if (mode === 'live' && !liveSlotsFree(env)) {
       return fail('A lot of people are checking in. Please try again in a minute.');
     }
-    const speed = env.production ? 1 : Math.max(1, Number(url.searchParams.get('speed')) || 1);
+    // Judge Mode can fast-forward a recording. A live check-in always runs at real speed.
+    const speed = env.production && !demo ? 1 : Math.min(30, Math.max(1, Number(url.searchParams.get('speed')) || 1));
 
     const id = randomUUID();
     const session = new CheckinSession(kind);
@@ -173,6 +195,7 @@ export function attachSockets(server: Server, db: Db, env: Env, today: () => str
       }
       // Recording sessions are for the reference library, not an athlete's history.
       const checkinId = recorder ? null : await saveCheckin(db, athlete.id, today(), result, mode);
+      if (!recorder) await awardPoints(db, athlete, today());
       send(ws, { type: 'result', phase, checkinId, result });
       ws.close();
     };
@@ -220,7 +243,7 @@ export function attachSockets(server: Server, db: Db, env: Env, today: () => str
         mode === 'live'
           ? startLive(env, callbacks)
           : mode === 'replay'
-            ? startReplay(url.searchParams.get('session') ?? 'calm_seated_90s', callbacks, speed)
+            ? startReplay(url.searchParams.get('session') ?? (athlete.id === 'demo-amara' ? 'amara_morning_90s' : 'calm_seated_90s'), callbacks, speed)
             : startSim(callbacks, speed);
       active.set(id, stream);
     } catch (err) {

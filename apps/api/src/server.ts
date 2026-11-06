@@ -3,7 +3,7 @@ import type { Server } from 'node:http';
 import { resolve } from 'node:path';
 import { serve } from '@hono/node-server';
 import { serveStatic } from '@hono/node-server/serve-static';
-import { openDb } from '@rollcall/db';
+import { closeDueSeasons, openDb } from '@rollcall/db';
 import { createApp } from './app';
 import { loadEnv, localDate, REPO_ROOT } from './env';
 import { makeNotifier } from './notify';
@@ -32,3 +32,12 @@ const server = serve({ fetch: app.fetch, port: env.port }, (info) => {
   );
 });
 attachSockets(server as unknown as Server, db, env, today);
+
+// The season job: closes finished weeks, moves crews between leagues and writes recap cards.
+const seasonJob = (): void => {
+  void Promise.all([closeDueSeasons(db, 'real', today()), closeDueSeasons(db, 'demo', today())]).catch((err: unknown) => {
+    console.error('[seasons]', err);
+  });
+};
+seasonJob();
+setInterval(seasonJob, 3_600_000).unref();

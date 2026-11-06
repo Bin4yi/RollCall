@@ -4,6 +4,12 @@ import {
   athletes,
   checkins,
   checkinStreak,
+  deleteGameData,
+  exportGameData,
+  loadCamp,
+  loadCrewFeed,
+  loadInsights,
+  loadToday,
   loadBoard,
   loadDetail,
   messages,
@@ -32,6 +38,7 @@ import { Hono, type Context } from 'hono';
 import { deleteCookie, getCookie, setCookie } from 'hono/cookie';
 import { z } from 'zod';
 import { makeSession, passphraseMatches, readSession } from './auth';
+import { mountGame } from './game-routes';
 import type { Env } from './env';
 import { silentNotifier, type Notifier } from './notify';
 
@@ -101,7 +108,7 @@ export function createApp(deps: AppDeps): Hono<Vars> {
   app.post('/api/demo/start', async (c) => {
     await seedDemo(db, today());
     startSession(c, 'demo');
-    return c.json({ workspace: 'demo', checkinLink: '/a/demo-hana?mode=replay' });
+    return c.json({ workspace: 'demo', checkinLink: '/a/demo-hana?mode=replay', morningLink: '/a/demo-amara' });
   });
 
   app.post('/api/coach/logout', (c) => {
@@ -304,6 +311,8 @@ export function createApp(deps: AppDeps): Hono<Vars> {
     return a ?? null;
   };
 
+  mountGame(athlete as never, { db, env, today, notifier, byToken });
+
   athlete.get('/:token', async (c) => {
     const a = await byToken(c.req.param('token'));
     if (!a) return c.json({ error: 'This link isn’t active. Ask your coach for a new one.' }, 404);
@@ -316,7 +325,12 @@ export function createApp(deps: AppDeps): Hono<Vars> {
       .from(plans)
       .where(and(eq(plans.athleteId, a.id), eq(plans.date, date)));
     const inbox = await db.select().from(messages).where(eq(messages.athleteId, a.id));
+    const feed = await loadCrewFeed(db, a.id, date);
     return c.json({
+      today: await loadToday(db, a, date),
+      insights: await loadInsights(db, a.id),
+      camp: await loadCamp(db, a.id),
+      crew: feed ? { name: feed.crew.name, emblem: feed.crew.emblem, checkedIn: feed.checkedIn, total: feed.total, streak: feed.crewStreak, todayPoints: feed.mine.today.reduce((s, e) => s + e.points, 0) } : null,
       name: a.name,
       avatar: a.avatar,
       sport: a.sport,
@@ -417,6 +431,7 @@ export function createApp(deps: AppDeps): Hono<Vars> {
       checkins: await db.select().from(checkins).where(eq(checkins.athleteId, a.id)),
       plans: await db.select().from(plans).where(eq(plans.athleteId, a.id)),
       messages: await db.select().from(messages).where(eq(messages.athleteId, a.id)),
+      ...(await exportGameData(db, a.id)),
     };
     c.header('Content-Disposition', 'attachment; filename="roll-call-my-data.json"');
     return c.json(body);
@@ -426,6 +441,7 @@ export function createApp(deps: AppDeps): Hono<Vars> {
   athlete.delete('/:token', async (c) => {
     const a = await byToken(c.req.param('token'));
     if (!a) return c.json({ error: 'Not found' }, 404);
+    await deleteGameData(db, a.id, today());
     await db.delete(checkins).where(eq(checkins.athleteId, a.id));
     await db.delete(plans).where(eq(plans.athleteId, a.id));
     await db.delete(messages).where(eq(messages.athleteId, a.id));

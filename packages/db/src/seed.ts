@@ -71,8 +71,8 @@ const CHARACTERS: Character[] = [
     token: DEMO_TOKENS.amara,
     showNumbers: true,
     notes: 'Marathon in nine weeks. Tends to push through heavy weeks.',
-    // A heavy block dipped and a coach-ordered easy week recovered it. She hasn't checked in yet today:
-    // Judge Mode's morning is hers, ending Heart: Ready, Legs: 9% below usual.
+    // A heavy block dipped and a coach-ordered easy week recovered it. Amara hasn't checked in yet today:
+    // Judge Mode's morning is theirs, ending Heart: Ready, Legs: 9% below usual.
     story: (d) => {
       if (d === 0) return { skip: true };
       if (d >= 14 && d <= 18) return { pulse: 7, rmssd: -18, stress: 28, sleep: -0.8, feel: -1 };

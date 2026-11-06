@@ -33,6 +33,7 @@ const METRIC_WORDS: Record<Metric, string> = {
   breath: 'breathing',
   sleep: 'sleep',
   feel: 'how they feel',
+  jump: 'jump height',
 };
 
 export function draftSignals(deviations: readonly Deviation[]): DraftInput['signals'] {
