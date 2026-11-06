@@ -34,7 +34,7 @@ function Chart({ detail, spec }: { detail: Detail; spec: (typeof CHARTS)[number]
   }, over the last 28 days.`;
   return (
     <figure className="m-0" data-testid={`chart-${spec.key}`}>
-      <figcaption className="flex items-baseline justify-between gap-2">
+      <figcaption className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between sm:gap-2">
         <span className="font-display font-bold">{spec.title}</span>
         <span className="text-xs text-mute">{spec.explain}</span>
       </figcaption>

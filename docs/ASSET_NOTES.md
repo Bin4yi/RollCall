@@ -41,7 +41,7 @@ The brief's default was `ASSET_MAX_USD=40` and a separate generation per asset. 
 
 ## Motion
 
-Sora is gone, so motion is code first: the rising sun, live heartbeat horizon and breathing glow (canvas), status transitions and page movement (Motion). The Rollo wave is a sprite sheet + JSON, transparent WebM and GIF in `apps/web/public/assets/anim/`, built with `ffmpeg-static`. All of it respects `prefers-reduced-motion`.
+Sora is gone, so motion is code first: the rising sun, live heartbeat horizon and breathing glow (canvas), status transitions and page movement (Motion). The Rollo wave is a sprite sheet + JSON, transparent WebM and GIF in `apps/web/public/assets/anim/`, built with `ffmpeg-static`. The app plays the sprite sheet on the consent screen. All of it respects `prefers-reduced-motion`.
 
 ## Provenance
 

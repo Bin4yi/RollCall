@@ -2,7 +2,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Route, Routes, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { api, ApiError, type AppConfig, type AthleteHome } from '../api';
-import { Art, Avatar, DemoBanner, Disclaimer, Problem, Spinner, type AssetId } from '../ui/kit';
+import { Art, Avatar, DemoBanner, Disclaimer, Problem, RolloWave, Spinner, type AssetId } from '../ui/kit';
 import { skyFor, SunriseCanvas } from './Sunrise';
 import { useCheckin, type CheckinResult, type Progress } from './useCheckin';
 
@@ -40,7 +40,7 @@ function Consent({ home, token, onDone }: { home: AthleteHome; token: string; on
   const [busy, setBusy] = useState(false);
   return (
     <main id="content" className="mx-auto max-w-lg px-4 py-6">
-      <Art id="rollo_wave" alt="" eager className="mx-auto w-32" />
+      <RolloWave />
       <h1 className="mt-2 text-center text-3xl">{greeting()}, {home.name}.</h1>
       <p className="mt-1 text-center text-mute">Before your first check-in, here’s the deal.</p>
       <div className="card mt-5 space-y-4 p-5 text-sm leading-relaxed">

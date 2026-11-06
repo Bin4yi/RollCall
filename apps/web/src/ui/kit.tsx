@@ -77,6 +77,11 @@ export function LogoMark({ size = 32 }: { size?: number }) {
   );
 }
 
+/** Rollo's six-frame wave. Reduced motion holds it still, through the global rule in style.css. */
+export function RolloWave({ size = 150 }: { size?: number }) {
+  return <div className="wave-sprite mx-auto" style={{ '--frame': `${size}px` } as CSSProperties} role="img" aria-label="Rollo waving hello" />;
+}
+
 export function DemoBanner({ children }: { children?: ReactNode }) {
   return (
     <div role="status" className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 bg-indigo px-4 py-2 text-center text-sm font-semibold text-paper">

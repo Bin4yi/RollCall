@@ -50,7 +50,7 @@ export function Landing() {
   return (
     <div className="min-h-dvh bg-paper">
       <header className="relative overflow-hidden border-b-2 border-indigo">
-        <Art id="hero" alt="" eager className="block h-[62dvh] min-h-[420px] w-full object-cover object-bottom sm:h-[72dvh]" />
+        <Art id="hero" alt="" eager className="block h-[62dvh] min-h-[420px] w-full object-cover object-[12%_bottom] sm:h-[72dvh] sm:object-bottom" />
         <div className="absolute inset-x-0 top-0 z-3 flex flex-col items-center px-4 pt-4 text-center sm:pt-8">
           <motion.div initial={still ? false : { y: -12, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
             <div className="rounded-2xl bg-paper/90 px-4 py-2">

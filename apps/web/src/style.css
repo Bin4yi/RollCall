@@ -41,7 +41,9 @@ h3 {
 
 @layer components {
 /* Risograph grain, drawn as an SVG noise tile so it costs no image request. */
+/* Layered, so a `fixed` utility on the same element still wins. */
 .riso-grain {
+  position: relative;
   isolation: isolate;
 }
 .riso-grain::after {
@@ -140,6 +142,18 @@ h3 {
   height: 1px;
   overflow: hidden;
   clip-path: inset(50%);
+}
+
+@keyframes wave-frames {
+  to {
+    background-position-x: calc(var(--frame) * -6);
+  }
+}
+.wave-sprite {
+  width: var(--frame);
+  height: var(--frame);
+  background: url('/assets/anim/rollo_wave_sheet.webp') 0 0 / calc(var(--frame) * 6) 100% no-repeat;
+  animation: wave-frames 0.9s steps(6) infinite;
 }
 
 @keyframes float-slow {
