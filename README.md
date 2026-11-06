@@ -38,7 +38,7 @@ pnpm sidecar                   # leave running in a second terminal
 pnpm dev
 ```
 
-Get a key from [physiology.presagetech.com](https://physiology.presagetech.com/auth/login). Measurement needs an internet connection, because the SDK checks the key and usage online.
+[Register for a Presage Developer Portal account](https://physiology.presagetech.com/auth/register) to get a key. Measurement needs an internet connection, because the SDK checks the key and usage online.
 
 For the best reading, put a lamp in front of you, sit back so your upper chest is in view, and rest the camera on something solid.
 
@@ -112,6 +112,7 @@ webcam → browser worker → sidecar + SmartSpectra SDK → VitalsFrame → noi
 - **What I couldn't confirm:** Presage's telemetry page rules out frames and values in *telemetry*, but I didn't find a statement covering all of the SDK's server traffic, so HUSH doesn't claim that nothing ever leaves your device.
 - **Turned off:** SDK telemetry (`enableTelemetry: false`). The SDK's cloud LLM feature is never called.
 - **Optional, off by default:** report notes from [Ollama](https://ollama.com) on your own computer, using numbers only.
+- **The Listener's voice:** generated clips are rendered ahead of time and shipped with the game. Nothing about you is sent to a voice service during play, including the pulse numbers it whispers.
 - A consent screen appears before the first live session. The webcam preview is off by default. No accounts, no analytics.
 
 ## Safety and accessibility
@@ -132,6 +133,7 @@ pnpm lint
 pnpm test:e2e    # Playwright; first run: pnpm --filter @hush/game exec playwright install chromium
 pnpm sessions:gen
 pnpm assets:pack  # after changing art: rebuilds apps/game/public/hush-assets from assets/ (needs Pillow)
+pnpm voice:gen    # after changing lines: renders the Listener's voice (needs OPENAI_API_KEY; add --dry-run to preview)
 ```
 
 Golden tests use real recordings from `data/sessions/` when present, and labelled synthetic stand-ins otherwise.
@@ -141,13 +143,13 @@ Golden tests use real recordings from `data/sessions/` when present, and labelle
 - Pulse is validated for 40–110 BPM and breathing for 5–40 breaths a minute. Readings outside those ranges are less reliable, and very fast motion can give confident but wrong readings.
 - Live capture needs Chrome or Edge.
 - On Windows, built-in webcams are documented as unsupported by the SDK's native camera path, so HUSH captures in the browser instead.
-- The Listener's voice uses your system's Web Speech voices, so it sounds different from one computer to the next.
+- Any Listener line without a generated clip uses your system's Web Speech voices, so it sounds different from one computer to the next.
 
 ## Credits
 
 - [Presage SmartSpectra SDK](https://github.com/Presage-Security/SmartSpectra), the vital-signs measurement; integration follows its documentation
 - [PixiJS](https://pixijs.com), [Vite](https://vite.dev), [zod](https://zod.dev), [ws](https://github.com/websockets/ws), [Vitest](https://vitest.dev), [Playwright](https://playwright.dev)
 - Art generated with Meta's Muse Image model through `tools/hush_asset_forge.py`
-- All sound is synthesised in the browser
+- Sound effects are synthesised in the browser. When `apps/game/public/hush-voice/` is present, the Listener's voice is AI-generated with OpenAI text-to-speech
 
 Built for the [Presage SmartSpectra SDK Challenge](https://dev.to/devteam/join-the-presage-smartspectra-sdk-challenge-3000-in-prizes-across-10-winners-1370) on DEV.

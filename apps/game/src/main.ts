@@ -23,7 +23,7 @@ import difficultyJson from '../../../config/difficulty.json';
 import linesJson from '../../../config/lines.json';
 import { AssetRegistry } from './assets';
 import { GameAudio, Whisperer } from './audio';
-import { CONSENT_POINTS, DISCLAIMER, ROOM_NAMES, SETUP_TIPS } from './copy';
+import { CONSENT_POINTS, DISCLAIMER, ROOM_NAMES, SETUP_TIPS, VOICE_NOTICE } from './copy';
 import { FrameCapture } from './frameCapture';
 import { numberToWords } from './manifest';
 import { showReport } from './reportView';
@@ -50,7 +50,7 @@ const settings = loadSettings();
 const assets = new AssetRegistry();
 const scene = new GameScene(assets);
 const audio = new GameAudio(settings);
-const whisper = new Whisperer(settings);
+const whisper = new Whisperer(settings, audio);
 
 type SourceChoice = { kind: 'sim' } | { kind: 'replay'; name: string } | { kind: 'live' };
 
@@ -134,7 +134,10 @@ function showTitle(): void {
         'settings',
       ),
     ),
-    el('p', { className: 'notice', textContent: DISCLAIMER }),
+    el('p', {
+      className: 'notice',
+      textContent: whisper.usesGeneratedVoice ? `${DISCLAIMER} ${VOICE_NOTICE}` : DISCLAIMER,
+    }),
   );
   ui.replaceChildren(screen);
 }
@@ -1164,7 +1167,7 @@ class GameSession {
 let endingDraw: ((dt: number) => void) | null = null;
 
 async function main(): Promise<void> {
-  await assets.init();
+  await Promise.all([assets.init(), whisper.init()]);
   await scene.init(document.getElementById('stage')!);
   ui.replaceChildren(
     el(
@@ -1192,6 +1195,7 @@ async function main(): Promise<void> {
   requestAnimationFrame(frame);
 
   (window as unknown as { __hush: unknown }).__hush = {
+    whisper,
     get run() {
       return session?.run ?? null;
     },

@@ -7,6 +7,7 @@ import {
   type Manifest,
 } from '../src/manifest';
 import { BANNED_UI_WORDS } from '../src/copy';
+import { VOICE_PULSE_MAX, VOICE_PULSE_MIN, voiceKey, voiceLines } from '../src/voice';
 import lines from '../../../config/lines.json';
 
 const manifest: Manifest = {
@@ -17,6 +18,29 @@ const manifest: Manifest = {
   },
   animations: {},
 };
+
+describe('voice pack', () => {
+  const planned = new Set(voiceLines(lines.whispers).map(voiceKey));
+
+  it('ignores punctuation, so spoken lines find their clips', () => {
+    expect(voiceKey('...I can still hear you...')).toBe('i can still hear you');
+    expect(voiceKey("...don't go...")).toBe("don't go");
+  });
+  it('has a clip for every line and every pulse reading in range', () => {
+    for (const line of Object.values(lines.whispers).flat()) {
+      for (const pulse of [VOICE_PULSE_MIN, 72, 112, VOICE_PULSE_MAX]) {
+        const spoken = line.replace('{pulse}', numberToWords(pulse));
+        expect(planned.has(voiceKey(spoken)), spoken).toBe(true);
+      }
+    }
+  });
+  it('covers the wording used when there is no pulse reading', () => {
+    expect(planned.has(voiceKey('...... I can count them...'))).toBe(true);
+  });
+  it('has no empty clips', () => {
+    expect(planned.has('')).toBe(false);
+  });
+});
 
 describe('pickedFile', () => {
   it('uses the picked variant', () => {

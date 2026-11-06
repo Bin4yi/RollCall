@@ -15,6 +15,9 @@ export const BANNED_UI_WORDS = [
 export const DISCLAIMER =
   'Horror content. For adults (18+). HUSH is a game, not a medical device. Pulse and breathing readings are estimates for gameplay only and must not be used for any health decision.';
 
+/** OpenAI's usage policies require telling players that a voice is AI-generated. */
+export const VOICE_NOTICE = "The Listener's voice is AI-generated.";
+
 /** Matches docs/SDK_NOTES.md. Says what's documented, and doesn't overclaim about the SDK. */
 export const CONSENT_POINTS = [
   'Your webcam is used only while a run is active, and the light on your camera shows when it is.',

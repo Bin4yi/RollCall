@@ -1,6 +1,9 @@
 import type { VitalsFrame } from '@hush/signals';
 import { PeakDetector } from './manifest';
 import type { Settings } from './settings';
+import { voiceKey, type VoicePack } from './voice';
+
+const VOICE_BASE = '/hush-voice/';
 
 /**
  * All sound is synthesised, so there are no audio files to license. Everything goes through a
@@ -243,13 +246,47 @@ export class GameAudio {
   silence(): void {
     void this.ctx?.suspend();
   }
+
+  /** Null until the first click has started audio, or if the clip can't be decoded. */
+  async decode(data: ArrayBuffer): Promise<AudioBuffer | null> {
+    return this.ctx ? this.ctx.decodeAudioData(data).catch(() => null) : null;
+  }
+
+  /** Plays through the limiter like every other sound. Returns how to stop it, or null if it can't play. */
+  playVoice(buffer: AudioBuffer): (() => void) | null {
+    if (!this.ctx) return null;
+    const src = this.ctx.createBufferSource();
+    src.buffer = buffer;
+    const gain = this.ctx.createGain();
+    gain.gain.value = this.settings.voice;
+    src.connect(gain).connect(this.master);
+    src.start();
+    return () => {
+      try {
+        src.stop();
+      } catch {
+        /* Already finished. */
+      }
+    };
+  }
 }
 
-/** The Listener's voice: Web Speech with a low, slow setting. Every line also gets a subtitle. */
+/**
+ * The Listener's voice: pre-rendered clips from tools/gen-voice.ts, or Web Speech with a low, slow
+ * setting for any line without one. Every line also gets a subtitle.
+ */
 export class Whisperer {
   private voice: SpeechSynthesisVoice | null = null;
+  private pack: VoicePack | null = null;
+  private readonly clips = new Map<string, Promise<AudioBuffer | null>>();
+  private stopClip: (() => void) | null = null;
+  /** Bumped on every say and stop, so a clip that loads too late stays silent. */
+  private latest = 0;
 
-  constructor(private readonly settings: Settings) {
+  constructor(
+    private readonly settings: Settings,
+    private readonly audio: GameAudio,
+  ) {
     const pick = (): void => {
       const voices = window.speechSynthesis?.getVoices() ?? [];
       this.voice =
@@ -261,8 +298,51 @@ export class Whisperer {
     if (window.speechSynthesis) window.speechSynthesis.onvoiceschanged = pick;
   }
 
+  /** Loads the voice pack if one has been generated. The game works the same without it. */
+  async init(): Promise<void> {
+    try {
+      const res = await fetch(`${VOICE_BASE}manifest.json`);
+      if (res.ok) this.pack = (await res.json()) as VoicePack;
+    } catch {
+      /* No pack: Web Speech it is. */
+    }
+  }
+
+  /** True when players will hear generated clips, which must be disclosed to them. */
+  get usesGeneratedVoice(): boolean {
+    return Object.keys(this.pack?.clips ?? {}).length > 0;
+  }
+
   say(text: string): void {
-    if (!window.speechSynthesis || this.settings.voice <= 0) return;
+    this.stop();
+    if (this.settings.voice <= 0) return;
+    const file = this.pack?.clips[voiceKey(text)];
+    if (!file) {
+      this.speak(text);
+      return;
+    }
+    const request = this.latest;
+    void this.loadClip(file).then((buffer) => {
+      if (request !== this.latest) return;
+      this.stopClip = buffer ? this.audio.playVoice(buffer) : null;
+      if (!this.stopClip) this.speak(text);
+    });
+  }
+
+  private loadClip(file: string): Promise<AudioBuffer | null> {
+    let clip = this.clips.get(file);
+    if (!clip) {
+      clip = fetch(VOICE_BASE + file)
+        .then((res) => (res.ok ? res.arrayBuffer() : null))
+        .then((data) => (data ? this.audio.decode(data) : null))
+        .catch(() => null);
+      this.clips.set(file, clip);
+    }
+    return clip;
+  }
+
+  private speak(text: string): void {
+    if (!window.speechSynthesis) return;
     const speech = new SpeechSynthesisUtterance(text.replace(/\.\.\./g, ' '));
     if (this.voice) speech.voice = this.voice;
     speech.rate = 0.6;
@@ -273,6 +353,9 @@ export class Whisperer {
   }
 
   stop(): void {
+    this.latest++;
+    this.stopClip?.();
+    this.stopClip = null;
     window.speechSynthesis?.cancel();
   }
 }
