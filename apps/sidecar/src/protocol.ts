@@ -43,6 +43,16 @@ export function safeSessionName(name: unknown): string | null {
   return /^[a-z0-9][a-z0-9_-]{0,63}$/i.test(name) ? name : null;
 }
 
+/** Log text seen when Presage rejects a key (probed with an invalid key against SDK 3.4.0). */
+export function isAuthFailure(log: string): boolean {
+  return /Invalid or missing API key|Status code: 401|API key or OAuth setup is correct/.test(log);
+}
+
+/** Harmless, frequent native log lines that would bury anything useful. */
+export function isLogNoise(line: string): boolean {
+  return /inference_feedback_manager|absl::InitializeLog/.test(line);
+}
+
 /** Coalesces SDK packets to the ~10 Hz frame rate in the signal contract. */
 export function mergeFrames(pending: VitalsFrame | null, next: VitalsFrame): VitalsFrame {
   if (!pending) return next;

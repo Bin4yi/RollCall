@@ -90,6 +90,8 @@ async function main(): Promise<void> {
   });
 
   let frameSize: { width: number; height: number } | null = null;
+  let sessionRunning = false;
+  let sendFailureReported = false;
   let normalizer = new MetricsNormalizer(frameSize);
   const startedAt = performance.now();
   let pending: ReturnType<MetricsNormalizer['toFrame']> | null = null;
@@ -101,6 +103,7 @@ async function main(): Promise<void> {
         : status === mod.ProcessingStatus.kError
           ? 'error'
           : `status-${status}`;
+    sessionRunning = status === mod.ProcessingStatus.kRunning;
     send({ type: 'status', state: name });
   }) as never);
   sdk.on('validationStatus', ((code: number, _ts: number, hint: string) => {
@@ -137,6 +140,8 @@ async function main(): Promise<void> {
     let lastTs = -1;
     server.on('connection', (socket) => {
       socket.on('message', (data: Buffer) => {
+        // sendFrame throws kInvalidState until the session is running (probed), so wait for it.
+        if (!sessionRunning) return;
         const header = parseFrameHeader(data);
         if (!header) return;
         if (!frameSize || frameSize.width !== header.width) {
@@ -146,14 +151,22 @@ async function main(): Promise<void> {
         // The SDK rejects non-monotonic timestamps; a reconnecting tab can restart its clock.
         const timestampUs = Math.max(header.timestampUs, lastTs + 1);
         lastTs = timestampUs;
-        sdk.sendFrame(
-          data.subarray(FRAME_HEADER_BYTES),
-          header.width,
-          header.height,
-          header.stride,
-          header.pixelFormat,
-          timestampUs,
-        );
+        try {
+          sdk.sendFrame(
+            data.subarray(FRAME_HEADER_BYTES),
+            header.width,
+            header.height,
+            header.stride,
+            header.pixelFormat,
+            timestampUs,
+          );
+        } catch (err) {
+          // One bad frame must not end the session. Say so once, not 30 times a second.
+          if (!sendFailureReported) {
+            sendFailureReported = true;
+            send({ type: 'status', state: 'frame-rejected', detail: (err as Error).message });
+          }
+        }
       });
     });
   }

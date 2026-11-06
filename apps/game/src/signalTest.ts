@@ -119,7 +119,7 @@ byId<HTMLButtonElement>('start').onclick = async () => {
     preview.hidden = false;
     await preview.play();
   } catch (err) {
-    sdkState = `Camera error: ${(err as Error).message}`;
+    sdkState = `Camera error: ${(err as Error).message || (err as Error).name}`;
     refresh();
   }
 };

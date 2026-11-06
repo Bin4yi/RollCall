@@ -10,7 +10,14 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Recorder, type VitalsFrame } from '@hush/signals';
 import { WebSocketServer, type WebSocket } from 'ws';
-import { safeSessionName, StartWatchdog, VITALS_PORT, type WorkerMessage } from './protocol';
+import {
+  isAuthFailure,
+  isLogNoise,
+  safeSessionName,
+  StartWatchdog,
+  VITALS_PORT,
+  type WorkerMessage,
+} from './protocol';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(here, '../../..');
@@ -53,9 +60,10 @@ function startWorker(): void {
   const child = fork(resolve(here, 'worker.ts'), [], {
     execArgv: process.execArgv,
     env: process.env,
-    stdio: ['ignore', 'ignore', 'inherit', 'ipc'],
+    stdio: ['ignore', 'ignore', 'pipe', 'ipc'],
   });
   worker = child;
+  child.stderr?.on('data', (chunk: Buffer) => onWorkerLog(chunk.toString()));
   child.on('message', (message: WorkerMessage) => onWorkerMessage(message));
   child.on('exit', (code) => {
     if (worker !== child) return;
@@ -72,6 +80,25 @@ function startWorker(): void {
       if (wanted.size > 0) startWorker();
     }, RESTART_DELAY_MS);
   });
+}
+
+/**
+ * A rejected key doesn't reliably raise an error event: with a 401 and no frames being pushed, the
+ * session stayed in "starting" with only log output (probed). Without this the player would wait
+ * for the watchdog.
+ */
+function onWorkerLog(text: string): void {
+  if (isAuthFailure(text)) {
+    watchdog.clear();
+    broadcast({
+      type: 'status',
+      state: 'failed',
+      detail: 'SmartSpectra rejected the API key. Check SMARTSPECTRA_API_KEY in .env.',
+    });
+  }
+  for (const line of text.split(/\r?\n/)) {
+    if (line.trim() && !isLogNoise(line)) console.error(line.slice(0, 300));
+  }
 }
 
 function stopWorker(): void {

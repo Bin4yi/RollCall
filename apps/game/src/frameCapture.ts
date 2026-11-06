@@ -31,8 +31,9 @@ export class FrameCapture {
       .MediaStreamTrackProcessor;
     if (!Processor) throw new Error('This browser cannot read camera frames. Use Chrome or Edge.');
 
+    // Only `ideal`: a hard minimum makes cameras refuse outright. The SDK warns if the rate is low.
     this.stream = await navigator.mediaDevices.getUserMedia({
-      video: { width: { ideal: 1280 }, height: { ideal: 720 }, frameRate: { ideal: 30, min: 25 } },
+      video: { width: { ideal: 1280 }, height: { ideal: 720 }, frameRate: { ideal: 30 } },
       audio: false,
     });
     const track = this.stream.getVideoTracks()[0]!;

@@ -396,7 +396,7 @@ async function startRun(choice: SourceChoice): Promise<void> {
       }
     }
   } catch (err) {
-    showProblem((err as Error).message);
+    showProblem((err as Error).message || (err as Error).name);
     return;
   }
   const start = (): void => {
