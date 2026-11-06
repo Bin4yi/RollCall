@@ -20,7 +20,7 @@ if (!raw) throw new Error('No test_person image: run pnpm assets:forge');
 const W = 480;
 const H = 720;
 const FPS = 30;
-const out = resolve(ROOT, 'apps/web/test-results/fake-camera');
+const out = resolve(ROOT, 'assets/raw/fake-camera');
 rmSync(out, { recursive: true, force: true });
 mkdirSync(out, { recursive: true });
 
@@ -46,7 +46,7 @@ for (let i = 0; i < seconds * FPS; i++) {
   const png = await sharp(frame.data, { raw: frame.info }).png({ compressionLevel: 1 }).toBuffer();
   writeFileSync(resolve(out, `f${String(n++).padStart(4, '0')}.png`), png);
 }
-const result = spawnSync(ffmpeg, ['-y', '-framerate', String(FPS), '-i', resolve(out, 'f%04d.png'), '-pix_fmt', 'yuv420p', resolve(ROOT, 'apps/web/test-results/fake-person.y4m')]);
+const result = spawnSync(ffmpeg, ['-y', '-framerate', String(FPS), '-i', resolve(out, 'f%04d.png'), '-pix_fmt', 'yuv420p', resolve(ROOT, 'assets/raw/fake-person.y4m')]);
 if (result.status !== 0) throw new Error(result.stderr.toString().slice(-500));
 rmSync(out, { recursive: true, force: true });
-console.log('Wrote apps/web/test-results/fake-person.y4m');
+console.log('Wrote assets/raw/fake-person.y4m');

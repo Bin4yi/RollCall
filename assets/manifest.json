@@ -1,6 +1,6 @@
 {
  "model": "gpt-image-2.6-sunburst",
- "spentUsd": 0.618,
+ "spentUsd": 1.003,
  "images": {
   "avatar_amara": {
    "file": "avatars/avatar_amara",
@@ -146,6 +146,294 @@
    "sheet": "badges",
    "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Six enamel pin badges, each a small sun rising over a heartbeat line, growing grander from the first to the last. Leave the middle of each pin plain, because a number is added later. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: tiny plain sun pin; small sun pin with short rays; sun pin with a laurel; bright sun pin with long rays; golden sun pin with laurel and stars; grand radiant sun pin with a crown of rays. No text, letters or numbers anywhere."
   },
+  "balance_pose": {
+   "file": "legs_guide/balance_pose",
+   "width": 267,
+   "height": 287,
+   "alt": "Rollo balancing on one leg",
+   "sheet": "legs_guide",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo with wings on his hips, knees bent in a quick dip before jumping; Rollo high in the air, wings on hips, legs straight; Rollo landing with straight legs, wings on hips; a pair of simple footprints on a small floor mat, a place to stand; Rollo balancing on one leg, wings out a little; Rollo sitting with one leg up on a cushion, an ice pack on it, relaxed; Rollo counting on his wing feathers; Rollo putting a barbell down, pleased, the set is done; Rollo drinking from a water bottle, taking a break; Rollo tapping on a window pane from outside with one wing; a phone propped on a floor, a person facing it from the front, standing a few steps back; a phone propped on a floor, a person side-on to it, standing a few steps back. No text, letters or numbers anywhere."
+  },
+  "banner_frame": {
+   "file": "season/banner_frame",
+   "width": 346,
+   "height": 259,
+   "alt": "A ribbon banner",
+   "sheet": "season",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a small triangular flag on a pole; one soft round cloud of morning mist; a golden sun-shaped trophy cup; a league badge of a thin sun just under the horizon, mostly indigo; a league badge of a half-risen sun, coral; a league badge of a full high sun, apricot; a league badge of a big golden low sun with long rays; an empty decorative ribbon banner with nothing written on it; Rollo fast asleep on a hilltop, one wing holding a small flag; Rollo cheering with both wings up; Rollo pointing at a little folded map; Rollo with three small cheerful chicks in sweatbands beside him. No text, letters or numbers anywhere."
+  },
+  "camera_front": {
+   "file": "legs_guide/camera_front",
+   "width": 255,
+   "height": 292,
+   "alt": "A phone on the floor with a person facing it",
+   "sheet": "legs_guide",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo with wings on his hips, knees bent in a quick dip before jumping; Rollo high in the air, wings on hips, legs straight; Rollo landing with straight legs, wings on hips; a pair of simple footprints on a small floor mat, a place to stand; Rollo balancing on one leg, wings out a little; Rollo sitting with one leg up on a cushion, an ice pack on it, relaxed; Rollo counting on his wing feathers; Rollo putting a barbell down, pleased, the set is done; Rollo drinking from a water bottle, taking a break; Rollo tapping on a window pane from outside with one wing; a phone propped on a floor, a person facing it from the front, standing a few steps back; a phone propped on a floor, a person side-on to it, standing a few steps back. No text, letters or numbers anywhere."
+  },
+  "camera_side": {
+   "file": "legs_guide/camera_side",
+   "width": 288,
+   "height": 292,
+   "alt": "A phone on the floor with a person side-on to it",
+   "sheet": "legs_guide",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo with wings on his hips, knees bent in a quick dip before jumping; Rollo high in the air, wings on hips, legs straight; Rollo landing with straight legs, wings on hips; a pair of simple footprints on a small floor mat, a place to stand; Rollo balancing on one leg, wings out a little; Rollo sitting with one leg up on a cushion, an ice pack on it, relaxed; Rollo counting on his wing feathers; Rollo putting a barbell down, pleased, the set is done; Rollo drinking from a water bottle, taking a break; Rollo tapping on a window pane from outside with one wing; a phone propped on a floor, a person facing it from the front, standing a few steps back; a phone propped on a floor, a person side-on to it, standing a few steps back. No text, letters or numbers anywhere."
+  },
+  "camp_barn": {
+   "file": "camp/camp_barn",
+   "width": 420,
+   "height": 334,
+   "alt": "barn building",
+   "sheet": "camp",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Six small farm buildings for a cosy game base, all seen from the same slightly raised angle at a matching scale, each on its own with no ground plate. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a little wooden chicken coop; a raised vegetable patch with carrots; a tiny oval running track; a red barn; a windmill; a small striped lighthouse. No text, letters or numbers anywhere."
+  },
+  "camp_coop": {
+   "file": "camp/camp_coop",
+   "width": 420,
+   "height": 387,
+   "alt": "coop building",
+   "sheet": "camp",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Six small farm buildings for a cosy game base, all seen from the same slightly raised angle at a matching scale, each on its own with no ground plate. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a little wooden chicken coop; a raised vegetable patch with carrots; a tiny oval running track; a red barn; a windmill; a small striped lighthouse. No text, letters or numbers anywhere."
+  },
+  "camp_lighthouse": {
+   "file": "camp/camp_lighthouse",
+   "width": 251,
+   "height": 420,
+   "alt": "lighthouse building",
+   "sheet": "camp",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Six small farm buildings for a cosy game base, all seen from the same slightly raised angle at a matching scale, each on its own with no ground plate. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a little wooden chicken coop; a raised vegetable patch with carrots; a tiny oval running track; a red barn; a windmill; a small striped lighthouse. No text, letters or numbers anywhere."
+  },
+  "camp_patch": {
+   "file": "camp/camp_patch",
+   "width": 420,
+   "height": 331,
+   "alt": "patch building",
+   "sheet": "camp",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Six small farm buildings for a cosy game base, all seen from the same slightly raised angle at a matching scale, each on its own with no ground plate. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a little wooden chicken coop; a raised vegetable patch with carrots; a tiny oval running track; a red barn; a windmill; a small striped lighthouse. No text, letters or numbers anywhere."
+  },
+  "camp_track": {
+   "file": "camp/camp_track",
+   "width": 420,
+   "height": 271,
+   "alt": "track building",
+   "sheet": "camp",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Six small farm buildings for a cosy game base, all seen from the same slightly raised angle at a matching scale, each on its own with no ground plate. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a little wooden chicken coop; a raised vegetable patch with carrots; a tiny oval running track; a red barn; a windmill; a small striped lighthouse. No text, letters or numbers anywhere."
+  },
+  "camp_windmill": {
+   "file": "camp/camp_windmill",
+   "width": 323,
+   "height": 420,
+   "alt": "windmill building",
+   "sheet": "camp",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Six small farm buildings for a cosy game base, all seen from the same slightly raised angle at a matching scale, each on its own with no ground plate. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a little wooden chicken coop; a raised vegetable patch with carrots; a tiny oval running track; a red barn; a windmill; a small striped lighthouse. No text, letters or numbers anywhere."
+  },
+  "card_skip": {
+   "file": "legs_guide/card_skip",
+   "width": 287,
+   "height": 286,
+   "alt": "Rollo resting a leg on a cushion",
+   "sheet": "legs_guide",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo with wings on his hips, knees bent in a quick dip before jumping; Rollo high in the air, wings on hips, legs straight; Rollo landing with straight legs, wings on hips; a pair of simple footprints on a small floor mat, a place to stand; Rollo balancing on one leg, wings out a little; Rollo sitting with one leg up on a cushion, an ice pack on it, relaxed; Rollo counting on his wing feathers; Rollo putting a barbell down, pleased, the set is done; Rollo drinking from a water bottle, taking a break; Rollo tapping on a window pane from outside with one wing; a phone propped on a floor, a person facing it from the front, standing a few steps back; a phone propped on a floor, a person side-on to it, standing a few steps back. No text, letters or numbers anywhere."
+  },
+  "crew_flag": {
+   "file": "season/crew_flag",
+   "width": 203,
+   "height": 241,
+   "alt": "A crew flag",
+   "sheet": "season",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a small triangular flag on a pole; one soft round cloud of morning mist; a golden sun-shaped trophy cup; a league badge of a thin sun just under the horizon, mostly indigo; a league badge of a half-risen sun, coral; a league badge of a full high sun, apricot; a league badge of a big golden low sun with long rays; an empty decorative ribbon banner with nothing written on it; Rollo fast asleep on a hilltop, one wing holding a small flag; Rollo cheering with both wings up; Rollo pointing at a little folded map; Rollo with three small cheerful chicks in sweatbands beside him. No text, letters or numbers anywhere."
+  },
+  "emblem_acorn": {
+   "file": "emblems/emblem_acorn",
+   "width": 200,
+   "height": 200,
+   "alt": "acorn crew emblem",
+   "sheet": "emblems",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Twenty-four round team emblem badges in one matching style, each a bold simple symbol inside a circle with a thick indigo ring. Transparent background outside the circles. A sprite sheet: exactly 6 columns by 4 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: fox head; ocean wave; mountain peak; lantern; comet; pine tree; owl; otter; heron; bear; hare; stag; anchor; compass; acorn; fern; kite; sailing boat; rising sun; crescent moon; shooting star; beehive; lighthouse; wolf. No text, letters or numbers anywhere."
+  },
+  "emblem_anchor": {
+   "file": "emblems/emblem_anchor",
+   "width": 200,
+   "height": 198,
+   "alt": "anchor crew emblem",
+   "sheet": "emblems",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Twenty-four round team emblem badges in one matching style, each a bold simple symbol inside a circle with a thick indigo ring. Transparent background outside the circles. A sprite sheet: exactly 6 columns by 4 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: fox head; ocean wave; mountain peak; lantern; comet; pine tree; owl; otter; heron; bear; hare; stag; anchor; compass; acorn; fern; kite; sailing boat; rising sun; crescent moon; shooting star; beehive; lighthouse; wolf. No text, letters or numbers anywhere."
+  },
+  "emblem_bear": {
+   "file": "emblems/emblem_bear",
+   "width": 200,
+   "height": 198,
+   "alt": "bear crew emblem",
+   "sheet": "emblems",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Twenty-four round team emblem badges in one matching style, each a bold simple symbol inside a circle with a thick indigo ring. Transparent background outside the circles. A sprite sheet: exactly 6 columns by 4 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: fox head; ocean wave; mountain peak; lantern; comet; pine tree; owl; otter; heron; bear; hare; stag; anchor; compass; acorn; fern; kite; sailing boat; rising sun; crescent moon; shooting star; beehive; lighthouse; wolf. No text, letters or numbers anywhere."
+  },
+  "emblem_comet": {
+   "file": "emblems/emblem_comet",
+   "width": 200,
+   "height": 197,
+   "alt": "comet crew emblem",
+   "sheet": "emblems",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Twenty-four round team emblem badges in one matching style, each a bold simple symbol inside a circle with a thick indigo ring. Transparent background outside the circles. A sprite sheet: exactly 6 columns by 4 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: fox head; ocean wave; mountain peak; lantern; comet; pine tree; owl; otter; heron; bear; hare; stag; anchor; compass; acorn; fern; kite; sailing boat; rising sun; crescent moon; shooting star; beehive; lighthouse; wolf. No text, letters or numbers anywhere."
+  },
+  "emblem_compass": {
+   "file": "emblems/emblem_compass",
+   "width": 199,
+   "height": 200,
+   "alt": "compass crew emblem",
+   "sheet": "emblems",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Twenty-four round team emblem badges in one matching style, each a bold simple symbol inside a circle with a thick indigo ring. Transparent background outside the circles. A sprite sheet: exactly 6 columns by 4 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: fox head; ocean wave; mountain peak; lantern; comet; pine tree; owl; otter; heron; bear; hare; stag; anchor; compass; acorn; fern; kite; sailing boat; rising sun; crescent moon; shooting star; beehive; lighthouse; wolf. No text, letters or numbers anywhere."
+  },
+  "emblem_fern": {
+   "file": "emblems/emblem_fern",
+   "width": 200,
+   "height": 199,
+   "alt": "fern crew emblem",
+   "sheet": "emblems",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Twenty-four round team emblem badges in one matching style, each a bold simple symbol inside a circle with a thick indigo ring. Transparent background outside the circles. A sprite sheet: exactly 6 columns by 4 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: fox head; ocean wave; mountain peak; lantern; comet; pine tree; owl; otter; heron; bear; hare; stag; anchor; compass; acorn; fern; kite; sailing boat; rising sun; crescent moon; shooting star; beehive; lighthouse; wolf. No text, letters or numbers anywhere."
+  },
+  "emblem_fox": {
+   "file": "emblems/emblem_fox",
+   "width": 200,
+   "height": 198,
+   "alt": "fox crew emblem",
+   "sheet": "emblems",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Twenty-four round team emblem badges in one matching style, each a bold simple symbol inside a circle with a thick indigo ring. Transparent background outside the circles. A sprite sheet: exactly 6 columns by 4 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: fox head; ocean wave; mountain peak; lantern; comet; pine tree; owl; otter; heron; bear; hare; stag; anchor; compass; acorn; fern; kite; sailing boat; rising sun; crescent moon; shooting star; beehive; lighthouse; wolf. No text, letters or numbers anywhere."
+  },
+  "emblem_hare": {
+   "file": "emblems/emblem_hare",
+   "width": 200,
+   "height": 196,
+   "alt": "hare crew emblem",
+   "sheet": "emblems",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Twenty-four round team emblem badges in one matching style, each a bold simple symbol inside a circle with a thick indigo ring. Transparent background outside the circles. A sprite sheet: exactly 6 columns by 4 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: fox head; ocean wave; mountain peak; lantern; comet; pine tree; owl; otter; heron; bear; hare; stag; anchor; compass; acorn; fern; kite; sailing boat; rising sun; crescent moon; shooting star; beehive; lighthouse; wolf. No text, letters or numbers anywhere."
+  },
+  "emblem_heron": {
+   "file": "emblems/emblem_heron",
+   "width": 200,
+   "height": 197,
+   "alt": "heron crew emblem",
+   "sheet": "emblems",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Twenty-four round team emblem badges in one matching style, each a bold simple symbol inside a circle with a thick indigo ring. Transparent background outside the circles. A sprite sheet: exactly 6 columns by 4 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: fox head; ocean wave; mountain peak; lantern; comet; pine tree; owl; otter; heron; bear; hare; stag; anchor; compass; acorn; fern; kite; sailing boat; rising sun; crescent moon; shooting star; beehive; lighthouse; wolf. No text, letters or numbers anywhere."
+  },
+  "emblem_hive": {
+   "file": "emblems/emblem_hive",
+   "width": 200,
+   "height": 200,
+   "alt": "hive crew emblem",
+   "sheet": "emblems",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Twenty-four round team emblem badges in one matching style, each a bold simple symbol inside a circle with a thick indigo ring. Transparent background outside the circles. A sprite sheet: exactly 6 columns by 4 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: fox head; ocean wave; mountain peak; lantern; comet; pine tree; owl; otter; heron; bear; hare; stag; anchor; compass; acorn; fern; kite; sailing boat; rising sun; crescent moon; shooting star; beehive; lighthouse; wolf. No text, letters or numbers anywhere."
+  },
+  "emblem_kite": {
+   "file": "emblems/emblem_kite",
+   "width": 200,
+   "height": 198,
+   "alt": "kite crew emblem",
+   "sheet": "emblems",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Twenty-four round team emblem badges in one matching style, each a bold simple symbol inside a circle with a thick indigo ring. Transparent background outside the circles. A sprite sheet: exactly 6 columns by 4 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: fox head; ocean wave; mountain peak; lantern; comet; pine tree; owl; otter; heron; bear; hare; stag; anchor; compass; acorn; fern; kite; sailing boat; rising sun; crescent moon; shooting star; beehive; lighthouse; wolf. No text, letters or numbers anywhere."
+  },
+  "emblem_lantern": {
+   "file": "emblems/emblem_lantern",
+   "width": 200,
+   "height": 199,
+   "alt": "lantern crew emblem",
+   "sheet": "emblems",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Twenty-four round team emblem badges in one matching style, each a bold simple symbol inside a circle with a thick indigo ring. Transparent background outside the circles. A sprite sheet: exactly 6 columns by 4 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: fox head; ocean wave; mountain peak; lantern; comet; pine tree; owl; otter; heron; bear; hare; stag; anchor; compass; acorn; fern; kite; sailing boat; rising sun; crescent moon; shooting star; beehive; lighthouse; wolf. No text, letters or numbers anywhere."
+  },
+  "emblem_light": {
+   "file": "emblems/emblem_light",
+   "width": 200,
+   "height": 199,
+   "alt": "light crew emblem",
+   "sheet": "emblems",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Twenty-four round team emblem badges in one matching style, each a bold simple symbol inside a circle with a thick indigo ring. Transparent background outside the circles. A sprite sheet: exactly 6 columns by 4 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: fox head; ocean wave; mountain peak; lantern; comet; pine tree; owl; otter; heron; bear; hare; stag; anchor; compass; acorn; fern; kite; sailing boat; rising sun; crescent moon; shooting star; beehive; lighthouse; wolf. No text, letters or numbers anywhere."
+  },
+  "emblem_moon": {
+   "file": "emblems/emblem_moon",
+   "width": 200,
+   "height": 200,
+   "alt": "moon crew emblem",
+   "sheet": "emblems",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Twenty-four round team emblem badges in one matching style, each a bold simple symbol inside a circle with a thick indigo ring. Transparent background outside the circles. A sprite sheet: exactly 6 columns by 4 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: fox head; ocean wave; mountain peak; lantern; comet; pine tree; owl; otter; heron; bear; hare; stag; anchor; compass; acorn; fern; kite; sailing boat; rising sun; crescent moon; shooting star; beehive; lighthouse; wolf. No text, letters or numbers anywhere."
+  },
+  "emblem_mountain": {
+   "file": "emblems/emblem_mountain",
+   "width": 200,
+   "height": 200,
+   "alt": "mountain crew emblem",
+   "sheet": "emblems",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Twenty-four round team emblem badges in one matching style, each a bold simple symbol inside a circle with a thick indigo ring. Transparent background outside the circles. A sprite sheet: exactly 6 columns by 4 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: fox head; ocean wave; mountain peak; lantern; comet; pine tree; owl; otter; heron; bear; hare; stag; anchor; compass; acorn; fern; kite; sailing boat; rising sun; crescent moon; shooting star; beehive; lighthouse; wolf. No text, letters or numbers anywhere."
+  },
+  "emblem_otter": {
+   "file": "emblems/emblem_otter",
+   "width": 200,
+   "height": 198,
+   "alt": "otter crew emblem",
+   "sheet": "emblems",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Twenty-four round team emblem badges in one matching style, each a bold simple symbol inside a circle with a thick indigo ring. Transparent background outside the circles. A sprite sheet: exactly 6 columns by 4 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: fox head; ocean wave; mountain peak; lantern; comet; pine tree; owl; otter; heron; bear; hare; stag; anchor; compass; acorn; fern; kite; sailing boat; rising sun; crescent moon; shooting star; beehive; lighthouse; wolf. No text, letters or numbers anywhere."
+  },
+  "emblem_owl": {
+   "file": "emblems/emblem_owl",
+   "width": 200,
+   "height": 197,
+   "alt": "owl crew emblem",
+   "sheet": "emblems",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Twenty-four round team emblem badges in one matching style, each a bold simple symbol inside a circle with a thick indigo ring. Transparent background outside the circles. A sprite sheet: exactly 6 columns by 4 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: fox head; ocean wave; mountain peak; lantern; comet; pine tree; owl; otter; heron; bear; hare; stag; anchor; compass; acorn; fern; kite; sailing boat; rising sun; crescent moon; shooting star; beehive; lighthouse; wolf. No text, letters or numbers anywhere."
+  },
+  "emblem_pine": {
+   "file": "emblems/emblem_pine",
+   "width": 200,
+   "height": 199,
+   "alt": "pine crew emblem",
+   "sheet": "emblems",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Twenty-four round team emblem badges in one matching style, each a bold simple symbol inside a circle with a thick indigo ring. Transparent background outside the circles. A sprite sheet: exactly 6 columns by 4 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: fox head; ocean wave; mountain peak; lantern; comet; pine tree; owl; otter; heron; bear; hare; stag; anchor; compass; acorn; fern; kite; sailing boat; rising sun; crescent moon; shooting star; beehive; lighthouse; wolf. No text, letters or numbers anywhere."
+  },
+  "emblem_sail": {
+   "file": "emblems/emblem_sail",
+   "width": 200,
+   "height": 199,
+   "alt": "sail crew emblem",
+   "sheet": "emblems",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Twenty-four round team emblem badges in one matching style, each a bold simple symbol inside a circle with a thick indigo ring. Transparent background outside the circles. A sprite sheet: exactly 6 columns by 4 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: fox head; ocean wave; mountain peak; lantern; comet; pine tree; owl; otter; heron; bear; hare; stag; anchor; compass; acorn; fern; kite; sailing boat; rising sun; crescent moon; shooting star; beehive; lighthouse; wolf. No text, letters or numbers anywhere."
+  },
+  "emblem_stag": {
+   "file": "emblems/emblem_stag",
+   "width": 200,
+   "height": 196,
+   "alt": "stag crew emblem",
+   "sheet": "emblems",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Twenty-four round team emblem badges in one matching style, each a bold simple symbol inside a circle with a thick indigo ring. Transparent background outside the circles. A sprite sheet: exactly 6 columns by 4 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: fox head; ocean wave; mountain peak; lantern; comet; pine tree; owl; otter; heron; bear; hare; stag; anchor; compass; acorn; fern; kite; sailing boat; rising sun; crescent moon; shooting star; beehive; lighthouse; wolf. No text, letters or numbers anywhere."
+  },
+  "emblem_star": {
+   "file": "emblems/emblem_star",
+   "width": 200,
+   "height": 199,
+   "alt": "star crew emblem",
+   "sheet": "emblems",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Twenty-four round team emblem badges in one matching style, each a bold simple symbol inside a circle with a thick indigo ring. Transparent background outside the circles. A sprite sheet: exactly 6 columns by 4 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: fox head; ocean wave; mountain peak; lantern; comet; pine tree; owl; otter; heron; bear; hare; stag; anchor; compass; acorn; fern; kite; sailing boat; rising sun; crescent moon; shooting star; beehive; lighthouse; wolf. No text, letters or numbers anywhere."
+  },
+  "emblem_sun": {
+   "file": "emblems/emblem_sun",
+   "width": 200,
+   "height": 198,
+   "alt": "sun crew emblem",
+   "sheet": "emblems",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Twenty-four round team emblem badges in one matching style, each a bold simple symbol inside a circle with a thick indigo ring. Transparent background outside the circles. A sprite sheet: exactly 6 columns by 4 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: fox head; ocean wave; mountain peak; lantern; comet; pine tree; owl; otter; heron; bear; hare; stag; anchor; compass; acorn; fern; kite; sailing boat; rising sun; crescent moon; shooting star; beehive; lighthouse; wolf. No text, letters or numbers anywhere."
+  },
+  "emblem_wave": {
+   "file": "emblems/emblem_wave",
+   "width": 200,
+   "height": 198,
+   "alt": "wave crew emblem",
+   "sheet": "emblems",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Twenty-four round team emblem badges in one matching style, each a bold simple symbol inside a circle with a thick indigo ring. Transparent background outside the circles. A sprite sheet: exactly 6 columns by 4 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: fox head; ocean wave; mountain peak; lantern; comet; pine tree; owl; otter; heron; bear; hare; stag; anchor; compass; acorn; fern; kite; sailing boat; rising sun; crescent moon; shooting star; beehive; lighthouse; wolf. No text, letters or numbers anywhere."
+  },
+  "emblem_wolf": {
+   "file": "emblems/emblem_wolf",
+   "width": 200,
+   "height": 200,
+   "alt": "wolf crew emblem",
+   "sheet": "emblems",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Twenty-four round team emblem badges in one matching style, each a bold simple symbol inside a circle with a thick indigo ring. Transparent background outside the circles. A sprite sheet: exactly 6 columns by 4 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: fox head; ocean wave; mountain peak; lantern; comet; pine tree; owl; otter; heron; bear; hare; stag; anchor; compass; acorn; fern; kite; sailing boat; rising sun; crescent moon; shooting star; beehive; lighthouse; wolf. No text, letters or numbers anywhere."
+  },
   "empty_athletes": {
    "file": "guide/empty_athletes",
    "width": 386,
@@ -161,6 +449,126 @@
    "alt": "Rollo napping beside a row of rising suns",
    "sheet": "guide",
    "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Small illustrated vignettes for an app. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a phone propped against a water bottle on a table; a person seated with face and upper chest in a phone frame; a desk lamp lighting a seated person from the front; a person sitting calmly with a small stopwatch; Rollo looking at an empty clipboard; Rollo napping happily beside a row of small rising suns. No text, letters or numbers anywhere."
+  },
+  "ex_bridge_front": {
+   "file": "exercises/ex_bridge_front",
+   "width": 289,
+   "height": 146,
+   "alt": "bridge from the front",
+   "sheet": "exercises",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Fifteen small exercise illustrations of the same fictional adult in plain clothes with no stripes, logos or marks, all at the same scale, each showing the lowest or hardest point of the movement. Transparent background. A sprite sheet: exactly 5 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: bodyweight squat from the front; bodyweight squat from the side; goblet squat holding a kettlebell from the front; goblet squat holding a kettlebell from the side; lunge from the front; lunge from the side; push-up from the front; push-up from the side; glute bridge lying on the back from the front; glute bridge lying on the back from the side; overhead press with dumbbells from the front; overhead press with dumbbells from the side; plank from the front; plank from the side; one kettlebell on its own. No text, letters or numbers anywhere."
+  },
+  "ex_bridge_side": {
+   "file": "exercises/ex_bridge_side",
+   "width": 270,
+   "height": 300,
+   "alt": "bridge from the side",
+   "sheet": "exercises",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Fifteen small exercise illustrations of the same fictional adult in plain clothes with no stripes, logos or marks, all at the same scale, each showing the lowest or hardest point of the movement. Transparent background. A sprite sheet: exactly 5 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: bodyweight squat from the front; bodyweight squat from the side; goblet squat holding a kettlebell from the front; goblet squat holding a kettlebell from the side; lunge from the front; lunge from the side; push-up from the front; push-up from the side; glute bridge lying on the back from the front; glute bridge lying on the back from the side; overhead press with dumbbells from the front; overhead press with dumbbells from the side; plank from the front; plank from the side; one kettlebell on its own. No text, letters or numbers anywhere."
+  },
+  "ex_goblet_front": {
+   "file": "exercises/ex_goblet_front",
+   "width": 274,
+   "height": 300,
+   "alt": "goblet from the front",
+   "sheet": "exercises",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Fifteen small exercise illustrations of the same fictional adult in plain clothes with no stripes, logos or marks, all at the same scale, each showing the lowest or hardest point of the movement. Transparent background. A sprite sheet: exactly 5 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: bodyweight squat from the front; bodyweight squat from the side; goblet squat holding a kettlebell from the front; goblet squat holding a kettlebell from the side; lunge from the front; lunge from the side; push-up from the front; push-up from the side; glute bridge lying on the back from the front; glute bridge lying on the back from the side; overhead press with dumbbells from the front; overhead press with dumbbells from the side; plank from the front; plank from the side; one kettlebell on its own. No text, letters or numbers anywhere."
+  },
+  "ex_goblet_side": {
+   "file": "exercises/ex_goblet_side",
+   "width": 274,
+   "height": 300,
+   "alt": "goblet from the side",
+   "sheet": "exercises",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Fifteen small exercise illustrations of the same fictional adult in plain clothes with no stripes, logos or marks, all at the same scale, each showing the lowest or hardest point of the movement. Transparent background. A sprite sheet: exactly 5 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: bodyweight squat from the front; bodyweight squat from the side; goblet squat holding a kettlebell from the front; goblet squat holding a kettlebell from the side; lunge from the front; lunge from the side; push-up from the front; push-up from the side; glute bridge lying on the back from the front; glute bridge lying on the back from the side; overhead press with dumbbells from the front; overhead press with dumbbells from the side; plank from the front; plank from the side; one kettlebell on its own. No text, letters or numbers anywhere."
+  },
+  "ex_kettlebell": {
+   "file": "exercises/ex_kettlebell",
+   "width": 270,
+   "height": 300,
+   "alt": "A kettlebell",
+   "sheet": "exercises",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Fifteen small exercise illustrations of the same fictional adult in plain clothes with no stripes, logos or marks, all at the same scale, each showing the lowest or hardest point of the movement. Transparent background. A sprite sheet: exactly 5 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: bodyweight squat from the front; bodyweight squat from the side; goblet squat holding a kettlebell from the front; goblet squat holding a kettlebell from the side; lunge from the front; lunge from the side; push-up from the front; push-up from the side; glute bridge lying on the back from the front; glute bridge lying on the back from the side; overhead press with dumbbells from the front; overhead press with dumbbells from the side; plank from the front; plank from the side; one kettlebell on its own. No text, letters or numbers anywhere."
+  },
+  "ex_lunge_front": {
+   "file": "exercises/ex_lunge_front",
+   "width": 274,
+   "height": 300,
+   "alt": "lunge from the front",
+   "sheet": "exercises",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Fifteen small exercise illustrations of the same fictional adult in plain clothes with no stripes, logos or marks, all at the same scale, each showing the lowest or hardest point of the movement. Transparent background. A sprite sheet: exactly 5 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: bodyweight squat from the front; bodyweight squat from the side; goblet squat holding a kettlebell from the front; goblet squat holding a kettlebell from the side; lunge from the front; lunge from the side; push-up from the front; push-up from the side; glute bridge lying on the back from the front; glute bridge lying on the back from the side; overhead press with dumbbells from the front; overhead press with dumbbells from the side; plank from the front; plank from the side; one kettlebell on its own. No text, letters or numbers anywhere."
+  },
+  "ex_lunge_side": {
+   "file": "exercises/ex_lunge_side",
+   "width": 264,
+   "height": 300,
+   "alt": "lunge from the side",
+   "sheet": "exercises",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Fifteen small exercise illustrations of the same fictional adult in plain clothes with no stripes, logos or marks, all at the same scale, each showing the lowest or hardest point of the movement. Transparent background. A sprite sheet: exactly 5 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: bodyweight squat from the front; bodyweight squat from the side; goblet squat holding a kettlebell from the front; goblet squat holding a kettlebell from the side; lunge from the front; lunge from the side; push-up from the front; push-up from the side; glute bridge lying on the back from the front; glute bridge lying on the back from the side; overhead press with dumbbells from the front; overhead press with dumbbells from the side; plank from the front; plank from the side; one kettlebell on its own. No text, letters or numbers anywhere."
+  },
+  "ex_plank_front": {
+   "file": "exercises/ex_plank_front",
+   "width": 300,
+   "height": 261,
+   "alt": "plank from the front",
+   "sheet": "exercises",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Fifteen small exercise illustrations of the same fictional adult in plain clothes with no stripes, logos or marks, all at the same scale, each showing the lowest or hardest point of the movement. Transparent background. A sprite sheet: exactly 5 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: bodyweight squat from the front; bodyweight squat from the side; goblet squat holding a kettlebell from the front; goblet squat holding a kettlebell from the side; lunge from the front; lunge from the side; push-up from the front; push-up from the side; glute bridge lying on the back from the front; glute bridge lying on the back from the side; overhead press with dumbbells from the front; overhead press with dumbbells from the side; plank from the front; plank from the side; one kettlebell on its own. No text, letters or numbers anywhere."
+  },
+  "ex_plank_side": {
+   "file": "exercises/ex_plank_side",
+   "width": 300,
+   "height": 233,
+   "alt": "plank from the side",
+   "sheet": "exercises",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Fifteen small exercise illustrations of the same fictional adult in plain clothes with no stripes, logos or marks, all at the same scale, each showing the lowest or hardest point of the movement. Transparent background. A sprite sheet: exactly 5 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: bodyweight squat from the front; bodyweight squat from the side; goblet squat holding a kettlebell from the front; goblet squat holding a kettlebell from the side; lunge from the front; lunge from the side; push-up from the front; push-up from the side; glute bridge lying on the back from the front; glute bridge lying on the back from the side; overhead press with dumbbells from the front; overhead press with dumbbells from the side; plank from the front; plank from the side; one kettlebell on its own. No text, letters or numbers anywhere."
+  },
+  "ex_press_front": {
+   "file": "exercises/ex_press_front",
+   "width": 269,
+   "height": 300,
+   "alt": "press from the front",
+   "sheet": "exercises",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Fifteen small exercise illustrations of the same fictional adult in plain clothes with no stripes, logos or marks, all at the same scale, each showing the lowest or hardest point of the movement. Transparent background. A sprite sheet: exactly 5 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: bodyweight squat from the front; bodyweight squat from the side; goblet squat holding a kettlebell from the front; goblet squat holding a kettlebell from the side; lunge from the front; lunge from the side; push-up from the front; push-up from the side; glute bridge lying on the back from the front; glute bridge lying on the back from the side; overhead press with dumbbells from the front; overhead press with dumbbells from the side; plank from the front; plank from the side; one kettlebell on its own. No text, letters or numbers anywhere."
+  },
+  "ex_press_side": {
+   "file": "exercises/ex_press_side",
+   "width": 280,
+   "height": 300,
+   "alt": "press from the side",
+   "sheet": "exercises",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Fifteen small exercise illustrations of the same fictional adult in plain clothes with no stripes, logos or marks, all at the same scale, each showing the lowest or hardest point of the movement. Transparent background. A sprite sheet: exactly 5 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: bodyweight squat from the front; bodyweight squat from the side; goblet squat holding a kettlebell from the front; goblet squat holding a kettlebell from the side; lunge from the front; lunge from the side; push-up from the front; push-up from the side; glute bridge lying on the back from the front; glute bridge lying on the back from the side; overhead press with dumbbells from the front; overhead press with dumbbells from the side; plank from the front; plank from the side; one kettlebell on its own. No text, letters or numbers anywhere."
+  },
+  "ex_pushup_front": {
+   "file": "exercises/ex_pushup_front",
+   "width": 246,
+   "height": 143,
+   "alt": "pushup from the front",
+   "sheet": "exercises",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Fifteen small exercise illustrations of the same fictional adult in plain clothes with no stripes, logos or marks, all at the same scale, each showing the lowest or hardest point of the movement. Transparent background. A sprite sheet: exactly 5 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: bodyweight squat from the front; bodyweight squat from the side; goblet squat holding a kettlebell from the front; goblet squat holding a kettlebell from the side; lunge from the front; lunge from the side; push-up from the front; push-up from the side; glute bridge lying on the back from the front; glute bridge lying on the back from the side; overhead press with dumbbells from the front; overhead press with dumbbells from the side; plank from the front; plank from the side; one kettlebell on its own. No text, letters or numbers anywhere."
+  },
+  "ex_pushup_side": {
+   "file": "exercises/ex_pushup_side",
+   "width": 266,
+   "height": 100,
+   "alt": "pushup from the side",
+   "sheet": "exercises",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Fifteen small exercise illustrations of the same fictional adult in plain clothes with no stripes, logos or marks, all at the same scale, each showing the lowest or hardest point of the movement. Transparent background. A sprite sheet: exactly 5 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: bodyweight squat from the front; bodyweight squat from the side; goblet squat holding a kettlebell from the front; goblet squat holding a kettlebell from the side; lunge from the front; lunge from the side; push-up from the front; push-up from the side; glute bridge lying on the back from the front; glute bridge lying on the back from the side; overhead press with dumbbells from the front; overhead press with dumbbells from the side; plank from the front; plank from the side; one kettlebell on its own. No text, letters or numbers anywhere."
+  },
+  "ex_squat_front": {
+   "file": "exercises/ex_squat_front",
+   "width": 268,
+   "height": 300,
+   "alt": "squat from the front",
+   "sheet": "exercises",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Fifteen small exercise illustrations of the same fictional adult in plain clothes with no stripes, logos or marks, all at the same scale, each showing the lowest or hardest point of the movement. Transparent background. A sprite sheet: exactly 5 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: bodyweight squat from the front; bodyweight squat from the side; goblet squat holding a kettlebell from the front; goblet squat holding a kettlebell from the side; lunge from the front; lunge from the side; push-up from the front; push-up from the side; glute bridge lying on the back from the front; glute bridge lying on the back from the side; overhead press with dumbbells from the front; overhead press with dumbbells from the side; plank from the front; plank from the side; one kettlebell on its own. No text, letters or numbers anywhere."
+  },
+  "ex_squat_side": {
+   "file": "exercises/ex_squat_side",
+   "width": 274,
+   "height": 300,
+   "alt": "squat from the side",
+   "sheet": "exercises",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Fifteen small exercise illustrations of the same fictional adult in plain clothes with no stripes, logos or marks, all at the same scale, each showing the lowest or hardest point of the movement. Transparent background. A sprite sheet: exactly 5 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: bodyweight squat from the front; bodyweight squat from the side; goblet squat holding a kettlebell from the front; goblet squat holding a kettlebell from the side; lunge from the front; lunge from the side; push-up from the front; push-up from the side; glute bridge lying on the back from the front; glute bridge lying on the back from the side; overhead press with dumbbells from the front; overhead press with dumbbells from the side; plank from the front; plank from the side; one kettlebell on its own. No text, letters or numbers anywhere."
   },
   "feel_1": {
    "file": "rollo_feel/feel_1",
@@ -202,6 +610,22 @@
    "sheet": "rollo_feel",
    "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo’s face looking wrecked and flattened; Rollo’s face tired, with droopy eyes; Rollo’s face okay, a small neutral smile; Rollo’s face good, a big smile; Rollo’s face flying high with joy, little wings out; Rollo looking puzzled with a tangled whistle and lanyard. No text, letters or numbers anywhere."
   },
+  "floor_marker": {
+   "file": "legs_guide/floor_marker",
+   "width": 249,
+   "height": 108,
+   "alt": "Footprints marking where to stand",
+   "sheet": "legs_guide",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo with wings on his hips, knees bent in a quick dip before jumping; Rollo high in the air, wings on hips, legs straight; Rollo landing with straight legs, wings on hips; a pair of simple footprints on a small floor mat, a place to stand; Rollo balancing on one leg, wings out a little; Rollo sitting with one leg up on a cushion, an ice pack on it, relaxed; Rollo counting on his wing feathers; Rollo putting a barbell down, pleased, the set is done; Rollo drinking from a water bottle, taking a break; Rollo tapping on a window pane from outside with one wing; a phone propped on a floor, a person facing it from the front, standing a few steps back; a phone propped on a floor, a person side-on to it, standing a few steps back. No text, letters or numbers anywhere."
+  },
+  "fog_cloud": {
+   "file": "season/fog_cloud",
+   "width": 298,
+   "height": 178,
+   "alt": "A cloud of morning mist",
+   "sheet": "season",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a small triangular flag on a pole; one soft round cloud of morning mist; a golden sun-shaped trophy cup; a league badge of a thin sun just under the horizon, mostly indigo; a league badge of a half-risen sun, coral; a league badge of a full high sun, apricot; a league badge of a big golden low sun with long rays; an empty decorative ribbon banner with nothing written on it; Rollo fast asleep on a hilltop, one wing holding a small flag; Rollo cheering with both wings up; Rollo pointing at a little folded map; Rollo with three small cheerful chicks in sweatbands beside him. No text, letters or numbers anywhere."
+  },
   "hero": {
    "file": "hero/hero",
    "width": 1536,
@@ -242,6 +666,110 @@
    "sheet": "how",
    "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Four square illustrations for a landing page. Plain clothing with no stripes, logos or marks. Transparent background. A sprite sheet: exactly 2 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a fictional athlete sitting on a bench at dawn, looking at a propped phone; a coach at a laptop looking at a row of small sun icons; a coach’s hand pressing send on a phone, a paper plane flying into the sunrise; a padlock whose body is a sun and whose shackle is a pulse wave. No text, letters or numbers anywhere."
   },
+  "idle_f1": {
+   "file": "rollo_idle_frames/idle_f1",
+   "width": 212,
+   "height": 320,
+   "alt": "",
+   "sheet": "rollo_idle_frames",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Six animation frames of a gentle idle loop, for a small farm scene. Rollo stays in the same place and size in every frame, standing with his feet still; only his chest, head and tail move slightly as he breathes, looks about and blinks. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: looking ahead; chest rising; chest high, tail lifted; head turned a little; blinking; chest falling. No text, letters or numbers anywhere."
+  },
+  "idle_f2": {
+   "file": "rollo_idle_frames/idle_f2",
+   "width": 215,
+   "height": 320,
+   "alt": "",
+   "sheet": "rollo_idle_frames",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Six animation frames of a gentle idle loop, for a small farm scene. Rollo stays in the same place and size in every frame, standing with his feet still; only his chest, head and tail move slightly as he breathes, looks about and blinks. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: looking ahead; chest rising; chest high, tail lifted; head turned a little; blinking; chest falling. No text, letters or numbers anywhere."
+  },
+  "idle_f3": {
+   "file": "rollo_idle_frames/idle_f3",
+   "width": 224,
+   "height": 320,
+   "alt": "",
+   "sheet": "rollo_idle_frames",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Six animation frames of a gentle idle loop, for a small farm scene. Rollo stays in the same place and size in every frame, standing with his feet still; only his chest, head and tail move slightly as he breathes, looks about and blinks. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: looking ahead; chest rising; chest high, tail lifted; head turned a little; blinking; chest falling. No text, letters or numbers anywhere."
+  },
+  "idle_f4": {
+   "file": "rollo_idle_frames/idle_f4",
+   "width": 218,
+   "height": 320,
+   "alt": "",
+   "sheet": "rollo_idle_frames",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Six animation frames of a gentle idle loop, for a small farm scene. Rollo stays in the same place and size in every frame, standing with his feet still; only his chest, head and tail move slightly as he breathes, looks about and blinks. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: looking ahead; chest rising; chest high, tail lifted; head turned a little; blinking; chest falling. No text, letters or numbers anywhere."
+  },
+  "idle_f5": {
+   "file": "rollo_idle_frames/idle_f5",
+   "width": 215,
+   "height": 320,
+   "alt": "",
+   "sheet": "rollo_idle_frames",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Six animation frames of a gentle idle loop, for a small farm scene. Rollo stays in the same place and size in every frame, standing with his feet still; only his chest, head and tail move slightly as he breathes, looks about and blinks. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: looking ahead; chest rising; chest high, tail lifted; head turned a little; blinking; chest falling. No text, letters or numbers anywhere."
+  },
+  "idle_f6": {
+   "file": "rollo_idle_frames/idle_f6",
+   "width": 215,
+   "height": 320,
+   "alt": "",
+   "sheet": "rollo_idle_frames",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Six animation frames of a gentle idle loop, for a small farm scene. Rollo stays in the same place and size in every frame, standing with his feet still; only his chest, head and tail move slightly as he breathes, looks about and blinks. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: looking ahead; chest rising; chest high, tail lifted; head turned a little; blinking; chest falling. No text, letters or numbers anywhere."
+  },
+  "jump_air": {
+   "file": "legs_guide/jump_air",
+   "width": 196,
+   "height": 321,
+   "alt": "Rollo in the air with straight legs",
+   "sheet": "legs_guide",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo with wings on his hips, knees bent in a quick dip before jumping; Rollo high in the air, wings on hips, legs straight; Rollo landing with straight legs, wings on hips; a pair of simple footprints on a small floor mat, a place to stand; Rollo balancing on one leg, wings out a little; Rollo sitting with one leg up on a cushion, an ice pack on it, relaxed; Rollo counting on his wing feathers; Rollo putting a barbell down, pleased, the set is done; Rollo drinking from a water bottle, taking a break; Rollo tapping on a window pane from outside with one wing; a phone propped on a floor, a person facing it from the front, standing a few steps back; a phone propped on a floor, a person side-on to it, standing a few steps back. No text, letters or numbers anywhere."
+  },
+  "jump_dip": {
+   "file": "legs_guide/jump_dip",
+   "width": 263,
+   "height": 271,
+   "alt": "Rollo dipping with wings on hips",
+   "sheet": "legs_guide",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo with wings on his hips, knees bent in a quick dip before jumping; Rollo high in the air, wings on hips, legs straight; Rollo landing with straight legs, wings on hips; a pair of simple footprints on a small floor mat, a place to stand; Rollo balancing on one leg, wings out a little; Rollo sitting with one leg up on a cushion, an ice pack on it, relaxed; Rollo counting on his wing feathers; Rollo putting a barbell down, pleased, the set is done; Rollo drinking from a water bottle, taking a break; Rollo tapping on a window pane from outside with one wing; a phone propped on a floor, a person facing it from the front, standing a few steps back; a phone propped on a floor, a person side-on to it, standing a few steps back. No text, letters or numbers anywhere."
+  },
+  "jump_land": {
+   "file": "legs_guide/jump_land",
+   "width": 208,
+   "height": 285,
+   "alt": "Rollo landing with straight legs",
+   "sheet": "legs_guide",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo with wings on his hips, knees bent in a quick dip before jumping; Rollo high in the air, wings on hips, legs straight; Rollo landing with straight legs, wings on hips; a pair of simple footprints on a small floor mat, a place to stand; Rollo balancing on one leg, wings out a little; Rollo sitting with one leg up on a cushion, an ice pack on it, relaxed; Rollo counting on his wing feathers; Rollo putting a barbell down, pleased, the set is done; Rollo drinking from a water bottle, taking a break; Rollo tapping on a window pane from outside with one wing; a phone propped on a floor, a person facing it from the front, standing a few steps back; a phone propped on a floor, a person side-on to it, standing a few steps back. No text, letters or numbers anywhere."
+  },
+  "league_dawn": {
+   "file": "season/league_dawn",
+   "width": 260,
+   "height": 126,
+   "alt": "Dawn league badge",
+   "sheet": "season",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a small triangular flag on a pole; one soft round cloud of morning mist; a golden sun-shaped trophy cup; a league badge of a thin sun just under the horizon, mostly indigo; a league badge of a half-risen sun, coral; a league badge of a full high sun, apricot; a league badge of a big golden low sun with long rays; an empty decorative ribbon banner with nothing written on it; Rollo fast asleep on a hilltop, one wing holding a small flag; Rollo cheering with both wings up; Rollo pointing at a little folded map; Rollo with three small cheerful chicks in sweatbands beside him. No text, letters or numbers anywhere."
+  },
+  "league_golden": {
+   "file": "season/league_golden",
+   "width": 341,
+   "height": 303,
+   "alt": "Golden Hour league badge",
+   "sheet": "season",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a small triangular flag on a pole; one soft round cloud of morning mist; a golden sun-shaped trophy cup; a league badge of a thin sun just under the horizon, mostly indigo; a league badge of a half-risen sun, coral; a league badge of a full high sun, apricot; a league badge of a big golden low sun with long rays; an empty decorative ribbon banner with nothing written on it; Rollo fast asleep on a hilltop, one wing holding a small flag; Rollo cheering with both wings up; Rollo pointing at a little folded map; Rollo with three small cheerful chicks in sweatbands beside him. No text, letters or numbers anywhere."
+  },
+  "league_midday": {
+   "file": "season/league_midday",
+   "width": 239,
+   "height": 309,
+   "alt": "Midday league badge",
+   "sheet": "season",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a small triangular flag on a pole; one soft round cloud of morning mist; a golden sun-shaped trophy cup; a league badge of a thin sun just under the horizon, mostly indigo; a league badge of a half-risen sun, coral; a league badge of a full high sun, apricot; a league badge of a big golden low sun with long rays; an empty decorative ribbon banner with nothing written on it; Rollo fast asleep on a hilltop, one wing holding a small flag; Rollo cheering with both wings up; Rollo pointing at a little folded map; Rollo with three small cheerful chicks in sweatbands beside him. No text, letters or numbers anywhere."
+  },
+  "league_morning": {
+   "file": "season/league_morning",
+   "width": 248,
+   "height": 174,
+   "alt": "Morning league badge",
+   "sheet": "season",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a small triangular flag on a pole; one soft round cloud of morning mist; a golden sun-shaped trophy cup; a league badge of a thin sun just under the horizon, mostly indigo; a league badge of a half-risen sun, coral; a league badge of a full high sun, apricot; a league badge of a big golden low sun with long rays; an empty decorative ribbon banner with nothing written on it; Rollo fast asleep on a hilltop, one wing holding a small flag; Rollo cheering with both wings up; Rollo pointing at a little folded map; Rollo with three small cheerful chicks in sweatbands beside him. No text, letters or numbers anywhere."
+  },
   "logo_wordmark": {
    "file": "logo/logo_wordmark",
    "width": 1200,
@@ -249,6 +777,14 @@
    "alt": "Roll Call",
    "sheet": "logo",
    "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. A logo wordmark reading exactly \"ROLL CALL\" in chunky, rounded, friendly indigo capital letters on one line. A coral sun rises from behind the first letter O of ROLL, and a thin heartbeat pulse line runs along the baseline as the horizon. Only those two words. Transparent background."
+  },
+  "nudge_window": {
+   "file": "legs_guide/nudge_window",
+   "width": 316,
+   "height": 271,
+   "alt": "Rollo tapping on a window",
+   "sheet": "legs_guide",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo with wings on his hips, knees bent in a quick dip before jumping; Rollo high in the air, wings on hips, legs straight; Rollo landing with straight legs, wings on hips; a pair of simple footprints on a small floor mat, a place to stand; Rollo balancing on one leg, wings out a little; Rollo sitting with one leg up on a cushion, an ice pack on it, relaxed; Rollo counting on his wing feathers; Rollo putting a barbell down, pleased, the set is done; Rollo drinking from a water bottle, taking a break; Rollo tapping on a window pane from outside with one wing; a phone propped on a floor, a person facing it from the front, standing a few steps back; a phone propped on a floor, a person side-on to it, standing a few steps back. No text, letters or numbers anywhere."
   },
   "onboard_frame": {
    "file": "guide/onboard_frame",
@@ -298,6 +834,14 @@
    "sheet": "rollo_poses",
    "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo waving hello; Rollo blowing his whistle; Rollo holding a clipboard, ticking a box; Rollo pointing at a desk lamp; Rollo holding a phone at arm’s length; Rollo sitting very still with eyes closed; Rollo with a wing tip to his beak, saying shh; Rollo celebrating with confetti; Rollo asleep on a pillow; Rollo stretching; Rollo holding a steaming mug; Rollo sprinting. No text, letters or numbers anywhere."
   },
+  "rollo_cheer": {
+   "file": "season/rollo_cheer",
+   "width": 268,
+   "height": 318,
+   "alt": "Rollo cheering",
+   "sheet": "season",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a small triangular flag on a pole; one soft round cloud of morning mist; a golden sun-shaped trophy cup; a league badge of a thin sun just under the horizon, mostly indigo; a league badge of a half-risen sun, coral; a league badge of a full high sun, apricot; a league badge of a big golden low sun with long rays; an empty decorative ribbon banner with nothing written on it; Rollo fast asleep on a hilltop, one wing holding a small flag; Rollo cheering with both wings up; Rollo pointing at a little folded map; Rollo with three small cheerful chicks in sweatbands beside him. No text, letters or numbers anywhere."
+  },
   "rollo_clipboard": {
    "file": "rollo_poses/rollo_clipboard",
    "width": 269,
@@ -306,6 +850,22 @@
    "sheet": "rollo_poses",
    "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo waving hello; Rollo blowing his whistle; Rollo holding a clipboard, ticking a box; Rollo pointing at a desk lamp; Rollo holding a phone at arm’s length; Rollo sitting very still with eyes closed; Rollo with a wing tip to his beak, saying shh; Rollo celebrating with confetti; Rollo asleep on a pillow; Rollo stretching; Rollo holding a steaming mug; Rollo sprinting. No text, letters or numbers anywhere."
   },
+  "rollo_count": {
+   "file": "legs_guide/rollo_count",
+   "width": 252,
+   "height": 284,
+   "alt": "Rollo counting on his feathers",
+   "sheet": "legs_guide",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo with wings on his hips, knees bent in a quick dip before jumping; Rollo high in the air, wings on hips, legs straight; Rollo landing with straight legs, wings on hips; a pair of simple footprints on a small floor mat, a place to stand; Rollo balancing on one leg, wings out a little; Rollo sitting with one leg up on a cushion, an ice pack on it, relaxed; Rollo counting on his wing feathers; Rollo putting a barbell down, pleased, the set is done; Rollo drinking from a water bottle, taking a break; Rollo tapping on a window pane from outside with one wing; a phone propped on a floor, a person facing it from the front, standing a few steps back; a phone propped on a floor, a person side-on to it, standing a few steps back. No text, letters or numbers anywhere."
+  },
+  "rollo_crew": {
+   "file": "season/rollo_crew",
+   "width": 339,
+   "height": 317,
+   "alt": "Rollo with three small chicks",
+   "sheet": "season",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a small triangular flag on a pole; one soft round cloud of morning mist; a golden sun-shaped trophy cup; a league badge of a thin sun just under the horizon, mostly indigo; a league badge of a half-risen sun, coral; a league badge of a full high sun, apricot; a league badge of a big golden low sun with long rays; an empty decorative ribbon banner with nothing written on it; Rollo fast asleep on a hilltop, one wing holding a small flag; Rollo cheering with both wings up; Rollo pointing at a little folded map; Rollo with three small cheerful chicks in sweatbands beside him. No text, letters or numbers anywhere."
+  },
   "rollo_lamp": {
    "file": "rollo_poses/rollo_lamp",
    "width": 358,
@@ -313,6 +873,14 @@
    "alt": "Rollo pointing at a desk lamp",
    "sheet": "rollo_poses",
    "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo waving hello; Rollo blowing his whistle; Rollo holding a clipboard, ticking a box; Rollo pointing at a desk lamp; Rollo holding a phone at arm’s length; Rollo sitting very still with eyes closed; Rollo with a wing tip to his beak, saying shh; Rollo celebrating with confetti; Rollo asleep on a pillow; Rollo stretching; Rollo holding a steaming mug; Rollo sprinting. No text, letters or numbers anywhere."
+  },
+  "rollo_map": {
+   "file": "season/rollo_map",
+   "width": 318,
+   "height": 318,
+   "alt": "Rollo pointing at a map",
+   "sheet": "season",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a small triangular flag on a pole; one soft round cloud of morning mist; a golden sun-shaped trophy cup; a league badge of a thin sun just under the horizon, mostly indigo; a league badge of a half-risen sun, coral; a league badge of a full high sun, apricot; a league badge of a big golden low sun with long rays; an empty decorative ribbon banner with nothing written on it; Rollo fast asleep on a hilltop, one wing holding a small flag; Rollo cheering with both wings up; Rollo pointing at a little folded map; Rollo with three small cheerful chicks in sweatbands beside him. No text, letters or numbers anywhere."
   },
   "rollo_mug": {
    "file": "rollo_poses/rollo_mug",
@@ -337,6 +905,22 @@
    "alt": "Rollo holding a phone at arm’s length",
    "sheet": "rollo_poses",
    "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo waving hello; Rollo blowing his whistle; Rollo holding a clipboard, ticking a box; Rollo pointing at a desk lamp; Rollo holding a phone at arm’s length; Rollo sitting very still with eyes closed; Rollo with a wing tip to his beak, saying shh; Rollo celebrating with confetti; Rollo asleep on a pillow; Rollo stretching; Rollo holding a steaming mug; Rollo sprinting. No text, letters or numbers anywhere."
+  },
+  "rollo_rack": {
+   "file": "legs_guide/rollo_rack",
+   "width": 340,
+   "height": 280,
+   "alt": "Rollo putting a barbell down",
+   "sheet": "legs_guide",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo with wings on his hips, knees bent in a quick dip before jumping; Rollo high in the air, wings on hips, legs straight; Rollo landing with straight legs, wings on hips; a pair of simple footprints on a small floor mat, a place to stand; Rollo balancing on one leg, wings out a little; Rollo sitting with one leg up on a cushion, an ice pack on it, relaxed; Rollo counting on his wing feathers; Rollo putting a barbell down, pleased, the set is done; Rollo drinking from a water bottle, taking a break; Rollo tapping on a window pane from outside with one wing; a phone propped on a floor, a person facing it from the front, standing a few steps back; a phone propped on a floor, a person side-on to it, standing a few steps back. No text, letters or numbers anywhere."
+  },
+  "rollo_rested": {
+   "file": "season/rollo_rested",
+   "width": 343,
+   "height": 295,
+   "alt": "Rollo asleep on a hilltop holding a flag",
+   "sheet": "season",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a small triangular flag on a pole; one soft round cloud of morning mist; a golden sun-shaped trophy cup; a league badge of a thin sun just under the horizon, mostly indigo; a league badge of a half-risen sun, coral; a league badge of a full high sun, apricot; a league badge of a big golden low sun with long rays; an empty decorative ribbon banner with nothing written on it; Rollo fast asleep on a hilltop, one wing holding a small flag; Rollo cheering with both wings up; Rollo pointing at a little folded map; Rollo with three small cheerful chicks in sweatbands beside him. No text, letters or numbers anywhere."
   },
   "rollo_shh": {
    "file": "rollo_poses/rollo_shh",
@@ -369,6 +953,14 @@
    "alt": "Rollo stretching",
    "sheet": "rollo_poses",
    "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo waving hello; Rollo blowing his whistle; Rollo holding a clipboard, ticking a box; Rollo pointing at a desk lamp; Rollo holding a phone at arm’s length; Rollo sitting very still with eyes closed; Rollo with a wing tip to his beak, saying shh; Rollo celebrating with confetti; Rollo asleep on a pillow; Rollo stretching; Rollo holding a steaming mug; Rollo sprinting. No text, letters or numbers anywhere."
+  },
+  "rollo_water": {
+   "file": "legs_guide/rollo_water",
+   "width": 245,
+   "height": 287,
+   "alt": "Rollo drinking from a water bottle",
+   "sheet": "legs_guide",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo with wings on his hips, knees bent in a quick dip before jumping; Rollo high in the air, wings on hips, legs straight; Rollo landing with straight legs, wings on hips; a pair of simple footprints on a small floor mat, a place to stand; Rollo balancing on one leg, wings out a little; Rollo sitting with one leg up on a cushion, an ice pack on it, relaxed; Rollo counting on his wing feathers; Rollo putting a barbell down, pleased, the set is done; Rollo drinking from a water bottle, taking a break; Rollo tapping on a window pane from outside with one wing; a phone propped on a floor, a person facing it from the front, standing a few steps back; a phone propped on a floor, a person side-on to it, standing a few steps back. No text, letters or numbers anywhere."
   },
   "rollo_wave": {
    "file": "rollo_poses/rollo_wave",
@@ -449,6 +1041,102 @@
    "alt": "triathlon icon",
    "sheet": "sports",
    "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Eight simple bold sport icons in one matching style, indigo with one coral accent. Transparent background. A sprite sheet: exactly 4 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: running shoe; bicycle; swimmer in waves; triathlon: shoe, bicycle wheel and wave together; barbell; rowing oars; football; climbing carabiner. No text, letters or numbers anywhere."
+  },
+  "tile_coast": {
+   "file": "map_tiles/tile_coast",
+   "width": 174,
+   "height": 200,
+   "alt": "coast tile",
+   "sheet": "map_tiles",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Nine small landscape symbols for a board-game map, seen from slightly above, each one compact and fitting inside a hexagon, with no ground plate or background. Transparent background. A sprite sheet: exactly 3 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: tufts of meadow grass with a few flowers; a cluster of pine trees; a bend of a river with small waves; a small round lake with reeds; a rounded grassy hill; a rocky mountain pass with two peaks; a sandy coast with a wave; a tall striped lighthouse; a tiny village of three houses. No text, letters or numbers anywhere."
+  },
+  "tile_forest": {
+   "file": "map_tiles/tile_forest",
+   "width": 174,
+   "height": 200,
+   "alt": "forest tile",
+   "sheet": "map_tiles",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Nine small landscape symbols for a board-game map, seen from slightly above, each one compact and fitting inside a hexagon, with no ground plate or background. Transparent background. A sprite sheet: exactly 3 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: tufts of meadow grass with a few flowers; a cluster of pine trees; a bend of a river with small waves; a small round lake with reeds; a rounded grassy hill; a rocky mountain pass with two peaks; a sandy coast with a wave; a tall striped lighthouse; a tiny village of three houses. No text, letters or numbers anywhere."
+  },
+  "tile_hill": {
+   "file": "map_tiles/tile_hill",
+   "width": 175,
+   "height": 200,
+   "alt": "hill tile",
+   "sheet": "map_tiles",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Nine small landscape symbols for a board-game map, seen from slightly above, each one compact and fitting inside a hexagon, with no ground plate or background. Transparent background. A sprite sheet: exactly 3 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: tufts of meadow grass with a few flowers; a cluster of pine trees; a bend of a river with small waves; a small round lake with reeds; a rounded grassy hill; a rocky mountain pass with two peaks; a sandy coast with a wave; a tall striped lighthouse; a tiny village of three houses. No text, letters or numbers anywhere."
+  },
+  "tile_lake": {
+   "file": "map_tiles/tile_lake",
+   "width": 176,
+   "height": 200,
+   "alt": "lake tile",
+   "sheet": "map_tiles",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Nine small landscape symbols for a board-game map, seen from slightly above, each one compact and fitting inside a hexagon, with no ground plate or background. Transparent background. A sprite sheet: exactly 3 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: tufts of meadow grass with a few flowers; a cluster of pine trees; a bend of a river with small waves; a small round lake with reeds; a rounded grassy hill; a rocky mountain pass with two peaks; a sandy coast with a wave; a tall striped lighthouse; a tiny village of three houses. No text, letters or numbers anywhere."
+  },
+  "tile_lighthouse": {
+   "file": "map_tiles/tile_lighthouse",
+   "width": 173,
+   "height": 200,
+   "alt": "lighthouse tile",
+   "sheet": "map_tiles",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Nine small landscape symbols for a board-game map, seen from slightly above, each one compact and fitting inside a hexagon, with no ground plate or background. Transparent background. A sprite sheet: exactly 3 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: tufts of meadow grass with a few flowers; a cluster of pine trees; a bend of a river with small waves; a small round lake with reeds; a rounded grassy hill; a rocky mountain pass with two peaks; a sandy coast with a wave; a tall striped lighthouse; a tiny village of three houses. No text, letters or numbers anywhere."
+  },
+  "tile_meadow": {
+   "file": "map_tiles/tile_meadow",
+   "width": 175,
+   "height": 200,
+   "alt": "meadow tile",
+   "sheet": "map_tiles",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Nine small landscape symbols for a board-game map, seen from slightly above, each one compact and fitting inside a hexagon, with no ground plate or background. Transparent background. A sprite sheet: exactly 3 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: tufts of meadow grass with a few flowers; a cluster of pine trees; a bend of a river with small waves; a small round lake with reeds; a rounded grassy hill; a rocky mountain pass with two peaks; a sandy coast with a wave; a tall striped lighthouse; a tiny village of three houses. No text, letters or numbers anywhere."
+  },
+  "tile_pass": {
+   "file": "map_tiles/tile_pass",
+   "width": 174,
+   "height": 200,
+   "alt": "pass tile",
+   "sheet": "map_tiles",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Nine small landscape symbols for a board-game map, seen from slightly above, each one compact and fitting inside a hexagon, with no ground plate or background. Transparent background. A sprite sheet: exactly 3 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: tufts of meadow grass with a few flowers; a cluster of pine trees; a bend of a river with small waves; a small round lake with reeds; a rounded grassy hill; a rocky mountain pass with two peaks; a sandy coast with a wave; a tall striped lighthouse; a tiny village of three houses. No text, letters or numbers anywhere."
+  },
+  "tile_river": {
+   "file": "map_tiles/tile_river",
+   "width": 176,
+   "height": 200,
+   "alt": "river tile",
+   "sheet": "map_tiles",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Nine small landscape symbols for a board-game map, seen from slightly above, each one compact and fitting inside a hexagon, with no ground plate or background. Transparent background. A sprite sheet: exactly 3 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: tufts of meadow grass with a few flowers; a cluster of pine trees; a bend of a river with small waves; a small round lake with reeds; a rounded grassy hill; a rocky mountain pass with two peaks; a sandy coast with a wave; a tall striped lighthouse; a tiny village of three houses. No text, letters or numbers anywhere."
+  },
+  "tile_village": {
+   "file": "map_tiles/tile_village",
+   "width": 174,
+   "height": 200,
+   "alt": "village tile",
+   "sheet": "map_tiles",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Nine small landscape symbols for a board-game map, seen from slightly above, each one compact and fitting inside a hexagon, with no ground plate or background. Transparent background. A sprite sheet: exactly 3 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: tufts of meadow grass with a few flowers; a cluster of pine trees; a bend of a river with small waves; a small round lake with reeds; a rounded grassy hill; a rocky mountain pass with two peaks; a sandy coast with a wave; a tall striped lighthouse; a tiny village of three houses. No text, letters or numbers anywhere."
+  },
+  "trophy": {
+   "file": "season/trophy",
+   "width": 268,
+   "height": 279,
+   "alt": "A golden sun cup",
+   "sheet": "season",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a small triangular flag on a pole; one soft round cloud of morning mist; a golden sun-shaped trophy cup; a league badge of a thin sun just under the horizon, mostly indigo; a league badge of a half-risen sun, coral; a league badge of a full high sun, apricot; a league badge of a big golden low sun with long rays; an empty decorative ribbon banner with nothing written on it; Rollo fast asleep on a hilltop, one wing holding a small flag; Rollo cheering with both wings up; Rollo pointing at a little folded map; Rollo with three small cheerful chicks in sweatbands beside him. No text, letters or numbers anywhere."
+  },
+  "valley_lit": {
+   "file": "valley_lit/valley_lit",
+   "width": 1536,
+   "height": 1024,
+   "alt": "The same valley lit up by the sunrise",
+   "sheet": "valley_lit",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. This exact valley, same composition and every feature in the same place, now at sunrise: warm apricot and coral light floods the hexagon patches, the sky glows, and a big halftone sun sits low over the mountain pass. Keep the river, forest, lake and lighthouse exactly where they are. No people. No text, letters or numbers anywhere."
+  },
+  "valley_unlit": {
+   "file": "valley_unlit/valley_unlit",
+   "width": 1536,
+   "height": 1024,
+   "alt": "A dark valley just before dawn",
+   "sheet": "valley_unlit",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Wide landing-page scene: a peaceful valley seen from a hilltop just before dawn, still dark and mostly deep indigo with muted teal. Rolling hills, a winding river, a pine forest, a small lake, a mountain pass, and a striped lighthouse on a far coast. The land is subtly divided into large soft hexagon patches. No people. No text, letters or numbers anywhere."
   },
   "wave_f1": {
    "file": "rollo_wave_frames/wave_f1",

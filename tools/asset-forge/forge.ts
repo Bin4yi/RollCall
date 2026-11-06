@@ -158,13 +158,13 @@ async function slice(sheet: Sheet): Promise<Record<string, ManifestEntry>> {
   return out;
 }
 
-/** Wave loop: same canvas for every frame, as a sprite sheet + JSON, transparent WebM and GIF. */
-async function buildWaveAnimation(): Promise<void> {
-  const sheet = CATALOG.find((s) => s.id === 'rollo_wave_frames')!;
+/** A six-frame loop: same canvas for every frame, as a sprite sheet + JSON, transparent WebM and GIF. */
+async function buildLoop(sheetId: string, name: string, fps: number): Promise<void> {
+  const sheet = CATALOG.find((s) => s.id === sheetId)!;
   if (!existsSync(rawPath(sheet))) return;
   const size = 320;
   const dir = resolve(PUBLIC, 'anim');
-  const temp = resolve(RAW, 'wave_frames');
+  const temp = resolve(RAW, `${name}_frames`);
   mkdirSync(dir, { recursive: true });
   mkdirSync(temp, { recursive: true });
   const composites: OverlayOptions[] = [];
@@ -183,15 +183,15 @@ async function buildWaveAnimation(): Promise<void> {
   await sharp({ create: { width: size * 6, height: size, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } } })
     .composite(composites)
     .webp({ quality: 82 })
-    .toFile(resolve(dir, 'rollo_wave_sheet.webp'));
+    .toFile(resolve(dir, `${name}_sheet.webp`));
   writeFileSync(
-    resolve(dir, 'rollo_wave_sheet.json'),
-    `${JSON.stringify({ fps: 8, frameWidth: size, frameHeight: size, frames: 6 }, null, 1)}\n`,
+    resolve(dir, `${name}_sheet.json`),
+    `${JSON.stringify({ fps, frameWidth: size, frameHeight: size, frames: 6 }, null, 1)}\n`,
   );
   if (!ffmpeg) return;
-  const input = ['-y', '-framerate', '8', '-stream_loop', '3', '-i', resolve(temp, 'f%d.png')];
-  spawnSync(ffmpeg, [...input, '-c:v', 'libvpx-vp9', '-pix_fmt', 'yuva420p', '-b:v', '0', '-crf', '34', resolve(dir, 'rollo_wave.webm')]);
-  spawnSync(ffmpeg, [...input, '-filter_complex', '[0]split[a][b];[a]palettegen=reserve_transparent=1[p];[b][p]paletteuse', resolve(dir, 'rollo_wave.gif')]);
+  const input = ['-y', '-framerate', String(fps), '-stream_loop', '3', '-i', resolve(temp, 'f%d.png')];
+  spawnSync(ffmpeg, [...input, '-c:v', 'libvpx-vp9', '-pix_fmt', 'yuva420p', '-b:v', '0', '-crf', '34', resolve(dir, `${name}.webm`)]);
+  spawnSync(ffmpeg, [...input, '-filter_complex', '[0]split[a][b];[a]palettegen=reserve_transparent=1[p];[b][p]paletteuse', resolve(dir, `${name}.gif`)]);
 }
 
 function writeOutputs(manifest: Record<string, ManifestEntry>): void {
@@ -256,7 +256,8 @@ async function main(): Promise<void> {
   rmSync(PUBLIC, { recursive: true, force: true });
   const manifest: Record<string, ManifestEntry> = {};
   for (const sheet of CATALOG) Object.assign(manifest, await slice(sheet));
-  await buildWaveAnimation();
+  await buildLoop('rollo_wave_frames', 'rollo_wave', 8);
+  await buildLoop('rollo_idle_frames', 'rollo_idle', 4);
   writeOutputs(manifest);
   console.log(`${Object.keys(manifest).length} sprites. Spent $${ledger.usd.toFixed(3)} of $${MAX_USD}.`);
 }

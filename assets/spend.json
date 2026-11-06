@@ -1,5 +1,5 @@
 {
- "usd": 0.6175799999999999,
+ "usd": 1.0031480000000002,
  "calls": [
   {
    "id": "api-probe",
@@ -84,6 +84,66 @@
    "quality": "medium",
    "usd": 0.044835,
    "at": "2026-11-06T09:38:54.907Z"
+  },
+  {
+   "id": "legs_guide",
+   "quality": "medium",
+   "usd": 0.041767,
+   "at": "2026-11-06T14:01:52.234Z"
+  },
+  {
+   "id": "exercises",
+   "quality": "medium",
+   "usd": 0.035695,
+   "at": "2026-11-06T14:02:34.091Z"
+  },
+  {
+   "id": "emblems",
+   "quality": "medium",
+   "usd": 0.03536,
+   "at": "2026-11-06T14:03:16.948Z"
+  },
+  {
+   "id": "map_tiles",
+   "quality": "medium",
+   "usd": 0.044895,
+   "at": "2026-11-06T14:03:54.340Z"
+  },
+  {
+   "id": "season",
+   "quality": "medium",
+   "usd": 0.041532,
+   "at": "2026-11-06T14:04:41.058Z"
+  },
+  {
+   "id": "camp",
+   "quality": "medium",
+   "usd": 0.035225,
+   "at": "2026-11-06T14:05:12.333Z"
+  },
+  {
+   "id": "valley_unlit",
+   "quality": "medium",
+   "usd": 0.034895,
+   "at": "2026-11-06T14:09:54.970Z"
+  },
+  {
+   "id": "valley_lit",
+   "quality": "medium",
+   "usd": 0.040552,
+   "at": "2026-11-06T14:10:30.861Z"
+  },
+  {
+   "id": "rollo_idle_frames",
+   "quality": "medium",
+   "usd": 0.041247,
+   "at": "2026-11-06T14:11:08.453Z"
+  },
+  {
+   "id": "test_person",
+   "quality": "medium",
+   "usd": 0.0344,
+   "at": "2026-11-06T14:11:23.652Z"
   }
  ]
 }
