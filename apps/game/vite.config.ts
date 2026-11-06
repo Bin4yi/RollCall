@@ -1,27 +1,17 @@
-import {
-  cpSync,
-  createReadStream,
-  existsSync,
-  mkdirSync,
-  readdirSync,
-  readFileSync,
-  statSync,
-} from 'node:fs';
+import { cpSync, createReadStream, existsSync, mkdirSync, readdirSync, statSync } from 'node:fs';
 import { dirname, extname, join, normalize, resolve, sep } from 'node:path';
 import { defineConfig, type Plugin } from 'vite';
 
 const root = resolve(import.meta.dirname, '../..');
 const MOUNTS: Record<string, string> = {
-  '/hush-assets/': resolve(root, 'assets'),
   '/sessions/': resolve(root, 'data/sessions'),
 };
 const TYPES: Record<string, string> = {
   '.json': 'application/json',
-  '.png': 'image/png',
   '.jsonl': 'text/plain',
 };
 
-/** Serves the art pack and sessions in dev, and copies only what the game needs into builds. */
+/** Serves recorded sessions in dev and copies them into builds. Art is in public/hush-assets. */
 function hushData(): Plugin {
   let outDir = '';
   return {
@@ -48,27 +38,6 @@ function hushData(): Plugin {
         mkdirSync(dirname(to), { recursive: true });
         cpSync(from, to);
       };
-      const assets = MOUNTS['/hush-assets/']!;
-      const manifestPath = join(assets, 'manifest.json');
-      if (existsSync(manifestPath)) {
-        copy(manifestPath, join(outDir, 'hush-assets/manifest.json'));
-        const manifest = JSON.parse(readFileSync(manifestPath, 'utf8')) as {
-          images: Record<string, { picked: number; files: string[] }>;
-          animations: Record<string, { sheet?: string; sheetJson?: string }>;
-        };
-        for (const image of Object.values(manifest.images)) {
-          const file = image.files[image.picked - 1];
-          if (file && existsSync(join(assets, file))) {
-            copy(join(assets, file), join(outDir, 'hush-assets', file));
-          }
-        }
-        const sheets = Object.values(manifest.animations).flatMap((a) => [a.sheet, a.sheetJson]);
-        for (const file of sheets) {
-          if (file && existsSync(join(assets, file))) {
-            copy(join(assets, file), join(outDir, 'hush-assets', file));
-          }
-        }
-      }
       const sessions = MOUNTS['/sessions/']!;
       for (const sub of ['', 'synthetic']) {
         const dir = join(sessions, sub);

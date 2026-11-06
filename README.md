@@ -131,6 +131,7 @@ pnpm typecheck
 pnpm lint
 pnpm test:e2e    # Playwright; first run: pnpm --filter @hush/game exec playwright install chromium
 pnpm sessions:gen
+pnpm assets:pack  # after changing art: rebuilds apps/game/public/hush-assets from assets/ (needs Pillow)
 ```
 
 Golden tests use real recordings from `data/sessions/` when present, and labelled synthetic stand-ins otherwise.

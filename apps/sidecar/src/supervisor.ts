@@ -201,4 +201,12 @@ const quit = (): void => {
 process.on('SIGINT', quit);
 process.on('SIGTERM', quit);
 
+server.on('error', (err: NodeJS.ErrnoException) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`[sidecar] Port ${VITALS_PORT} is in use. Is another sidecar already running?`);
+    process.exit(1);
+  }
+  throw err;
+});
+
 server.on('listening', () => console.log(`[sidecar] vitals on ws://127.0.0.1:${VITALS_PORT}`));

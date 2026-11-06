@@ -22,8 +22,7 @@ apps/sidecar/runtime/node_modules/
 apps/sidecar/runtime/package-lock.json
 
 # Generated art pack working files
-assets/raw/
-assets/.cache/
+assets/
 __pycache__/
 
 # Logs and OS noise

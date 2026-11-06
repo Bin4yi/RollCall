@@ -39,6 +39,7 @@ export const PRELOAD_IDS = [
   ...Object.values(POV),
   'bg_escape_dawn',
   'bg_game_over',
+  'station_plate',
   'fg_console_edge',
   'fg_shelf_end',
   'fg_pipes_valve',
@@ -168,6 +169,7 @@ export class GameScene {
   private lullPos = { x: 110, y: 610 };
   private monsterVisible = 0;
   private lullBreath = 0;
+  private walkFrames: Texture[] = [];
 
   constructor(private readonly assets: AssetRegistry) {}
 
@@ -227,6 +229,9 @@ export class GameScene {
 
   /** Call after preloading, so the HUD picks up real art rather than placeholders. */
   buildHud(): void {
+    void this.assets.frames('listener_walk').then((frames) => {
+      this.walkFrames = frames;
+    });
     const strip = new Sprite(this.assets.get('ui_oscilloscope_strip'));
     strip.width = STAGE_W;
     strip.height = HUD_H;
@@ -326,7 +331,10 @@ export class GameScene {
 
   /** Static-only title of what the player sees when the run is over. */
   showEnding(kind: 'escaped' | 'caught'): void {
-    this.setBackground(kind === 'escaped' ? 'bg_escape_dawn' : 'bg_game_over');
+    const ending = kind === 'escaped' ? 'bg_escape_dawn' : 'bg_game_over';
+    // Fall back to existing art rather than a labelled placeholder on the game's biggest moment.
+    const fallback = kind === 'escaped' ? 'station_plate' : 'bg_security_desk';
+    this.setBackground(this.assets.has(ending) ? ending : fallback);
     this.setForeground(null);
     this.monsterSprite.visible = false;
     this.povMonster.visible = false;
@@ -409,7 +417,11 @@ export class GameScene {
         : listener.state === 'LISTEN'
           ? 'listener_tilt'
           : 'listener_stalk';
-      this.monsterSprite.texture = this.assets.get(pose);
+      const walking = listener.state === 'PATROL' || listener.state === 'LEAVE';
+      const frame = walking
+        ? this.walkFrames[Math.floor(this.clock * 8) % this.walkFrames.length]
+        : null;
+      this.monsterSprite.texture = frame ?? this.assets.get(pose);
       const height = encounter ? 640 + listener.suspicion * 90 : 470;
       this.monsterSprite.scale.set(height / this.monsterSprite.texture.height);
       this.monsterSprite.position.set(

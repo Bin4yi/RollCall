@@ -11,6 +11,7 @@ test.use({
 });
 
 /** Proves the browser-to-sidecar frame format, using Chromium's fake camera and a stand-in socket. */
+// (Needs port 8766 free, so stop `pnpm sidecar` before running this.)
 test('webcam frames reach the frame socket in a format the SDK accepts', async ({ page }) => {
   const http = createServer();
   const server = new WebSocketServer({ server: http });

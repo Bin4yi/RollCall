@@ -1,4 +1,4 @@
-import { Assets, Texture } from 'pixi.js';
+import { Assets, Rectangle, Texture } from 'pixi.js';
 import { emptyManifest, pickedFile, placeholderColor, type Manifest } from './manifest';
 
 const BASE = '/hush-assets/';
@@ -68,19 +68,13 @@ export class AssetRegistry {
     if (!texture) {
       texture = this.placeholder(id);
       this.textures.set(id, texture);
-      void this.load2(id);
     }
     return texture;
   }
 
-  private async load2(id: string): Promise<void> {
-    const url = this.url(id);
-    if (!url) return;
-    try {
-      this.textures.set(id, await Assets.load<Texture>(url));
-    } catch {
-      /* Keep the placeholder. */
-    }
+  /** True if real art exists, as opposed to a placeholder. */
+  has(id: string): boolean {
+    return this.url(id) !== null;
   }
 
   /** Slices the frames of a horizontal/grid sprite sheet, or nothing if it's unavailable. */
@@ -98,7 +92,7 @@ export class AssetRegistry {
         out.push(
           new Texture({
             source: sheet.source,
-            frame: { x, y, width: anim.frameWidth, height: anim.frameHeight } as never,
+            frame: new Rectangle(x, y, anim.frameWidth, anim.frameHeight),
           }),
         );
       }

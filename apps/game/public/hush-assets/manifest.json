@@ -1,0 +1,1004 @@
+{
+ "images": {
+  "station_plate": {
+   "category": "anchors",
+   "transparent": false,
+   "picked": 1,
+   "files": [
+    "anchors/station_plate.webp"
+   ],
+   "width": 1280,
+   "height": 853
+  },
+  "bg_security_desk": {
+   "category": "backgrounds",
+   "transparent": false,
+   "picked": 1,
+   "files": [
+    "backgrounds/bg_security_desk.webp"
+   ],
+   "width": 1920,
+   "height": 1280
+  },
+  "bg_control_room": {
+   "category": "backgrounds",
+   "transparent": false,
+   "picked": 1,
+   "files": [
+    "backgrounds/bg_control_room.webp"
+   ],
+   "width": 1920,
+   "height": 1280
+  },
+  "bg_tape_archive": {
+   "category": "backgrounds",
+   "transparent": false,
+   "picked": 1,
+   "files": [
+    "backgrounds/bg_tape_archive.webp"
+   ],
+   "width": 1920,
+   "height": 1280
+  },
+  "bg_boiler_room": {
+   "category": "backgrounds",
+   "transparent": false,
+   "picked": 1,
+   "files": [
+    "backgrounds/bg_boiler_room.webp"
+   ],
+   "width": 1920,
+   "height": 1280
+  },
+  "bg_corridor": {
+   "category": "backgrounds",
+   "transparent": false,
+   "picked": 1,
+   "files": [
+    "backgrounds/bg_corridor.webp"
+   ],
+   "width": 1920,
+   "height": 1280
+  },
+  "pov_under_desk": {
+   "category": "backgrounds",
+   "transparent": false,
+   "picked": 1,
+   "files": [
+    "backgrounds/pov_under_desk.webp"
+   ],
+   "width": 1920,
+   "height": 1280
+  },
+  "pov_locker": {
+   "category": "backgrounds",
+   "transparent": false,
+   "picked": 1,
+   "files": [
+    "backgrounds/pov_locker.webp"
+   ],
+   "width": 1920,
+   "height": 1280
+  },
+  "pov_vent": {
+   "category": "backgrounds",
+   "transparent": false,
+   "picked": 1,
+   "files": [
+    "backgrounds/pov_vent.webp"
+   ],
+   "width": 1920,
+   "height": 1280
+  },
+  "pov_shelves": {
+   "category": "backgrounds",
+   "transparent": false,
+   "picked": 1,
+   "files": [
+    "backgrounds/pov_shelves.webp"
+   ],
+   "width": 1920,
+   "height": 1280
+  },
+  "fg_console_edge": {
+   "category": "foregrounds",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "foregrounds/fg_console_edge.webp"
+   ],
+   "width": 1600,
+   "height": 831
+  },
+  "fg_shelf_end": {
+   "category": "foregrounds",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "foregrounds/fg_shelf_end.webp"
+   ],
+   "width": 754,
+   "height": 1249
+  },
+  "fg_pipes_valve": {
+   "category": "foregrounds",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "foregrounds/fg_pipes_valve.webp"
+   ],
+   "width": 1255,
+   "height": 1158
+  },
+  "fg_desk_edge": {
+   "category": "foregrounds",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "foregrounds/fg_desk_edge.webp"
+   ],
+   "width": 1600,
+   "height": 1087
+  },
+  "lull_idle": {
+   "category": "characters",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "characters/lull_idle.webp"
+   ],
+   "width": 1052,
+   "height": 754
+  },
+  "lull_happy": {
+   "category": "characters",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "characters/lull_happy.webp"
+   ],
+   "width": 1100,
+   "height": 845
+  },
+  "lull_worried": {
+   "category": "characters",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "characters/lull_worried.webp"
+   ],
+   "width": 820,
+   "height": 1100
+  },
+  "lull_sleeping": {
+   "category": "characters",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "characters/lull_sleeping.webp"
+   ],
+   "width": 1100,
+   "height": 1088
+  },
+  "lull_guiding": {
+   "category": "characters",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "characters/lull_guiding.webp"
+   ],
+   "width": 1100,
+   "height": 830
+  },
+  "lull_celebrating": {
+   "category": "characters",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "characters/lull_celebrating.webp"
+   ],
+   "width": 1100,
+   "height": 1071
+  },
+  "lull_shh": {
+   "category": "characters",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "characters/lull_shh.webp"
+   ],
+   "width": 903,
+   "height": 1035
+  },
+  "lull_lamp": {
+   "category": "characters",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "characters/lull_lamp.webp"
+   ],
+   "width": 1100,
+   "height": 687
+  },
+  "listener_stand": {
+   "category": "characters",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "characters/listener_stand.webp"
+   ],
+   "width": 430,
+   "height": 1100
+  },
+  "listener_stalk": {
+   "category": "characters",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "characters/listener_stalk.webp"
+   ],
+   "width": 565,
+   "height": 1100
+  },
+  "listener_lean": {
+   "category": "characters",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "characters/listener_lean.webp"
+   ],
+   "width": 670,
+   "height": 1100
+  },
+  "listener_tilt": {
+   "category": "characters",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "characters/listener_tilt.webp"
+   ],
+   "width": 459,
+   "height": 1100
+  },
+  "listener_reach": {
+   "category": "characters",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "characters/listener_reach.webp"
+   ],
+   "width": 667,
+   "height": 1100
+  },
+  "listener_silhouette": {
+   "category": "characters",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "characters/listener_silhouette.webp"
+   ],
+   "width": 504,
+   "height": 1100
+  },
+  "listener_overhead": {
+   "category": "characters",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "characters/listener_overhead.webp"
+   ],
+   "width": 884,
+   "height": 1100
+  },
+  "listener_far": {
+   "category": "characters",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "characters/listener_far.webp"
+   ],
+   "width": 267,
+   "height": 565
+  },
+  "prop_reel_machine": {
+   "category": "props",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "props/prop_reel_machine.webp"
+   ],
+   "width": 512,
+   "height": 487
+  },
+  "prop_reel_wheel": {
+   "category": "props",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "props/prop_reel_wheel.webp"
+   ],
+   "width": 512,
+   "height": 510
+  },
+  "prop_crt_monitor": {
+   "category": "props",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "props/prop_crt_monitor.webp"
+   ],
+   "width": 512,
+   "height": 502
+  },
+  "prop_headphones": {
+   "category": "props",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "props/prop_headphones.webp"
+   ],
+   "width": 389,
+   "height": 512
+  },
+  "prop_flashlight": {
+   "category": "props",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "props/prop_flashlight.webp"
+   ],
+   "width": 512,
+   "height": 467
+  },
+  "prop_cassette": {
+   "category": "props",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "props/prop_cassette.webp"
+   ],
+   "width": 512,
+   "height": 373
+  },
+  "prop_fuse": {
+   "category": "props",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "props/prop_fuse.webp"
+   ],
+   "width": 512,
+   "height": 283
+  },
+  "prop_keycard": {
+   "category": "props",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "props/prop_keycard.webp"
+   ],
+   "width": 512,
+   "height": 382
+  },
+  "prop_breaker": {
+   "category": "props",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "props/prop_breaker.webp"
+   ],
+   "width": 460,
+   "height": 512
+  },
+  "prop_polaroid": {
+   "category": "props",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "props/prop_polaroid.webp"
+   ],
+   "width": 424,
+   "height": 512
+  },
+  "prop_thermos": {
+   "category": "props",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "props/prop_thermos.webp"
+   ],
+   "width": 277,
+   "height": 512
+  },
+  "prop_desk_lamp": {
+   "category": "props",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "props/prop_desk_lamp.webp"
+   ],
+   "width": 446,
+   "height": 512
+  },
+  "prop_rotary_phone": {
+   "category": "props",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "props/prop_rotary_phone.webp"
+   ],
+   "width": 512,
+   "height": 451
+  },
+  "prop_clipboard": {
+   "category": "props",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "props/prop_clipboard.webp"
+   ],
+   "width": 406,
+   "height": 512
+  },
+  "prop_beacon": {
+   "category": "props",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "props/prop_beacon.webp"
+   ],
+   "width": 444,
+   "height": 512
+  },
+  "prop_oscilloscope": {
+   "category": "props",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "props/prop_oscilloscope.webp"
+   ],
+   "width": 491,
+   "height": 512
+  },
+  "prop_gramophone_horn": {
+   "category": "props",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "props/prop_gramophone_horn.webp"
+   ],
+   "width": 472,
+   "height": 512
+  },
+  "prop_tape_box": {
+   "category": "props",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "props/prop_tape_box.webp"
+   ],
+   "width": 473,
+   "height": 512
+  },
+  "ui_logo": {
+   "category": "ui",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "ui/ui_logo.webp"
+   ],
+   "width": 1400,
+   "height": 352
+  },
+  "ui_app_icon": {
+   "category": "ui",
+   "transparent": false,
+   "picked": 1,
+   "files": [
+    "ui/ui_app_icon.webp"
+   ],
+   "width": 1400,
+   "height": 1400
+  },
+  "ui_hud_bezel": {
+   "category": "ui",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "ui/ui_hud_bezel.webp"
+   ],
+   "width": 1088,
+   "height": 1021
+  },
+  "ui_panel": {
+   "category": "ui",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "ui/ui_panel.webp"
+   ],
+   "width": 1072,
+   "height": 674
+  },
+  "ui_button": {
+   "category": "ui",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "ui/ui_button.webp"
+   ],
+   "width": 1400,
+   "height": 645
+  },
+  "ui_noise_meter": {
+   "category": "ui",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "ui/ui_noise_meter.webp"
+   ],
+   "width": 1206,
+   "height": 1207
+  },
+  "ui_oscilloscope_strip": {
+   "category": "ui",
+   "transparent": false,
+   "picked": 1,
+   "files": [
+    "ui/ui_oscilloscope_strip.webp"
+   ],
+   "width": 1400,
+   "height": 588
+  },
+  "icon_heart": {
+   "category": "icons",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "icons/icon_heart.webp"
+   ],
+   "width": 160,
+   "height": 143
+  },
+  "icon_lungs": {
+   "category": "icons",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "icons/icon_lungs.webp"
+   ],
+   "width": 160,
+   "height": 139
+  },
+  "icon_ear": {
+   "category": "icons",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "icons/icon_ear.webp"
+   ],
+   "width": 117,
+   "height": 160
+  },
+  "icon_stillness": {
+   "category": "icons",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "icons/icon_stillness.webp"
+   ],
+   "width": 160,
+   "height": 81
+  },
+  "icon_signal": {
+   "category": "icons",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "icons/icon_signal.webp"
+   ],
+   "width": 160,
+   "height": 153
+  },
+  "icon_light": {
+   "category": "icons",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "icons/icon_light.webp"
+   ],
+   "width": 110,
+   "height": 160
+  },
+  "icon_tape": {
+   "category": "icons",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "icons/icon_tape.webp"
+   ],
+   "width": 160,
+   "height": 113
+  },
+  "icon_fuse": {
+   "category": "icons",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "icons/icon_fuse.webp"
+   ],
+   "width": 67,
+   "height": 160
+  },
+  "icon_keycard": {
+   "category": "icons",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "icons/icon_keycard.webp"
+   ],
+   "width": 120,
+   "height": 160
+  },
+  "icon_door": {
+   "category": "icons",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "icons/icon_door.webp"
+   ],
+   "width": 109,
+   "height": 160
+  },
+  "icon_warning": {
+   "category": "icons",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "icons/icon_warning.webp"
+   ],
+   "width": 160,
+   "height": 149
+  },
+  "icon_gentle": {
+   "category": "icons",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "icons/icon_gentle.webp"
+   ],
+   "width": 71,
+   "height": 160
+  },
+  "icon_pause": {
+   "category": "icons",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "icons/icon_pause.webp"
+   ],
+   "width": 127,
+   "height": 160
+  },
+  "icon_camera": {
+   "category": "icons",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "icons/icon_camera.webp"
+   ],
+   "width": 160,
+   "height": 140
+  },
+  "icon_horn": {
+   "category": "icons",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "icons/icon_horn.webp"
+   ],
+   "width": 142,
+   "height": 160
+  },
+  "badge_ice_veins": {
+   "category": "badges",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "badges/badge_ice_veins.webp"
+   ],
+   "width": 196,
+   "height": 200
+  },
+  "badge_ghost_breath": {
+   "category": "badges",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "badges/badge_ghost_breath.webp"
+   ],
+   "width": 199,
+   "height": 200
+  },
+  "badge_statue": {
+   "category": "badges",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "badges/badge_statue.webp"
+   ],
+   "width": 198,
+   "height": 200
+  },
+  "badge_first_light": {
+   "category": "badges",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "badges/badge_first_light.webp"
+   ],
+   "width": 199,
+   "height": 200
+  },
+  "badge_tape_collector": {
+   "category": "badges",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "badges/badge_tape_collector.webp"
+   ],
+   "width": 199,
+   "height": 200
+  },
+  "badge_close_call": {
+   "category": "badges",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "badges/badge_close_call.webp"
+   ],
+   "width": 198,
+   "height": 200
+  },
+  "badge_sigh_of_relief": {
+   "category": "badges",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "badges/badge_sigh_of_relief.webp"
+   ],
+   "width": 194,
+   "height": 200
+  },
+  "badge_lull_friend": {
+   "category": "badges",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "badges/badge_lull_friend.webp"
+   ],
+   "width": 198,
+   "height": 200
+  },
+  "stamp_survived": {
+   "category": "stamps",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "stamps/stamp_survived.webp"
+   ],
+   "width": 512,
+   "height": 262
+  },
+  "stamp_heard": {
+   "category": "stamps",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "stamps/stamp_heard.webp"
+   ],
+   "width": 512,
+   "height": 268
+  },
+  "stamp_classified": {
+   "category": "stamps",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "stamps/stamp_classified.webp"
+   ],
+   "width": 512,
+   "height": 255
+  },
+  "stamp_calm": {
+   "category": "stamps",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "stamps/stamp_calm.webp"
+   ],
+   "width": 512,
+   "height": 312
+  },
+  "report_bg": {
+   "category": "report",
+   "transparent": false,
+   "picked": 1,
+   "files": [
+    "report/report_bg.webp"
+   ],
+   "width": 1067,
+   "height": 1600
+  },
+  "report_bg_wide": {
+   "category": "report",
+   "transparent": false,
+   "picked": 1,
+   "files": [
+    "report/report_bg_wide.webp"
+   ],
+   "width": 1600,
+   "height": 1067
+  },
+  "tut_still": {
+   "category": "tutorial",
+   "transparent": false,
+   "picked": 1,
+   "files": [
+    "tutorial/tut_still.webp"
+   ],
+   "width": 640,
+   "height": 640
+  },
+  "tut_light": {
+   "category": "tutorial",
+   "transparent": false,
+   "picked": 1,
+   "files": [
+    "tutorial/tut_light.webp"
+   ],
+   "width": 640,
+   "height": 640
+  },
+  "tut_breathe": {
+   "category": "tutorial",
+   "transparent": false,
+   "picked": 1,
+   "files": [
+    "tutorial/tut_breathe.webp"
+   ],
+   "width": 640,
+   "height": 640
+  },
+  "tut_quiet": {
+   "category": "tutorial",
+   "transparent": false,
+   "picked": 1,
+   "files": [
+    "tutorial/tut_quiet.webp"
+   ],
+   "width": 640,
+   "height": 640
+  },
+  "tape_card_1": {
+   "category": "tapes",
+   "transparent": false,
+   "picked": 1,
+   "files": [
+    "tapes/tape_card_1.webp"
+   ],
+   "width": 640,
+   "height": 640
+  },
+  "tape_card_2": {
+   "category": "tapes",
+   "transparent": false,
+   "picked": 1,
+   "files": [
+    "tapes/tape_card_2.webp"
+   ],
+   "width": 640,
+   "height": 640
+  },
+  "tape_card_3": {
+   "category": "tapes",
+   "transparent": false,
+   "picked": 1,
+   "files": [
+    "tapes/tape_card_3.webp"
+   ],
+   "width": 640,
+   "height": 640
+  },
+  "tape_card_4": {
+   "category": "tapes",
+   "transparent": false,
+   "picked": 1,
+   "files": [
+    "tapes/tape_card_4.webp"
+   ],
+   "width": 640,
+   "height": 640
+  },
+  "tape_card_5": {
+   "category": "tapes",
+   "transparent": false,
+   "picked": 1,
+   "files": [
+    "tapes/tape_card_5.webp"
+   ],
+   "width": 640,
+   "height": 640
+  },
+  "fx_dust": {
+   "category": "effects",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "effects/fx_dust.webp"
+   ],
+   "width": 1280,
+   "height": 726
+  },
+  "fx_fog": {
+   "category": "effects",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "effects/fx_fog.webp"
+   ],
+   "width": 1280,
+   "height": 514
+  },
+  "fx_lightcone": {
+   "category": "effects",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "effects/fx_lightcone.webp"
+   ],
+   "width": 752,
+   "height": 1280
+  },
+  "fx_tape_strands": {
+   "category": "effects",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "effects/fx_tape_strands.webp"
+   ],
+   "width": 1280,
+   "height": 741
+  },
+  "fx_scanlines": {
+   "category": "effects",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "effects/fx_scanlines.webp"
+   ],
+   "width": 1280,
+   "height": 720
+  },
+  "fx_vignette": {
+   "category": "effects",
+   "transparent": true,
+   "picked": 1,
+   "files": [
+    "effects/fx_vignette.webp"
+   ],
+   "width": 1280,
+   "height": 720
+  }
+ },
+ "animations": {
+  "listener_walk": {
+   "kind": "frames",
+   "fps": 8,
+   "frameWidth": 325,
+   "frameHeight": 512,
+   "frameCount": 6,
+   "sheet": "anim/listener_walk.webp"
+  }
+ }
+}

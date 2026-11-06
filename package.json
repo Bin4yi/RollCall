@@ -11,6 +11,7 @@
     "sidecar": "pnpm --filter @hush/sidecar start",
     "sidecar:setup": "npm install --prefix apps/sidecar/runtime --no-audit --no-fund",
     "sessions:gen": "tsx tools/gen-sessions.ts",
+    "assets:pack": "python tools/pack_assets.py",
     "typecheck": "tsc -b --pretty && pnpm --filter @hush/game typecheck && pnpm --filter @hush/sidecar typecheck",
     "lint": "eslint .",
     "format": "prettier --write .",
