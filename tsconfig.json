@@ -1,8 +1,4 @@
 {
   "files": [],
-  "references": [
-    { "path": "packages/signals" },
-    { "path": "packages/engine" },
-    { "path": "packages/report" }
-  ]
+  "references": [{ "path": "packages/signals" }]
 }

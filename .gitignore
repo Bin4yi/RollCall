@@ -4,7 +4,7 @@ CLAUDE.local.md
 .claude/
 .mcp.json
 .agents/
-HUSH_CLAUDE_CODE_PROMPT.md
+*_CLAUDE_CODE_PROMPT.md
 
 # Secrets
 .env
@@ -18,13 +18,17 @@ coverage/
 *.tsbuildinfo
 playwright-report/
 test-results/
-recordings/
-apps/sidecar/runtime/node_modules/
-apps/sidecar/runtime/package-lock.json
+apps/vitals-worker/runtime/node_modules/
+apps/vitals-worker/runtime/package-lock.json
 
-# Generated art pack working files
-assets/
-__pycache__/
+# Local data and working files
+*.db
+*.db-*
+assets/raw/
+assets/.cache/
+assets/failures.log
+archive/
+recordings/
 
 # Logs and OS noise
 *.log

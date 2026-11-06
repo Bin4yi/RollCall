@@ -1,8 +1,0 @@
-{
-  "name": "hush-sidecar-runtime",
-  "private": true,
-  "description": "Holds the 386 MB SmartSpectra SDK outside the pnpm workspace. Install with `pnpm sidecar:setup`.",
-  "dependencies": {
-    "@smartspectra/node-sdk": "3.4.0"
-  }
-}

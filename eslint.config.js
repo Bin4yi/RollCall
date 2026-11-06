@@ -2,7 +2,7 @@ import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
-  { ignores: ['**/dist/**', 'assets/**', 'data/**', 'apps/sidecar/runtime/**'] },
+  { ignores: ['**/dist/**', 'assets/**', 'archive/**', 'data/**', 'apps/vitals-worker/runtime/**'] },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
