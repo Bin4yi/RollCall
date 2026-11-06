@@ -62,7 +62,7 @@ function toNumber(ts: unknown): number {
   return 0;
 }
 
-/** Validated face-size range guard: landmark frames may be pixels or normalised (unclear in docs). */
+/** Landmark units are unclear in the docs (pixels or normalised), so both are handled. */
 function headFromLandmarks(
   points: { x?: number; y?: number }[],
   frameSize: { width: number; height: number } | null,
@@ -100,14 +100,14 @@ export class MetricsNormalizer {
   private lastTraceTs = -Infinity;
   private plethHz = 30;
   private traceHz = 30;
-  private validation: { ok: boolean; reason?: string } = { ok: true };
+  private validation: { ok: boolean; reason?: string; code?: number } = { ok: true };
   private facePresent = true;
 
   constructor(private readonly frameSize: { width: number; height: number } | null = null) {}
 
   /** Feed `validationStatus` events; code 0 is kOk and code 1 is kNoFaceFound. */
   setValidation(code: number, hint: string): void {
-    this.validation = code === 0 ? { ok: true } : { ok: false, reason: hint };
+    this.validation = code === 0 ? { ok: true } : { ok: false, reason: hint, code };
     this.facePresent = code !== 1;
   }
 

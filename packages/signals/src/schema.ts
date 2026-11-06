@@ -12,7 +12,14 @@ export const VitalsFrameSchema = z.object({
   t: z.number().nonnegative(),
   source: z.enum(['live', 'replay', 'sim']),
   facePresent: z.boolean().optional(),
-  quality: z.object({ ok: z.boolean(), reason: z.string().optional() }).optional(),
+  quality: z
+    .object({
+      ok: z.boolean(),
+      reason: z.string().optional(),
+      /** SDK ValidationCode, when the reason came from the SDK. */
+      code: z.number().optional(),
+    })
+    .optional(),
   pulse: z.object({ bpm: z.number(), conf: z.number().min(0).max(1) }).optional(),
   pleth: waveform.optional(),
   breath: z

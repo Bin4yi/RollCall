@@ -170,7 +170,7 @@ describe('MetricsNormalizer', () => {
     n.setValidation(1, 'No face');
     let f = n.toFrame({}, 0);
     expect(f.facePresent).toBe(false);
-    expect(f.quality).toEqual({ ok: false, reason: 'No face' });
+    expect(f.quality).toEqual({ ok: false, reason: 'No face', code: 1 });
     n.setValidation(5, 'Too dark');
     f = n.toFrame({}, 0);
     expect(f.facePresent).toBe(true);
