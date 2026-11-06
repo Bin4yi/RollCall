@@ -21,3 +21,18 @@
 | 2026-11-06 | Director visits track the player; noise-triggered visits can be dodged by moving | Keeps encounters on the planned pacing, while rewarding quick thinking after a noise | Always dodgeable (encounters too rare); never dodgeable |
 | 2026-11-06 | No Electron shell (`apps/desktop` not created) | Browser capture works in Chrome and Edge, so Electron isn't needed for camera access | Electron with the SDK's renderer path |
 | 2026-11-06 | **Pivot from HUSH to Roll Call.** Game code removed in one commit; the last HUSH state is `b0a5d63`. Kept: the SDK worker, `VitalsFrame` schema, recorder, replay and sim sources, browser frame capture, CI | The game hid its value behind an 8–12 minute run. A still, seated spot check against a personal baseline is how the SDK is meant to be used | Keep HUSH; a 90-second HUSH; TELL; Aftertaste |
+| 2026-11-06 | Capture at 30 fps, not the 15 fps in the brief | Presage docs: "don't let the camera fall below roughly 25 fps" | 15 fps as briefed (documented to fail validation) |
+| 2026-11-06 | Raw NV12 at 1280x720 on the same computer; JPEG at 640x480 elsewhere; canvas fallback for Safari | Raw is proven live here but too heavy for Wi-Fi; Safari lacks `MediaStreamTrackProcessor`. JPEG quality impact is unverified | WebRTC (far more moving parts); raw everywhere |
+| 2026-11-06 | Vitals worker runs locally on Windows; server SDK build is opt-in | The only proven path, and Presage's terms page could not be read to confirm server use is allowed | Linux VM from the start; Electron |
+| 2026-11-06 | Web stack: React, Vite, Tailwind, Motion, Recharts | As briefed; code split so athletes never download the charts | Next.js (no need for server rendering) |
+| 2026-11-06 | libSQL with Drizzle, hand-written additive migrations | Prebuilt binaries avoid native compiles on Windows, and no migration tool is needed at runtime | better-sqlite3 (native build); drizzle-kit migrations |
+| 2026-11-06 | Real and demo data separated by a `workspace` column | One-click Judge Mode on any deployment without risking real data | A second database |
+| 2026-11-06 | Judge Mode can never start the SDK, call an LLM or notify anyone | Public visitors must not spend the owner's credit | Rate limiting |
+| 2026-11-06 | Check-in logic runs on the server, for live, replay and sim alike | The same code path is what gets tested and demoed | Client-side replay |
+| 2026-11-06 | Art budget $2: sprite sheets plus code-drawn suns, skies and logo mark; no style-bible anchor | Owner's hard cap during the build. Spent $0.62, so there is room for more | Separate images at $40 as briefed |
+| 2026-11-06 | No generated video | OpenAI shut down the Sora Videos API on Sep 24, 2026 | Another video provider |
+| 2026-11-06 | Calendar day comes from the server (`APP_TIMEZONE`) | An evening settle check must not land on tomorrow's UTC date. Coach and athletes in very different time zones would see day boundaries at the coach's midnight | Per-athlete time zones |
+| 2026-11-06 | Status and date use the rolling assessment, with status held by a 0.25 margin | The brief asks for hysteresis without a number | No margin (flickers) |
+| 2026-11-06 | Board sorts by status, then how far from usual | Most-off first within a status | Alphabetical; nudge first |
+| 2026-11-06 | No StrictMode | Its double-run effects would start the SDK twice per check-in | Guarding against double starts |
+| 2026-11-06 | Coach-edited messages are not filtered for banned words | They are the coach's own words; only drafts and the app's own text are checked | Blocking the coach |

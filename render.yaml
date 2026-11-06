@@ -1,0 +1,15 @@
+# Render blueprint for Judge Mode. Nothing is deployed until someone connects this repo on Render.
+# Judge Mode needs no API keys. Add a persistent disk and DATABASE_URL to keep real athletes' data.
+services:
+  - type: web
+    name: roll-call
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/config
+    envVars:
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: DATABASE_URL
+        value: file:/tmp/rollcall.db
+      - key: COACH_PASSPHRASE
+        sync: false

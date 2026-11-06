@@ -31,7 +31,7 @@ describe('demo stories', () => {
   });
 
   it('puts the people who need attention first', () => {
-    expect(board.rows.slice(0, 2).map((r) => r.name).sort()).toEqual(['Amara', 'Tomasz']);
+    expect(board.rows.slice(0, 2).map((r) => r.name)).toEqual(['Amara', 'Tomasz']);
   });
 
   it('Amara is off her usual today, with plain reasons and intervals planned', () => {

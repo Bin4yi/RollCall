@@ -12,7 +12,7 @@ import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node
 import { dirname, resolve } from 'node:path';
 import ffmpeg from 'ffmpeg-static';
 import OpenAI, { toFile } from 'openai';
-import sharp from 'sharp';
+import sharp, { type OverlayOptions } from 'sharp';
 import { CATALOG, type Sheet } from './catalog';
 
 const ROOT = resolve(import.meta.dirname, '../..');
@@ -167,7 +167,7 @@ async function buildWaveAnimation(): Promise<void> {
   const temp = resolve(RAW, 'wave_frames');
   mkdirSync(dir, { recursive: true });
   mkdirSync(temp, { recursive: true });
-  const composites: sharp.OverlayOptions[] = [];
+  const composites: OverlayOptions[] = [];
   const [w, h] = sheet.size.split('x').map(Number) as [number, number];
   const cw = Math.floor(w / sheet.cols);
   const ch = Math.floor(h / sheet.rows);

@@ -191,7 +191,8 @@ const CHARACTERS: Character[] = [
     name: 'Hana',
     sport: 'triathlon',
     squad: 'Endurance',
-    usual: { pulse: 53, breath: 12, rmssd: 66, stress: 66, sleep: 7.6 },
+    // Matches the recording her Judge Mode check-in replays, so it lands as Ready.
+    usual: { pulse: 69, breath: 14, rmssd: 52, stress: 86, sleep: 7.6 },
     feel: 4,
     token: DEMO_TOKENS.hana,
     // Hasn't checked in yet today. Judge Mode's replayed check-in is hers.

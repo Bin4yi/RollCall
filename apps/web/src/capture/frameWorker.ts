@@ -1,13 +1,15 @@
 /// <reference lib="webworker" />
 /**
- * Runs off the main thread, so the game's rendering can't drop the camera under the SDK's 25 fps
- * floor. Reads VideoFrames and pushes them to the sidecar's frame socket. Header layout mirrors
- * apps/sidecar/src/protocol.ts. PixelFormat values come from the SDK API reference.
+ * Runs off the main thread, so page rendering can't drop the camera under the SDK's 25 fps floor.
+ * Reads VideoFrames and pushes them to the server's frame socket. Header layout mirrors
+ * apps/vitals-worker/src/protocol.ts. PixelFormat values come from the SDK API reference.
  */
 const HEADER = 24;
 const NV12 = 4;
 const RGBA = 2;
 const BGRA = 3;
+const JPEG = 100;
+const JPEG_QUALITY = 0.85;
 /** Drop rather than queue when the socket falls behind. Late frames are worthless. */
 const MAX_BUFFERED_BYTES = 8_000_000;
 
@@ -15,8 +17,10 @@ interface StartMessage {
   type: 'start';
   readable: ReadableStream<VideoFrame>;
   url: string;
+  encoding: 'raw' | 'jpeg';
 }
 
+let encoding: 'raw' | 'jpeg' = 'raw';
 let running = false;
 let socket: WebSocket | null = null;
 let sent = 0;
@@ -52,7 +56,21 @@ function header(
   view.setFloat64(16, ts, true);
 }
 
+async function encodeJpeg(frame: VideoFrame): Promise<ArrayBuffer> {
+  const width = frame.displayWidth;
+  const height = frame.displayHeight;
+  const canvas = new OffscreenCanvas(width, height);
+  canvas.getContext('2d')!.drawImage(frame, 0, 0);
+  const blob = await canvas.convertToBlob({ type: 'image/jpeg', quality: JPEG_QUALITY });
+  const body = await blob.arrayBuffer();
+  const buffer = new ArrayBuffer(HEADER + body.byteLength);
+  new Uint8Array(buffer, HEADER).set(new Uint8Array(body));
+  header(buffer, width, height, 0, JPEG, frame.timestamp);
+  return buffer;
+}
+
 async function encode(frame: VideoFrame): Promise<ArrayBuffer> {
+  if (encoding === 'jpeg') return encodeJpeg(frame);
   const width = frame.visibleRect?.width ?? frame.codedWidth;
   const height = frame.visibleRect?.height ?? frame.codedHeight;
   const ts = frame.timestamp;
@@ -152,6 +170,7 @@ setInterval(() => {
 self.onmessage = (event: MessageEvent<StartMessage | { type: 'stop' }>) => {
   if (event.data.type === 'start') {
     running = true;
+    encoding = event.data.encoding;
     connect(event.data.url);
     void pump(event.data.readable);
   } else {

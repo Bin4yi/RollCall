@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "scripts": { "typecheck": "tsc --noEmit -p tsconfig.json" },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "brand": "tsx brand.ts"
+  },
   "dependencies": {
     "ffmpeg-static": "^5.2.0",
     "openai": "^7.52.0",

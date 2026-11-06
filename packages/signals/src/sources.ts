@@ -42,7 +42,8 @@ export class ReplaySource implements SignalSource {
   advance(dtMs: number): void {
     if (!this.bus || !this.frames.length) return;
     this.time += dtMs;
-    for (;;) {
+    // A subscriber may stop this source from inside publish, so the bus is checked every time.
+    while (this.bus) {
       const frame = this.frames[this.cursor];
       if (!frame) {
         // A zero-length session has nothing to loop over and must not spin forever.

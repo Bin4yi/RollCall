@@ -35,6 +35,8 @@ export interface BoardRow {
   squad: string;
   avatar: string | null;
   status: Status;
+  /** How far from their usual, for sorting. Never shown as a number. */
+  score: number;
   reasons: string[];
   plan: { title: string; intensity: string; changed: boolean } | null;
   checkedIn: boolean;
@@ -100,6 +102,7 @@ export async function loadBoard(db: Db, workspace: Workspace, date: string): Pro
       squad: a.squad,
       avatar: a.avatar,
       status,
+      score: assessment?.score ?? 0,
       reasons: assessment?.reasons ?? [],
       plan: plan
         ? { title: plan.title, intensity: plan.intensity, changed: plan.originalTitle !== null }
@@ -116,7 +119,7 @@ export async function loadBoard(db: Db, workspace: Workspace, date: string): Pro
   rows.sort(
     (a, b) =>
       STATUS_ORDER[a.status] - STATUS_ORDER[b.status] ||
-      Number(b.gentleNudge) - Number(a.gentleNudge) ||
+      b.score - a.score ||
       a.name.localeCompare(b.name),
   );
   const checkedIn = rows.filter((r) => r.checkedIn).length;

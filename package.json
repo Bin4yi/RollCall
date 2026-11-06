@@ -12,13 +12,13 @@
     "start": "pnpm --filter @rollcall/api start",
     "vitals:setup": "npm install --prefix apps/vitals-worker/runtime --no-audit --no-fund",
     "sessions:gen": "tsx tools/seed/gen-sessions.ts",
-    "seed": "tsx tools/seed/seed.ts",
     "assets:forge": "tsx tools/asset-forge/forge.ts",
     "typecheck": "pnpm -r --workspace-concurrency=4 typecheck",
     "lint": "eslint .",
     "format": "prettier --write .",
     "test": "vitest run",
-    "test:e2e": "pnpm --filter @rollcall/web test:e2e"
+    "test:e2e": "pnpm --filter @rollcall/web test:e2e",
+    "assets:brand": "tsx tools/asset-forge/brand.ts"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.0",

@@ -282,3 +282,33 @@ describe('MetricsNormalizer.heartbeat', () => {
     });
   });
 });
+
+describe('stopping from inside a subscriber', () => {
+  const frames: VitalsFrame[] = [0, 100, 200, 300].map((t) => ({ t, source: 'live' }));
+
+  it('ReplaySource stops cleanly mid-advance', () => {
+    const bus = new SignalBus();
+    const source = new ReplaySource('s', frames, true);
+    let seen = 0;
+    bus.subscribe(() => {
+      seen++;
+      source.stop();
+    });
+    source.start(bus);
+    expect(() => source.advance(1000)).not.toThrow();
+    expect(seen).toBe(1);
+  });
+
+  it('SimSource stops cleanly mid-advance', () => {
+    const bus = new SignalBus();
+    const source = new SimSource(1);
+    let seen = 0;
+    bus.subscribe(() => {
+      seen++;
+      source.stop();
+    });
+    source.start(bus);
+    expect(() => source.advance(1000)).not.toThrow();
+    expect(seen).toBe(1);
+  });
+});

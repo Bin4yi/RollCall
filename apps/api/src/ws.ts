@@ -113,6 +113,8 @@ export function attachSockets(server: Server, db: Db, env: Env, today: () => str
       .select()
       .from(athletes)
       .where(eq(athletes.token, url.searchParams.get('token') ?? ''));
+    // The browser may have left during that query; a stream started now would never be stopped.
+    if (ws.readyState !== WebSocket.OPEN) return undefined;
     if (!athlete) return fail('This link isn’t active.');
     if (!athlete.consentAt) return fail('Consent is needed first.');
 
@@ -142,7 +144,6 @@ export function attachSockets(server: Server, db: Db, env: Env, today: () => str
     const recorder = recordName && /^[a-z0-9_-]+$/i.test(recordName) ? new Recorder() : null;
     let finished = false;
     let stream: VitalsStream | null = null;
-    let sinceTick = 0;
 
     const end = (): void => {
       finished = true;
@@ -181,15 +182,11 @@ export function attachSockets(server: Server, db: Db, env: Env, today: () => str
       recorder?.add(frame);
       session.ingest(frame);
       const phase = session.progress().phase;
-      // Waveform samples must always reach the screen; the rest only needs about 5 updates a second.
       if (phase === 'done' || phase === 'timed-out') {
         void finish();
         return;
       }
-      if (++sinceTick >= 1) {
-        sinceTick = 0;
-        send(ws, tickMessage(frame, session));
-      }
+      send(ws, tickMessage(frame, session));
     };
     const onStatus = (state: string, detail?: string): void => {
       if (finished) return;

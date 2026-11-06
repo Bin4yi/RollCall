@@ -2,13 +2,13 @@ import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
-  { ignores: ['**/dist/**', 'assets/**', 'archive/**', 'data/**', 'apps/vitals-worker/runtime/**'] },
+  { ignores: ['**/dist/**', 'assets/**', 'archive/**', '**/public/**', 'data/**', 'apps/vitals-worker/runtime/**'] },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
     files: ['**/*.ts'],
     rules: {
-      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
     },
   },
 );

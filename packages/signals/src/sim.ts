@@ -198,7 +198,8 @@ export class SimSource implements SignalSource {
   advance(dtMs: number): void {
     if (!this.bus) return;
     this.carry += dtMs;
-    while (this.carry >= 100) {
+    // A subscriber may stop this source from inside publish, so the bus is checked every time.
+    while (this.bus && this.carry >= 100) {
       this.carry -= 100;
       this.bus.publish(this.synth.step('sim'));
     }

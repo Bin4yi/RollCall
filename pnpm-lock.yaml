@@ -286,21 +286,33 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.3.4
         version: 4.3.4(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.15))
+      '@types/node':
+        specifier: ^24.0.0
+        version: 24.19.2
       '@types/react':
         specifier: ^19.0.0
         version: 19.3.0
       '@types/react-dom':
         specifier: ^19.0.0
         version: 19.3.0(@types/react@19.3.0)
+      '@types/ws':
+        specifier: ^8.18.0
+        version: 8.18.2
       '@vitejs/plugin-react':
         specifier: ^6.2.1
         version: 6.2.1(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.15))
+      sharp:
+        specifier: ^0.35.5
+        version: 0.35.5(@types/node@24.19.2)
       tailwindcss:
         specifier: ^4.3.4
         version: 4.3.4
       vite:
         specifier: ^8.3.6
         version: 8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.15)
+      ws:
+        specifier: ^8.22.1
+        version: 8.22.1
 
   packages/db:
     dependencies:
@@ -349,6 +361,8 @@ importers:
       sharp:
         specifier: ^0.35.5
         version: 0.35.5(@types/node@24.19.2)
+
+  tools/seed: {}
 
 packages:
 

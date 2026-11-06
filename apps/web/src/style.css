@@ -1,0 +1,163 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/bricolage-grotesque';
+@import '@fontsource-variable/inter';
+
+@theme {
+  --color-apricot: #ffb37a;
+  --color-coral: #ff6b5b;
+  --color-coral-ink: #b8352a;
+  --color-indigo: #2b2a6b;
+  --color-teal: #3fb8af;
+  --color-teal-ink: #17706a;
+  --color-paper: #fff6e9;
+  --color-paper-2: #fbe9d2;
+  --color-ink: #1b1a33;
+  --color-mute: #5b5a7d;
+  --font-display: 'Bricolage Grotesque Variable', 'Trebuchet MS', sans-serif;
+  --font-sans: 'Inter Variable', system-ui, sans-serif;
+  --shadow-riso: 4px 4px 0 0 var(--color-indigo);
+  --shadow-riso-sm: 2px 2px 0 0 var(--color-indigo);
+}
+
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+@layer components {
+/* Risograph grain, drawn as an SVG noise tile so it costs no image request. */
+.riso-grain {
+  isolation: isolate;
+}
+.riso-grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.16;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .1 0 0 0 0 .1 0 0 0 0 .2 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.6rem 1.15rem;
+  border: 2px solid var(--color-indigo);
+  border-radius: 14px;
+  background: white;
+  color: var(--color-indigo);
+  font-weight: 650;
+  cursor: pointer;
+  box-shadow: var(--shadow-riso-sm);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+  text-decoration: none;
+}
+.btn:hover:not(:disabled) {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 0 var(--color-indigo);
+}
+.btn:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+.btn:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+.btn-primary {
+  background: var(--color-indigo);
+  color: var(--color-paper);
+}
+.btn-coral {
+  background: var(--color-coral);
+  color: var(--color-ink);
+}
+
+.card {
+  background: white;
+  border: 2px solid var(--color-indigo);
+  border-radius: 18px;
+  box-shadow: var(--shadow-riso-sm);
+}
+
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-coral-ink);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@layer base {
+  input,
+  textarea,
+  select {
+    border: 2px solid var(--color-indigo);
+    border-radius: 12px;
+    background: white;
+    padding: 0.6rem 0.75rem;
+    color: var(--color-ink);
+    width: 100%;
+  }
+
+  input[type='range'] {
+    padding: 0;
+    border: 0;
+    accent-color: var(--color-coral-ink);
+    height: 44px;
+    background: transparent;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+}
+
+.sr-only-focusable:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+@keyframes float-slow {
+  50% {
+    transform: translateY(-6px);
+  }
+}
+.float {
+  animation: float-slow 3.4s ease-in-out infinite;
+}
+
+/* Respect reduced motion everywhere: the live readings still update, nothing else moves. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

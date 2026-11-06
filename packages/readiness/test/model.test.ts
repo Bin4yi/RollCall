@@ -180,8 +180,10 @@ describe('status', () => {
   });
 
   it('low-confidence metrics simply drop out', () => {
-    const { pulse: _pulse, rmssd: _rmssd, ...camera } = steady(14);
-    const a = last(assessHistory([...history(14), { ...camera, breath: 13 }]));
+    const today = steady(14, { breath: 13 });
+    delete today.pulse;
+    delete today.rmssd;
+    const a = last(assessHistory([...history(14), today]));
     expect(a.deviations.map((d) => d.metric)).not.toContain('pulse');
     expect(a.deviations.map((d) => d.metric)).not.toContain('rmssd');
     expect(a.status).toBe('ready');
@@ -226,5 +228,6 @@ describe('wording', () => {
   it('the filter catches banned words in any case', () => {
     expect(findBannedWords('possible INFECTION and a Diagnosis')).toEqual(['diagnos', 'infection']);
     expect(findBannedWords('Pulse above your usual')).toEqual([]);
+    expect(findBannedWords('Stillness matters, and sickness does not belong here')).toEqual(['sick']);
   });
 });

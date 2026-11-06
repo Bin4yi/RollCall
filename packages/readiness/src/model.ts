@@ -260,7 +260,8 @@ export const BANNED_WORDS = [
   'risk score',
 ] as const;
 
+/** Matches from the start of a word, so "stillness" isn't read as "illness". */
 export function findBannedWords(text: string): string[] {
   const lower = text.toLowerCase();
-  return BANNED_WORDS.filter((w) => lower.includes(w));
+  return BANNED_WORDS.filter((w) => new RegExp(`\\b${w}`).test(lower));
 }
