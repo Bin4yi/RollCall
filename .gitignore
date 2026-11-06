@@ -1,0 +1,32 @@
+# Claude Code / AI tooling (never committed)
+CLAUDE.md
+CLAUDE.local.md
+.claude/
+.mcp.json
+.agents/
+HUSH_CLAUDE_CODE_PROMPT.md
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies and build output
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+playwright-report/
+test-results/
+apps/sidecar/runtime/node_modules/
+apps/sidecar/runtime/package-lock.json
+
+# Generated art pack working files
+assets/raw/
+assets/.cache/
+__pycache__/
+
+# Logs and OS noise
+*.log
+.DS_Store
+Thumbs.db
