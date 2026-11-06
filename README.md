@@ -10,8 +10,9 @@ It reads your pulse, breathing and heart rate variability with the [Presage Smar
 
 ## Watch the walkthrough
 
-<!-- When the video is up, wrap this image in a link to it: [![...](...)](https://youtu.be/...) -->
-![Roll Call walkthrough: just a phone, 75 seconds](apps/web/public/brand/youtube-thumb.png)
+[![Watch the Roll Call walkthrough on YouTube: just a phone, 75 seconds](apps/web/public/brand/youtube-thumb.png)](https://youtu.be/6QGh0zoUoIw)
+
+**[Watch it on YouTube](https://youtu.be/6QGh0zoUoIw)** (under 3 minutes). The check-in in the video is a labelled replay with fictional data, and the voice and exercise footage are AI-generated.
 
 ## Try it in two minutes
 
