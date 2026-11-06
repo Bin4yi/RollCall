@@ -1,0 +1,232 @@
+import type { SignalBus, SignalSource, SourceStatus } from './bus';
+import type { VitalsFrame } from './schema';
+
+/** Small seeded PRNG (mulberry32) so simulated and generated sessions are reproducible. */
+export function makeRng(seed: number): () => number {
+  let a = seed >>> 0;
+  return () => {
+    a = (a + 0x6d2b79f5) >>> 0;
+    let t = a;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+/** Everything the simulated body is doing right now. Scripts and the keyboard both write this. */
+export interface BodyState {
+  pulseBpm: number;
+  breathBpm: number;
+  /** 0 = metronomic, 1 = very uneven breath intervals. */
+  breathJitter: number;
+  breathAmplitude: number;
+  talking: boolean;
+  facePresent: boolean;
+  /** Head movement speed; 0 = still. */
+  headMotion: number;
+  /** 0..1 fear/surprise expression level. */
+  fear: number;
+  /** 0..1 measurement confidence, standing in for lighting and framing quality. */
+  signalQuality: number;
+  qualityReason?: string;
+}
+
+export const restingBody = (): BodyState => ({
+  pulseBpm: 70,
+  breathBpm: 14,
+  breathJitter: 0.04,
+  breathAmplitude: 1,
+  talking: false,
+  facePresent: true,
+  headMotion: 0.002,
+  fear: 0,
+  signalQuality: 0.9,
+});
+
+const TRACE_HZ = 30;
+
+/**
+ * Synthesises frames in the same shape as the SDK normaliser: 10 Hz frames with pleth and
+ * breath waveform samples. Rates carry the SDK's documented window lag (12 s pulse, 30 s breath)
+ * and zero confidence until that window fills, so Sim mode exposes the real timing problems.
+ */
+export class BodySynth {
+  readonly body: BodyState = restingBody();
+  private readonly rng: () => number;
+  private t = 0;
+  private plethPhase = 0;
+  private breathPhase = 0;
+  private breathRateNow = 14;
+  private pulseWindow = 70;
+  private breathWindow = 14;
+  private headX = 0.5;
+  private headY = 0.45;
+  private carry = 0;
+
+  constructor(seed: number) {
+    this.rng = makeRng(seed);
+  }
+
+  /** Advance exactly one 100 ms frame. */
+  step(source: VitalsFrame['source']): VitalsFrame {
+    const dt = 0.1;
+    this.t += 100;
+    const b = this.body;
+    const elapsed = this.t / 1000;
+
+    const present = b.facePresent;
+    const pleth: number[] = [];
+    const trace: number[] = [];
+    const count = Math.round(TRACE_HZ * dt + this.carry);
+    this.carry = TRACE_HZ * dt + this.carry - count;
+    for (let i = 0; i < count; i++) {
+      const dtSample = 1 / TRACE_HZ;
+      this.plethPhase += (b.pulseBpm / 60) * dtSample;
+      const beat = this.plethPhase % 1;
+      const wave =
+        Math.exp(-((beat - 0.2) ** 2) / 0.012) + 0.45 * Math.exp(-((beat - 0.5) ** 2) / 0.02);
+      pleth.push(wave + (this.rng() - 0.5) * 0.04 * (1.2 - b.signalQuality));
+
+      // New breath: re-roll the rate so jitter shows up as uneven peak intervals.
+      const before = this.breathPhase;
+      this.breathPhase += (this.breathRateNow / 60) * dtSample;
+      if (Math.floor(this.breathPhase) !== Math.floor(before)) {
+        this.breathRateNow = Math.max(
+          3,
+          b.breathBpm * (1 + (this.rng() - 0.5) * 2 * b.breathJitter),
+        );
+      }
+      const breath = -Math.cos(2 * Math.PI * this.breathPhase) * b.breathAmplitude;
+      trace.push(breath + (this.rng() - 0.5) * 0.02);
+    }
+
+    // Window lag matching the SDK's rolling averages, approximated as first-order filters.
+    this.pulseWindow += (b.pulseBpm - this.pulseWindow) * (dt / 6);
+    this.breathWindow += (b.breathBpm - this.breathWindow) * (dt / 15);
+
+    this.headX += (this.rng() - 0.5) * b.headMotion * 2;
+    this.headY += (this.rng() - 0.5) * b.headMotion * 2;
+    this.headX += (0.5 - this.headX) * 0.05;
+    this.headY += (0.45 - this.headY) * 0.05;
+
+    const quality = present ? b.signalQuality : 0;
+    const pulseConf = elapsed < 12 ? 0 : quality;
+    const breathConf = elapsed < 30 ? 0 : quality;
+
+    const frame: VitalsFrame = {
+      t: this.t,
+      source,
+      facePresent: present,
+      quality: present
+        ? quality >= 0.45
+          ? { ok: true }
+          : { ok: false, reason: b.qualityReason ?? 'Add light in front of your face.' }
+        : { ok: false, reason: 'No face found. Face the camera.' },
+      talking: present && b.talking,
+      blink: present && this.rng() < 0.03,
+    };
+    if (!present) return frame;
+
+    frame.pulse = { bpm: round(this.pulseWindow, 1), conf: pulseConf };
+    frame.pleth = {
+      samples: pleth.map((v) => round(v, 3)),
+      hz: TRACE_HZ,
+      stable: pulseConf >= 0.4,
+    };
+    frame.breath = {
+      bpm: round(this.breathWindow, 1),
+      conf: breathConf,
+      amplitude: round(b.breathAmplitude, 3),
+      apnea: b.breathAmplitude < 0.1 && breathConf > 0,
+    };
+    frame.breathTrace = {
+      samples: trace.map((v) => round(v, 3)),
+      hz: TRACE_HZ,
+      stable: breathConf >= 0.45,
+    };
+    frame.hrv = { value: 42, unit: 'ms', conf: elapsed < 60 ? 0 : quality };
+    frame.expression = { neutral: round(1 - b.fear, 2), fear: round(b.fear, 2), surprise: 0 };
+    frame.head = { x: round(this.headX, 4), y: round(this.headY, 4), scale: 0.3 };
+    return frame;
+  }
+}
+
+function round(v: number, places: number): number {
+  const m = 10 ** places;
+  return Math.round(v * m) / m;
+}
+
+/**
+ * Keyboard simulation: ↑/↓ pulse, B panting, S slow breathing, T talk, F flinch, L lose face,
+ * M move head. Keys are fed in with `key()`/`keyUp()` so this class stays DOM-free.
+ */
+export class SimSource implements SignalSource {
+  readonly kind = 'sim' as const;
+  readonly label = 'SIM';
+  status: SourceStatus = 'idle';
+  private bus: SignalBus | null = null;
+  private readonly synth: BodySynth;
+  private carry = 0;
+  private flinchLeft = 0;
+  private held = new Set<string>();
+  /** Target resting values the pulse drifts back towards when no key is held. */
+  private targetPulse = 70;
+
+  constructor(seed = 1) {
+    this.synth = new BodySynth(seed);
+  }
+
+  get body(): BodyState {
+    return this.synth.body;
+  }
+
+  start(bus: SignalBus): void {
+    this.bus = bus;
+    this.status = 'streaming';
+  }
+
+  key(code: string): void {
+    this.held.add(code);
+    if (code === 'KeyF') this.flinchLeft = 0.6;
+    if (code === 'KeyL') this.synth.body.facePresent = !this.synth.body.facePresent;
+    if (code === 'KeyQ')
+      this.synth.body.signalQuality = this.synth.body.signalQuality > 0.5 ? 0.15 : 0.9;
+  }
+
+  keyUp(code: string): void {
+    this.held.delete(code);
+  }
+
+  advance(dtMs: number): void {
+    if (!this.bus) return;
+    this.carry += dtMs;
+    while (this.carry >= 100) {
+      this.carry -= 100;
+      this.applyKeys();
+      this.bus.publish(this.synth.step('sim'));
+    }
+  }
+
+  private applyKeys(): void {
+    const b = this.synth.body;
+    if (this.held.has('ArrowUp')) this.targetPulse = Math.min(150, this.targetPulse + 1.5);
+    if (this.held.has('ArrowDown')) this.targetPulse = Math.max(50, this.targetPulse - 1.5);
+    b.pulseBpm += (this.targetPulse - b.pulseBpm) * 0.05;
+
+    const panting = this.held.has('KeyB');
+    const slow = this.held.has('KeyS');
+    const targetBreath = panting ? 30 : slow ? 7 : 14;
+    b.breathBpm += (targetBreath - b.breathBpm) * 0.08;
+    b.breathJitter = panting ? 0.3 : 0.04;
+    b.talking = this.held.has('KeyT');
+
+    this.flinchLeft = Math.max(0, this.flinchLeft - 0.1);
+    b.fear = this.flinchLeft > 0 ? 0.8 : 0;
+    b.headMotion = this.held.has('KeyM') || this.flinchLeft > 0 ? 0.05 : 0.002;
+  }
+
+  stop(): void {
+    this.bus = null;
+    this.status = 'idle';
+  }
+}
