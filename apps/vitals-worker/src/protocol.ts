@@ -1,14 +1,14 @@
 import type { VitalsFrame } from '@rollcall/signals';
 
-export const VITALS_PORT = 8765;
-export const FRAMES_PORT = 8766;
-
 /**
  * Binary frame header sent by the browser to the worker's frame socket.
- * Mirrors apps/game/src/frameWorker.ts.
+ * Mirrors apps/web/src/capture/frameWorker.ts.
  * Layout (little endian): u32 width, u32 height, u32 stride, u32 pixelFormat, f64 timestampUs.
  */
 export const FRAME_HEADER_BYTES = 24;
+
+/** Our own pixelFormat value: the body is a JPEG, for phones where raw frames would swamp Wi-Fi. */
+export const JPEG_FORMAT = 100;
 
 export interface FrameHeader {
   width: number;
@@ -58,6 +58,7 @@ export class FrameClock {
 /** Messages from the SDK worker up to the supervisor. */
 export type WorkerMessage =
   | { type: 'frame'; frame: VitalsFrame }
+  | { type: 'ready'; framesPort: number }
   | { type: 'status'; state: string; detail?: string }
   | { type: 'validation'; code: number; hint: string }
   | { type: 'error'; code: number; message: string; retryable: boolean };

@@ -39,6 +39,18 @@ const grid = (cols: number, rows: number, list: string): string =>
 
 export const CATALOG: Sheet[] = [
   {
+    id: 'logo',
+    prompt: `${STYLE} A logo wordmark reading exactly "ROLL CALL" in chunky, rounded, friendly indigo capital letters on one line. A coral sun rises from behind the first letter O of ROLL, and a thin heartbeat pulse line runs along the baseline as the horizon. Only those two words. Transparent background.`,
+    size: '1536x1024',
+    quality: 'medium',
+    transparent: true,
+    cols: 0,
+    rows: 0,
+    sprites: [{ id: 'logo_wordmark', alt: 'Roll Call' }],
+    refs: [],
+    maxSide: 1200,
+  },
+  {
     id: 'rollo_sheet',
     prompt: `${STYLE} Character sheet of ${ROLLO} Four views in a row on plain cream: front, three-quarter, side, back. Same character in every view. ${NO_TEXT}`,
     size: '1536x1024',
@@ -82,7 +94,7 @@ export const CATALOG: Sheet[] = [
   },
   {
     id: 'avatars',
-    prompt: `${STYLE} Portrait busts of twelve different fictional adult athletes in the same riso style, each inside a soft circle of colour, clearly illustrated and never photographic. Transparent background outside the circles. ${grid(
+    prompt: `${STYLE} Portrait busts of twelve different fictional adult athletes in the same riso style, each inside a soft circle of colour, clearly illustrated and never photographic. Plain sports clothing with no stripes, logos or marks. Transparent background outside the circles. ${grid(
       4,
       3,
       'Amara, a Black woman in her 30s, marathon runner; Kasun, a Sri Lankan man in his 20s, cyclist; Noor, an Arab woman in her 30s wearing a hijab, powerlifter; Diego, a Latino man in his 40s, triathlete; Mei, a Chinese woman in her 20s, swimmer; Tomasz, a white man in his 50s with a grey beard, rower; Priya, an Indian woman in her 30s, climber; Jonah, a Black man in his 20s, footballer; Freya, a white woman in her 50s with short grey hair, runner; Hana, a Japanese woman in her 40s, triathlete; Sione, a Pacific Islander man in his 30s, weightlifter; Elif, a Turkish woman in her 20s, cyclist',
@@ -172,7 +184,7 @@ export const CATALOG: Sheet[] = [
   },
   {
     id: 'how',
-    prompt: `${STYLE} Four square illustrations for a landing page. Transparent background. ${grid(
+    prompt: `${STYLE} Four square illustrations for a landing page. Plain clothing with no stripes, logos or marks. Transparent background. ${grid(
       2,
       2,
       'a fictional athlete sitting on a bench at dawn, looking at a propped phone; a coach at a laptop looking at a row of small sun icons; a coach’s hand pressing send on a phone, a paper plane flying into the sunrise; a padlock whose body is a sun and whose shackle is a pulse wave',

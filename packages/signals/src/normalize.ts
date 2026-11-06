@@ -111,12 +111,21 @@ export class MetricsNormalizer {
   private validation: { ok: boolean; reason?: string; code?: number } = { ok: true };
   private facePresent = true;
 
-  constructor(private readonly frameSize: { width: number; height: number } | null = null) {}
+  constructor(private frameSize: { width: number; height: number } | null = null) {}
+
+  setFrameSize(size: { width: number; height: number }): void {
+    this.frameSize = size;
+  }
 
   /** Feed `validationStatus` events; code 0 is kOk and code 1 is kNoFaceFound. */
   setValidation(code: number, hint: string): void {
     this.validation = code === 0 ? { ok: true } : { ok: false, reason: hint, code };
     this.facePresent = code !== 1;
+  }
+
+  /** A frame with validation state only, for when the SDK has no metrics to send yet. */
+  heartbeat(tMs: number): VitalsFrame {
+    return { t: tMs, source: 'live', facePresent: this.facePresent, quality: this.validation };
   }
 
   toFrame(metrics: SdkMetrics, tMs: number): VitalsFrame {

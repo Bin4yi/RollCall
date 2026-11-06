@@ -1,5 +1,502 @@
 {
  "model": "gpt-image-2.6-sunburst",
- "spentUsd": 0.145,
- "images": {}
+ "spentUsd": 0.618,
+ "images": {
+  "avatar_amara": {
+   "file": "avatars/avatar_amara",
+   "width": 320,
+   "height": 315,
+   "alt": "Illustrated portrait of Amara, a fictional athlete",
+   "sheet": "avatars",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Portrait busts of twelve different fictional adult athletes in the same riso style, each inside a soft circle of colour, clearly illustrated and never photographic. Plain sports clothing with no stripes, logos or marks. Transparent background outside the circles. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Amara, a Black woman in her 30s, marathon runner; Kasun, a Sri Lankan man in his 20s, cyclist; Noor, an Arab woman in her 30s wearing a hijab, powerlifter; Diego, a Latino man in his 40s, triathlete; Mei, a Chinese woman in her 20s, swimmer; Tomasz, a white man in his 50s with a grey beard, rower; Priya, an Indian woman in her 30s, climber; Jonah, a Black man in his 20s, footballer; Freya, a white woman in her 50s with short grey hair, runner; Hana, a Japanese woman in her 40s, triathlete; Sione, a Pacific Islander man in his 30s, weightlifter; Elif, a Turkish woman in her 20s, cyclist. No text, letters or numbers anywhere."
+  },
+  "avatar_diego": {
+   "file": "avatars/avatar_diego",
+   "width": 320,
+   "height": 314,
+   "alt": "Illustrated portrait of Diego, a fictional athlete",
+   "sheet": "avatars",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Portrait busts of twelve different fictional adult athletes in the same riso style, each inside a soft circle of colour, clearly illustrated and never photographic. Plain sports clothing with no stripes, logos or marks. Transparent background outside the circles. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Amara, a Black woman in her 30s, marathon runner; Kasun, a Sri Lankan man in his 20s, cyclist; Noor, an Arab woman in her 30s wearing a hijab, powerlifter; Diego, a Latino man in his 40s, triathlete; Mei, a Chinese woman in her 20s, swimmer; Tomasz, a white man in his 50s with a grey beard, rower; Priya, an Indian woman in her 30s, climber; Jonah, a Black man in his 20s, footballer; Freya, a white woman in her 50s with short grey hair, runner; Hana, a Japanese woman in her 40s, triathlete; Sione, a Pacific Islander man in his 30s, weightlifter; Elif, a Turkish woman in her 20s, cyclist. No text, letters or numbers anywhere."
+  },
+  "avatar_elif": {
+   "file": "avatars/avatar_elif",
+   "width": 320,
+   "height": 316,
+   "alt": "Illustrated portrait of Elif, a fictional athlete",
+   "sheet": "avatars",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Portrait busts of twelve different fictional adult athletes in the same riso style, each inside a soft circle of colour, clearly illustrated and never photographic. Plain sports clothing with no stripes, logos or marks. Transparent background outside the circles. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Amara, a Black woman in her 30s, marathon runner; Kasun, a Sri Lankan man in his 20s, cyclist; Noor, an Arab woman in her 30s wearing a hijab, powerlifter; Diego, a Latino man in his 40s, triathlete; Mei, a Chinese woman in her 20s, swimmer; Tomasz, a white man in his 50s with a grey beard, rower; Priya, an Indian woman in her 30s, climber; Jonah, a Black man in his 20s, footballer; Freya, a white woman in her 50s with short grey hair, runner; Hana, a Japanese woman in her 40s, triathlete; Sione, a Pacific Islander man in his 30s, weightlifter; Elif, a Turkish woman in her 20s, cyclist. No text, letters or numbers anywhere."
+  },
+  "avatar_freya": {
+   "file": "avatars/avatar_freya",
+   "width": 320,
+   "height": 319,
+   "alt": "Illustrated portrait of Freya, a fictional athlete",
+   "sheet": "avatars",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Portrait busts of twelve different fictional adult athletes in the same riso style, each inside a soft circle of colour, clearly illustrated and never photographic. Plain sports clothing with no stripes, logos or marks. Transparent background outside the circles. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Amara, a Black woman in her 30s, marathon runner; Kasun, a Sri Lankan man in his 20s, cyclist; Noor, an Arab woman in her 30s wearing a hijab, powerlifter; Diego, a Latino man in his 40s, triathlete; Mei, a Chinese woman in her 20s, swimmer; Tomasz, a white man in his 50s with a grey beard, rower; Priya, an Indian woman in her 30s, climber; Jonah, a Black man in his 20s, footballer; Freya, a white woman in her 50s with short grey hair, runner; Hana, a Japanese woman in her 40s, triathlete; Sione, a Pacific Islander man in his 30s, weightlifter; Elif, a Turkish woman in her 20s, cyclist. No text, letters or numbers anywhere."
+  },
+  "avatar_hana": {
+   "file": "avatars/avatar_hana",
+   "width": 320,
+   "height": 318,
+   "alt": "Illustrated portrait of Hana, a fictional athlete",
+   "sheet": "avatars",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Portrait busts of twelve different fictional adult athletes in the same riso style, each inside a soft circle of colour, clearly illustrated and never photographic. Plain sports clothing with no stripes, logos or marks. Transparent background outside the circles. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Amara, a Black woman in her 30s, marathon runner; Kasun, a Sri Lankan man in his 20s, cyclist; Noor, an Arab woman in her 30s wearing a hijab, powerlifter; Diego, a Latino man in his 40s, triathlete; Mei, a Chinese woman in her 20s, swimmer; Tomasz, a white man in his 50s with a grey beard, rower; Priya, an Indian woman in her 30s, climber; Jonah, a Black man in his 20s, footballer; Freya, a white woman in her 50s with short grey hair, runner; Hana, a Japanese woman in her 40s, triathlete; Sione, a Pacific Islander man in his 30s, weightlifter; Elif, a Turkish woman in her 20s, cyclist. No text, letters or numbers anywhere."
+  },
+  "avatar_jonah": {
+   "file": "avatars/avatar_jonah",
+   "width": 320,
+   "height": 313,
+   "alt": "Illustrated portrait of Jonah, a fictional athlete",
+   "sheet": "avatars",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Portrait busts of twelve different fictional adult athletes in the same riso style, each inside a soft circle of colour, clearly illustrated and never photographic. Plain sports clothing with no stripes, logos or marks. Transparent background outside the circles. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Amara, a Black woman in her 30s, marathon runner; Kasun, a Sri Lankan man in his 20s, cyclist; Noor, an Arab woman in her 30s wearing a hijab, powerlifter; Diego, a Latino man in his 40s, triathlete; Mei, a Chinese woman in her 20s, swimmer; Tomasz, a white man in his 50s with a grey beard, rower; Priya, an Indian woman in her 30s, climber; Jonah, a Black man in his 20s, footballer; Freya, a white woman in her 50s with short grey hair, runner; Hana, a Japanese woman in her 40s, triathlete; Sione, a Pacific Islander man in his 30s, weightlifter; Elif, a Turkish woman in her 20s, cyclist. No text, letters or numbers anywhere."
+  },
+  "avatar_kasun": {
+   "file": "avatars/avatar_kasun",
+   "width": 319,
+   "height": 319,
+   "alt": "Illustrated portrait of Kasun, a fictional athlete",
+   "sheet": "avatars",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Portrait busts of twelve different fictional adult athletes in the same riso style, each inside a soft circle of colour, clearly illustrated and never photographic. Plain sports clothing with no stripes, logos or marks. Transparent background outside the circles. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Amara, a Black woman in her 30s, marathon runner; Kasun, a Sri Lankan man in his 20s, cyclist; Noor, an Arab woman in her 30s wearing a hijab, powerlifter; Diego, a Latino man in his 40s, triathlete; Mei, a Chinese woman in her 20s, swimmer; Tomasz, a white man in his 50s with a grey beard, rower; Priya, an Indian woman in her 30s, climber; Jonah, a Black man in his 20s, footballer; Freya, a white woman in her 50s with short grey hair, runner; Hana, a Japanese woman in her 40s, triathlete; Sione, a Pacific Islander man in his 30s, weightlifter; Elif, a Turkish woman in her 20s, cyclist. No text, letters or numbers anywhere."
+  },
+  "avatar_mei": {
+   "file": "avatars/avatar_mei",
+   "width": 318,
+   "height": 320,
+   "alt": "Illustrated portrait of Mei, a fictional athlete",
+   "sheet": "avatars",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Portrait busts of twelve different fictional adult athletes in the same riso style, each inside a soft circle of colour, clearly illustrated and never photographic. Plain sports clothing with no stripes, logos or marks. Transparent background outside the circles. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Amara, a Black woman in her 30s, marathon runner; Kasun, a Sri Lankan man in his 20s, cyclist; Noor, an Arab woman in her 30s wearing a hijab, powerlifter; Diego, a Latino man in his 40s, triathlete; Mei, a Chinese woman in her 20s, swimmer; Tomasz, a white man in his 50s with a grey beard, rower; Priya, an Indian woman in her 30s, climber; Jonah, a Black man in his 20s, footballer; Freya, a white woman in her 50s with short grey hair, runner; Hana, a Japanese woman in her 40s, triathlete; Sione, a Pacific Islander man in his 30s, weightlifter; Elif, a Turkish woman in her 20s, cyclist. No text, letters or numbers anywhere."
+  },
+  "avatar_noor": {
+   "file": "avatars/avatar_noor",
+   "width": 320,
+   "height": 319,
+   "alt": "Illustrated portrait of Noor, a fictional athlete",
+   "sheet": "avatars",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Portrait busts of twelve different fictional adult athletes in the same riso style, each inside a soft circle of colour, clearly illustrated and never photographic. Plain sports clothing with no stripes, logos or marks. Transparent background outside the circles. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Amara, a Black woman in her 30s, marathon runner; Kasun, a Sri Lankan man in his 20s, cyclist; Noor, an Arab woman in her 30s wearing a hijab, powerlifter; Diego, a Latino man in his 40s, triathlete; Mei, a Chinese woman in her 20s, swimmer; Tomasz, a white man in his 50s with a grey beard, rower; Priya, an Indian woman in her 30s, climber; Jonah, a Black man in his 20s, footballer; Freya, a white woman in her 50s with short grey hair, runner; Hana, a Japanese woman in her 40s, triathlete; Sione, a Pacific Islander man in his 30s, weightlifter; Elif, a Turkish woman in her 20s, cyclist. No text, letters or numbers anywhere."
+  },
+  "avatar_priya": {
+   "file": "avatars/avatar_priya",
+   "width": 320,
+   "height": 318,
+   "alt": "Illustrated portrait of Priya, a fictional athlete",
+   "sheet": "avatars",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Portrait busts of twelve different fictional adult athletes in the same riso style, each inside a soft circle of colour, clearly illustrated and never photographic. Plain sports clothing with no stripes, logos or marks. Transparent background outside the circles. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Amara, a Black woman in her 30s, marathon runner; Kasun, a Sri Lankan man in his 20s, cyclist; Noor, an Arab woman in her 30s wearing a hijab, powerlifter; Diego, a Latino man in his 40s, triathlete; Mei, a Chinese woman in her 20s, swimmer; Tomasz, a white man in his 50s with a grey beard, rower; Priya, an Indian woman in her 30s, climber; Jonah, a Black man in his 20s, footballer; Freya, a white woman in her 50s with short grey hair, runner; Hana, a Japanese woman in her 40s, triathlete; Sione, a Pacific Islander man in his 30s, weightlifter; Elif, a Turkish woman in her 20s, cyclist. No text, letters or numbers anywhere."
+  },
+  "avatar_sione": {
+   "file": "avatars/avatar_sione",
+   "width": 320,
+   "height": 316,
+   "alt": "Illustrated portrait of Sione, a fictional athlete",
+   "sheet": "avatars",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Portrait busts of twelve different fictional adult athletes in the same riso style, each inside a soft circle of colour, clearly illustrated and never photographic. Plain sports clothing with no stripes, logos or marks. Transparent background outside the circles. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Amara, a Black woman in her 30s, marathon runner; Kasun, a Sri Lankan man in his 20s, cyclist; Noor, an Arab woman in her 30s wearing a hijab, powerlifter; Diego, a Latino man in his 40s, triathlete; Mei, a Chinese woman in her 20s, swimmer; Tomasz, a white man in his 50s with a grey beard, rower; Priya, an Indian woman in her 30s, climber; Jonah, a Black man in his 20s, footballer; Freya, a white woman in her 50s with short grey hair, runner; Hana, a Japanese woman in her 40s, triathlete; Sione, a Pacific Islander man in his 30s, weightlifter; Elif, a Turkish woman in her 20s, cyclist. No text, letters or numbers anywhere."
+  },
+  "avatar_tomasz": {
+   "file": "avatars/avatar_tomasz",
+   "width": 320,
+   "height": 320,
+   "alt": "Illustrated portrait of Tomasz, a fictional athlete",
+   "sheet": "avatars",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Portrait busts of twelve different fictional adult athletes in the same riso style, each inside a soft circle of colour, clearly illustrated and never photographic. Plain sports clothing with no stripes, logos or marks. Transparent background outside the circles. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Amara, a Black woman in her 30s, marathon runner; Kasun, a Sri Lankan man in his 20s, cyclist; Noor, an Arab woman in her 30s wearing a hijab, powerlifter; Diego, a Latino man in his 40s, triathlete; Mei, a Chinese woman in her 20s, swimmer; Tomasz, a white man in his 50s with a grey beard, rower; Priya, an Indian woman in her 30s, climber; Jonah, a Black man in his 20s, footballer; Freya, a white woman in her 50s with short grey hair, runner; Hana, a Japanese woman in her 40s, triathlete; Sione, a Pacific Islander man in his 30s, weightlifter; Elif, a Turkish woman in her 20s, cyclist. No text, letters or numbers anywhere."
+  },
+  "badge_100": {
+   "file": "badges/badge_100",
+   "width": 240,
+   "height": 224,
+   "alt": "100 sunrises badge",
+   "sheet": "badges",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Six enamel pin badges, each a small sun rising over a heartbeat line, growing grander from the first to the last. Leave the middle of each pin plain, because a number is added later. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: tiny plain sun pin; small sun pin with short rays; sun pin with a laurel; bright sun pin with long rays; golden sun pin with laurel and stars; grand radiant sun pin with a crown of rays. No text, letters or numbers anywhere."
+  },
+  "badge_14": {
+   "file": "badges/badge_14",
+   "width": 240,
+   "height": 218,
+   "alt": "14 sunrises badge",
+   "sheet": "badges",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Six enamel pin badges, each a small sun rising over a heartbeat line, growing grander from the first to the last. Leave the middle of each pin plain, because a number is added later. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: tiny plain sun pin; small sun pin with short rays; sun pin with a laurel; bright sun pin with long rays; golden sun pin with laurel and stars; grand radiant sun pin with a crown of rays. No text, letters or numbers anywhere."
+  },
+  "badge_3": {
+   "file": "badges/badge_3",
+   "width": 240,
+   "height": 194,
+   "alt": "3 sunrises badge",
+   "sheet": "badges",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Six enamel pin badges, each a small sun rising over a heartbeat line, growing grander from the first to the last. Leave the middle of each pin plain, because a number is added later. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: tiny plain sun pin; small sun pin with short rays; sun pin with a laurel; bright sun pin with long rays; golden sun pin with laurel and stars; grand radiant sun pin with a crown of rays. No text, letters or numbers anywhere."
+  },
+  "badge_30": {
+   "file": "badges/badge_30",
+   "width": 240,
+   "height": 201,
+   "alt": "30 sunrises badge",
+   "sheet": "badges",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Six enamel pin badges, each a small sun rising over a heartbeat line, growing grander from the first to the last. Leave the middle of each pin plain, because a number is added later. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: tiny plain sun pin; small sun pin with short rays; sun pin with a laurel; bright sun pin with long rays; golden sun pin with laurel and stars; grand radiant sun pin with a crown of rays. No text, letters or numbers anywhere."
+  },
+  "badge_60": {
+   "file": "badges/badge_60",
+   "width": 240,
+   "height": 216,
+   "alt": "60 sunrises badge",
+   "sheet": "badges",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Six enamel pin badges, each a small sun rising over a heartbeat line, growing grander from the first to the last. Leave the middle of each pin plain, because a number is added later. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: tiny plain sun pin; small sun pin with short rays; sun pin with a laurel; bright sun pin with long rays; golden sun pin with laurel and stars; grand radiant sun pin with a crown of rays. No text, letters or numbers anywhere."
+  },
+  "badge_7": {
+   "file": "badges/badge_7",
+   "width": 240,
+   "height": 236,
+   "alt": "7 sunrises badge",
+   "sheet": "badges",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Six enamel pin badges, each a small sun rising over a heartbeat line, growing grander from the first to the last. Leave the middle of each pin plain, because a number is added later. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: tiny plain sun pin; small sun pin with short rays; sun pin with a laurel; bright sun pin with long rays; golden sun pin with laurel and stars; grand radiant sun pin with a crown of rays. No text, letters or numbers anywhere."
+  },
+  "empty_athletes": {
+   "file": "guide/empty_athletes",
+   "width": 386,
+   "height": 444,
+   "alt": "Rollo with an empty clipboard",
+   "sheet": "guide",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Small illustrated vignettes for an app. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a phone propped against a water bottle on a table; a person seated with face and upper chest in a phone frame; a desk lamp lighting a seated person from the front; a person sitting calmly with a small stopwatch; Rollo looking at an empty clipboard; Rollo napping happily beside a row of small rising suns. No text, letters or numbers anywhere."
+  },
+  "empty_done": {
+   "file": "guide/empty_done",
+   "width": 470,
+   "height": 420,
+   "alt": "Rollo napping beside a row of rising suns",
+   "sheet": "guide",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Small illustrated vignettes for an app. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a phone propped against a water bottle on a table; a person seated with face and upper chest in a phone frame; a desk lamp lighting a seated person from the front; a person sitting calmly with a small stopwatch; Rollo looking at an empty clipboard; Rollo napping happily beside a row of small rising suns. No text, letters or numbers anywhere."
+  },
+  "feel_1": {
+   "file": "rollo_feel/feel_1",
+   "width": 404,
+   "height": 358,
+   "alt": "Rollo looking wrecked",
+   "sheet": "rollo_feel",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo’s face looking wrecked and flattened; Rollo’s face tired, with droopy eyes; Rollo’s face okay, a small neutral smile; Rollo’s face good, a big smile; Rollo’s face flying high with joy, little wings out; Rollo looking puzzled with a tangled whistle and lanyard. No text, letters or numbers anywhere."
+  },
+  "feel_2": {
+   "file": "rollo_feel/feel_2",
+   "width": 331,
+   "height": 437,
+   "alt": "Rollo looking tired",
+   "sheet": "rollo_feel",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo’s face looking wrecked and flattened; Rollo’s face tired, with droopy eyes; Rollo’s face okay, a small neutral smile; Rollo’s face good, a big smile; Rollo’s face flying high with joy, little wings out; Rollo looking puzzled with a tangled whistle and lanyard. No text, letters or numbers anywhere."
+  },
+  "feel_3": {
+   "file": "rollo_feel/feel_3",
+   "width": 319,
+   "height": 439,
+   "alt": "Rollo looking okay",
+   "sheet": "rollo_feel",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo’s face looking wrecked and flattened; Rollo’s face tired, with droopy eyes; Rollo’s face okay, a small neutral smile; Rollo’s face good, a big smile; Rollo’s face flying high with joy, little wings out; Rollo looking puzzled with a tangled whistle and lanyard. No text, letters or numbers anywhere."
+  },
+  "feel_4": {
+   "file": "rollo_feel/feel_4",
+   "width": 323,
+   "height": 439,
+   "alt": "Rollo looking good",
+   "sheet": "rollo_feel",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo’s face looking wrecked and flattened; Rollo’s face tired, with droopy eyes; Rollo’s face okay, a small neutral smile; Rollo’s face good, a big smile; Rollo’s face flying high with joy, little wings out; Rollo looking puzzled with a tangled whistle and lanyard. No text, letters or numbers anywhere."
+  },
+  "feel_5": {
+   "file": "rollo_feel/feel_5",
+   "width": 394,
+   "height": 461,
+   "alt": "Rollo flying with joy",
+   "sheet": "rollo_feel",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo’s face looking wrecked and flattened; Rollo’s face tired, with droopy eyes; Rollo’s face okay, a small neutral smile; Rollo’s face good, a big smile; Rollo’s face flying high with joy, little wings out; Rollo looking puzzled with a tangled whistle and lanyard. No text, letters or numbers anywhere."
+  },
+  "hero": {
+   "file": "hero/hero",
+   "width": 1536,
+   "height": 1024,
+   "alt": "Rollo crowing on a fence post as the sun rises over a running track",
+   "sheet": "hero",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Wide landing-page scene: first light over an empty running track, a huge halftone sun rising, and the horizon line itself is a heartbeat pulse wave. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. He is crowing on a fence post in the foreground, small in the frame, matching the reference. No text, letters or numbers anywhere."
+  },
+  "how_athlete": {
+   "file": "how/how_athlete",
+   "width": 437,
+   "height": 457,
+   "alt": "An athlete checking in on a propped phone at dawn",
+   "sheet": "how",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Four square illustrations for a landing page. Plain clothing with no stripes, logos or marks. Transparent background. A sprite sheet: exactly 2 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a fictional athlete sitting on a bench at dawn, looking at a propped phone; a coach at a laptop looking at a row of small sun icons; a coach’s hand pressing send on a phone, a paper plane flying into the sunrise; a padlock whose body is a sun and whose shackle is a pulse wave. No text, letters or numbers anywhere."
+  },
+  "how_coach": {
+   "file": "how/how_coach",
+   "width": 451,
+   "height": 396,
+   "alt": "A coach looking at a row of suns on a laptop",
+   "sheet": "how",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Four square illustrations for a landing page. Plain clothing with no stripes, logos or marks. Transparent background. A sprite sheet: exactly 2 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a fictional athlete sitting on a bench at dawn, looking at a propped phone; a coach at a laptop looking at a row of small sun icons; a coach’s hand pressing send on a phone, a paper plane flying into the sunrise; a padlock whose body is a sun and whose shackle is a pulse wave. No text, letters or numbers anywhere."
+  },
+  "how_privacy": {
+   "file": "how/how_privacy",
+   "width": 356,
+   "height": 438,
+   "alt": "A padlock made from a sun and a pulse wave",
+   "sheet": "how",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Four square illustrations for a landing page. Plain clothing with no stripes, logos or marks. Transparent background. A sprite sheet: exactly 2 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a fictional athlete sitting on a bench at dawn, looking at a propped phone; a coach at a laptop looking at a row of small sun icons; a coach’s hand pressing send on a phone, a paper plane flying into the sunrise; a padlock whose body is a sun and whose shackle is a pulse wave. No text, letters or numbers anywhere."
+  },
+  "how_send": {
+   "file": "how/how_send",
+   "width": 443,
+   "height": 446,
+   "alt": "A coach pressing send, a paper plane flying into the sunrise",
+   "sheet": "how",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Four square illustrations for a landing page. Plain clothing with no stripes, logos or marks. Transparent background. A sprite sheet: exactly 2 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a fictional athlete sitting on a bench at dawn, looking at a propped phone; a coach at a laptop looking at a row of small sun icons; a coach’s hand pressing send on a phone, a paper plane flying into the sunrise; a padlock whose body is a sun and whose shackle is a pulse wave. No text, letters or numbers anywhere."
+  },
+  "logo_wordmark": {
+   "file": "logo/logo_wordmark",
+   "width": 1200,
+   "height": 443,
+   "alt": "Roll Call",
+   "sheet": "logo",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. A logo wordmark reading exactly \"ROLL CALL\" in chunky, rounded, friendly indigo capital letters on one line. A coral sun rises from behind the first letter O of ROLL, and a thin heartbeat pulse line runs along the baseline as the horizon. Only those two words. Transparent background."
+  },
+  "onboard_frame": {
+   "file": "guide/onboard_frame",
+   "width": 284,
+   "height": 422,
+   "alt": "A person with their face and upper chest in view",
+   "sheet": "guide",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Small illustrated vignettes for an app. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a phone propped against a water bottle on a table; a person seated with face and upper chest in a phone frame; a desk lamp lighting a seated person from the front; a person sitting calmly with a small stopwatch; Rollo looking at an empty clipboard; Rollo napping happily beside a row of small rising suns. No text, letters or numbers anywhere."
+  },
+  "onboard_light": {
+   "file": "guide/onboard_light",
+   "width": 440,
+   "height": 399,
+   "alt": "A lamp lighting a person from the front",
+   "sheet": "guide",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Small illustrated vignettes for an app. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a phone propped against a water bottle on a table; a person seated with face and upper chest in a phone frame; a desk lamp lighting a seated person from the front; a person sitting calmly with a small stopwatch; Rollo looking at an empty clipboard; Rollo napping happily beside a row of small rising suns. No text, letters or numbers anywhere."
+  },
+  "onboard_prop": {
+   "file": "guide/onboard_prop",
+   "width": 416,
+   "height": 402,
+   "alt": "A phone propped up on a table",
+   "sheet": "guide",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Small illustrated vignettes for an app. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a phone propped against a water bottle on a table; a person seated with face and upper chest in a phone frame; a desk lamp lighting a seated person from the front; a person sitting calmly with a small stopwatch; Rollo looking at an empty clipboard; Rollo napping happily beside a row of small rising suns. No text, letters or numbers anywhere."
+  },
+  "onboard_still": {
+   "file": "guide/onboard_still",
+   "width": 399,
+   "height": 419,
+   "alt": "A person sitting calmly",
+   "sheet": "guide",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Small illustrated vignettes for an app. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: a phone propped against a water bottle on a table; a person seated with face and upper chest in a phone frame; a desk lamp lighting a seated person from the front; a person sitting calmly with a small stopwatch; Rollo looking at an empty clipboard; Rollo napping happily beside a row of small rising suns. No text, letters or numbers anywhere."
+  },
+  "rollo_asleep": {
+   "file": "rollo_poses/rollo_asleep",
+   "width": 325,
+   "height": 268,
+   "alt": "Rollo asleep on a pillow",
+   "sheet": "rollo_poses",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo waving hello; Rollo blowing his whistle; Rollo holding a clipboard, ticking a box; Rollo pointing at a desk lamp; Rollo holding a phone at arm’s length; Rollo sitting very still with eyes closed; Rollo with a wing tip to his beak, saying shh; Rollo celebrating with confetti; Rollo asleep on a pillow; Rollo stretching; Rollo holding a steaming mug; Rollo sprinting. No text, letters or numbers anywhere."
+  },
+  "rollo_celebrate": {
+   "file": "rollo_poses/rollo_celebrate",
+   "width": 334,
+   "height": 302,
+   "alt": "Rollo celebrating with confetti",
+   "sheet": "rollo_poses",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo waving hello; Rollo blowing his whistle; Rollo holding a clipboard, ticking a box; Rollo pointing at a desk lamp; Rollo holding a phone at arm’s length; Rollo sitting very still with eyes closed; Rollo with a wing tip to his beak, saying shh; Rollo celebrating with confetti; Rollo asleep on a pillow; Rollo stretching; Rollo holding a steaming mug; Rollo sprinting. No text, letters or numbers anywhere."
+  },
+  "rollo_clipboard": {
+   "file": "rollo_poses/rollo_clipboard",
+   "width": 269,
+   "height": 307,
+   "alt": "Rollo ticking a clipboard",
+   "sheet": "rollo_poses",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo waving hello; Rollo blowing his whistle; Rollo holding a clipboard, ticking a box; Rollo pointing at a desk lamp; Rollo holding a phone at arm’s length; Rollo sitting very still with eyes closed; Rollo with a wing tip to his beak, saying shh; Rollo celebrating with confetti; Rollo asleep on a pillow; Rollo stretching; Rollo holding a steaming mug; Rollo sprinting. No text, letters or numbers anywhere."
+  },
+  "rollo_lamp": {
+   "file": "rollo_poses/rollo_lamp",
+   "width": 358,
+   "height": 306,
+   "alt": "Rollo pointing at a desk lamp",
+   "sheet": "rollo_poses",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo waving hello; Rollo blowing his whistle; Rollo holding a clipboard, ticking a box; Rollo pointing at a desk lamp; Rollo holding a phone at arm’s length; Rollo sitting very still with eyes closed; Rollo with a wing tip to his beak, saying shh; Rollo celebrating with confetti; Rollo asleep on a pillow; Rollo stretching; Rollo holding a steaming mug; Rollo sprinting. No text, letters or numbers anywhere."
+  },
+  "rollo_mug": {
+   "file": "rollo_poses/rollo_mug",
+   "width": 249,
+   "height": 303,
+   "alt": "Rollo holding a steaming mug",
+   "sheet": "rollo_poses",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo waving hello; Rollo blowing his whistle; Rollo holding a clipboard, ticking a box; Rollo pointing at a desk lamp; Rollo holding a phone at arm’s length; Rollo sitting very still with eyes closed; Rollo with a wing tip to his beak, saying shh; Rollo celebrating with confetti; Rollo asleep on a pillow; Rollo stretching; Rollo holding a steaming mug; Rollo sprinting. No text, letters or numbers anywhere."
+  },
+  "rollo_offline": {
+   "file": "rollo_feel/rollo_offline",
+   "width": 342,
+   "height": 449,
+   "alt": "Rollo with a tangled whistle",
+   "sheet": "rollo_feel",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo’s face looking wrecked and flattened; Rollo’s face tired, with droopy eyes; Rollo’s face okay, a small neutral smile; Rollo’s face good, a big smile; Rollo’s face flying high with joy, little wings out; Rollo looking puzzled with a tangled whistle and lanyard. No text, letters or numbers anywhere."
+  },
+  "rollo_phone": {
+   "file": "rollo_poses/rollo_phone",
+   "width": 296,
+   "height": 299,
+   "alt": "Rollo holding a phone at arm’s length",
+   "sheet": "rollo_poses",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo waving hello; Rollo blowing his whistle; Rollo holding a clipboard, ticking a box; Rollo pointing at a desk lamp; Rollo holding a phone at arm’s length; Rollo sitting very still with eyes closed; Rollo with a wing tip to his beak, saying shh; Rollo celebrating with confetti; Rollo asleep on a pillow; Rollo stretching; Rollo holding a steaming mug; Rollo sprinting. No text, letters or numbers anywhere."
+  },
+  "rollo_shh": {
+   "file": "rollo_poses/rollo_shh",
+   "width": 239,
+   "height": 301,
+   "alt": "Rollo asking for quiet",
+   "sheet": "rollo_poses",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo waving hello; Rollo blowing his whistle; Rollo holding a clipboard, ticking a box; Rollo pointing at a desk lamp; Rollo holding a phone at arm’s length; Rollo sitting very still with eyes closed; Rollo with a wing tip to his beak, saying shh; Rollo celebrating with confetti; Rollo asleep on a pillow; Rollo stretching; Rollo holding a steaming mug; Rollo sprinting. No text, letters or numbers anywhere."
+  },
+  "rollo_sprint": {
+   "file": "rollo_poses/rollo_sprint",
+   "width": 323,
+   "height": 300,
+   "alt": "Rollo sprinting",
+   "sheet": "rollo_poses",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo waving hello; Rollo blowing his whistle; Rollo holding a clipboard, ticking a box; Rollo pointing at a desk lamp; Rollo holding a phone at arm’s length; Rollo sitting very still with eyes closed; Rollo with a wing tip to his beak, saying shh; Rollo celebrating with confetti; Rollo asleep on a pillow; Rollo stretching; Rollo holding a steaming mug; Rollo sprinting. No text, letters or numbers anywhere."
+  },
+  "rollo_still": {
+   "file": "rollo_poses/rollo_still",
+   "width": 257,
+   "height": 300,
+   "alt": "Rollo sitting still with his eyes closed",
+   "sheet": "rollo_poses",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo waving hello; Rollo blowing his whistle; Rollo holding a clipboard, ticking a box; Rollo pointing at a desk lamp; Rollo holding a phone at arm’s length; Rollo sitting very still with eyes closed; Rollo with a wing tip to his beak, saying shh; Rollo celebrating with confetti; Rollo asleep on a pillow; Rollo stretching; Rollo holding a steaming mug; Rollo sprinting. No text, letters or numbers anywhere."
+  },
+  "rollo_stretch": {
+   "file": "rollo_poses/rollo_stretch",
+   "width": 275,
+   "height": 302,
+   "alt": "Rollo stretching",
+   "sheet": "rollo_poses",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo waving hello; Rollo blowing his whistle; Rollo holding a clipboard, ticking a box; Rollo pointing at a desk lamp; Rollo holding a phone at arm’s length; Rollo sitting very still with eyes closed; Rollo with a wing tip to his beak, saying shh; Rollo celebrating with confetti; Rollo asleep on a pillow; Rollo stretching; Rollo holding a steaming mug; Rollo sprinting. No text, letters or numbers anywhere."
+  },
+  "rollo_wave": {
+   "file": "rollo_poses/rollo_wave",
+   "width": 273,
+   "height": 305,
+   "alt": "Rollo waving hello",
+   "sheet": "rollo_poses",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo waving hello; Rollo blowing his whistle; Rollo holding a clipboard, ticking a box; Rollo pointing at a desk lamp; Rollo holding a phone at arm’s length; Rollo sitting very still with eyes closed; Rollo with a wing tip to his beak, saying shh; Rollo celebrating with confetti; Rollo asleep on a pillow; Rollo stretching; Rollo holding a steaming mug; Rollo sprinting. No text, letters or numbers anywhere."
+  },
+  "rollo_whistle": {
+   "file": "rollo_poses/rollo_whistle",
+   "width": 274,
+   "height": 307,
+   "alt": "Rollo blowing his whistle",
+   "sheet": "rollo_poses",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Transparent background. A sprite sheet: exactly 4 columns by 3 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: Rollo waving hello; Rollo blowing his whistle; Rollo holding a clipboard, ticking a box; Rollo pointing at a desk lamp; Rollo holding a phone at arm’s length; Rollo sitting very still with eyes closed; Rollo with a wing tip to his beak, saying shh; Rollo celebrating with confetti; Rollo asleep on a pillow; Rollo stretching; Rollo holding a steaming mug; Rollo sprinting. No text, letters or numbers anywhere."
+  },
+  "sport_climbing": {
+   "file": "sports/sport_climbing",
+   "width": 122,
+   "height": 160,
+   "alt": "climbing icon",
+   "sheet": "sports",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Eight simple bold sport icons in one matching style, indigo with one coral accent. Transparent background. A sprite sheet: exactly 4 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: running shoe; bicycle; swimmer in waves; triathlon: shoe, bicycle wheel and wave together; barbell; rowing oars; football; climbing carabiner. No text, letters or numbers anywhere."
+  },
+  "sport_cycling": {
+   "file": "sports/sport_cycling",
+   "width": 160,
+   "height": 103,
+   "alt": "cycling icon",
+   "sheet": "sports",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Eight simple bold sport icons in one matching style, indigo with one coral accent. Transparent background. A sprite sheet: exactly 4 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: running shoe; bicycle; swimmer in waves; triathlon: shoe, bicycle wheel and wave together; barbell; rowing oars; football; climbing carabiner. No text, letters or numbers anywhere."
+  },
+  "sport_football": {
+   "file": "sports/sport_football",
+   "width": 160,
+   "height": 160,
+   "alt": "football icon",
+   "sheet": "sports",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Eight simple bold sport icons in one matching style, indigo with one coral accent. Transparent background. A sprite sheet: exactly 4 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: running shoe; bicycle; swimmer in waves; triathlon: shoe, bicycle wheel and wave together; barbell; rowing oars; football; climbing carabiner. No text, letters or numbers anywhere."
+  },
+  "sport_lifting": {
+   "file": "sports/sport_lifting",
+   "width": 160,
+   "height": 85,
+   "alt": "lifting icon",
+   "sheet": "sports",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Eight simple bold sport icons in one matching style, indigo with one coral accent. Transparent background. A sprite sheet: exactly 4 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: running shoe; bicycle; swimmer in waves; triathlon: shoe, bicycle wheel and wave together; barbell; rowing oars; football; climbing carabiner. No text, letters or numbers anywhere."
+  },
+  "sport_rowing": {
+   "file": "sports/sport_rowing",
+   "width": 160,
+   "height": 154,
+   "alt": "rowing icon",
+   "sheet": "sports",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Eight simple bold sport icons in one matching style, indigo with one coral accent. Transparent background. A sprite sheet: exactly 4 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: running shoe; bicycle; swimmer in waves; triathlon: shoe, bicycle wheel and wave together; barbell; rowing oars; football; climbing carabiner. No text, letters or numbers anywhere."
+  },
+  "sport_running": {
+   "file": "sports/sport_running",
+   "width": 160,
+   "height": 89,
+   "alt": "running icon",
+   "sheet": "sports",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Eight simple bold sport icons in one matching style, indigo with one coral accent. Transparent background. A sprite sheet: exactly 4 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: running shoe; bicycle; swimmer in waves; triathlon: shoe, bicycle wheel and wave together; barbell; rowing oars; football; climbing carabiner. No text, letters or numbers anywhere."
+  },
+  "sport_swimming": {
+   "file": "sports/sport_swimming",
+   "width": 160,
+   "height": 104,
+   "alt": "swimming icon",
+   "sheet": "sports",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Eight simple bold sport icons in one matching style, indigo with one coral accent. Transparent background. A sprite sheet: exactly 4 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: running shoe; bicycle; swimmer in waves; triathlon: shoe, bicycle wheel and wave together; barbell; rowing oars; football; climbing carabiner. No text, letters or numbers anywhere."
+  },
+  "sport_triathlon": {
+   "file": "sports/sport_triathlon",
+   "width": 160,
+   "height": 119,
+   "alt": "triathlon icon",
+   "sheet": "sports",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Eight simple bold sport icons in one matching style, indigo with one coral accent. Transparent background. A sprite sheet: exactly 4 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: running shoe; bicycle; swimmer in waves; triathlon: shoe, bicycle wheel and wave together; barbell; rowing oars; football; climbing carabiner. No text, letters or numbers anywhere."
+  },
+  "wave_f1": {
+   "file": "rollo_wave_frames/wave_f1",
+   "width": 213,
+   "height": 320,
+   "alt": "",
+   "sheet": "rollo_wave_frames",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Six animation frames of one waving loop. Rollo stays in the same place and size in every frame; only his raised wing moves, from low to high and back. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: wing low; wing rising; wing high; wing higher, tilted out; wing high; wing rising. No text, letters or numbers anywhere."
+  },
+  "wave_f2": {
+   "file": "rollo_wave_frames/wave_f2",
+   "width": 237,
+   "height": 320,
+   "alt": "",
+   "sheet": "rollo_wave_frames",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Six animation frames of one waving loop. Rollo stays in the same place and size in every frame; only his raised wing moves, from low to high and back. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: wing low; wing rising; wing high; wing higher, tilted out; wing high; wing rising. No text, letters or numbers anywhere."
+  },
+  "wave_f3": {
+   "file": "rollo_wave_frames/wave_f3",
+   "width": 229,
+   "height": 320,
+   "alt": "",
+   "sheet": "rollo_wave_frames",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Six animation frames of one waving loop. Rollo stays in the same place and size in every frame; only his raised wing moves, from low to high and back. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: wing low; wing rising; wing high; wing higher, tilted out; wing high; wing rising. No text, letters or numbers anywhere."
+  },
+  "wave_f4": {
+   "file": "rollo_wave_frames/wave_f4",
+   "width": 233,
+   "height": 320,
+   "alt": "",
+   "sheet": "rollo_wave_frames",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Six animation frames of one waving loop. Rollo stays in the same place and size in every frame; only his raised wing moves, from low to high and back. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: wing low; wing rising; wing high; wing higher, tilted out; wing high; wing rising. No text, letters or numbers anywhere."
+  },
+  "wave_f5": {
+   "file": "rollo_wave_frames/wave_f5",
+   "width": 231,
+   "height": 320,
+   "alt": "",
+   "sheet": "rollo_wave_frames",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Six animation frames of one waving loop. Rollo stays in the same place and size in every frame; only his raised wing moves, from low to high and back. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: wing low; wing rising; wing high; wing higher, tilted out; wing high; wing rising. No text, letters or numbers anywhere."
+  },
+  "wave_f6": {
+   "file": "rollo_wave_frames/wave_f6",
+   "width": 234,
+   "height": 320,
+   "alt": "",
+   "sheet": "rollo_wave_frames",
+   "prompt": "Risograph print illustration: two or three ink overprints with visible grain, halftone dots and slight misregistration, like a hand-printed training-camp zine. Inks only: dawn apricot #FFB37A, coral #FF6B5B, deep indigo #2B2A6B, sky teal #3FB8AF, on cream paper #FFF6E9. Flat shapes, bold friendly linework. Not a photograph. No real brands or logos. Rollo: a small, round, cheerful rooster coach. His comb is shaped like a little pulse wave. He wears a coach whistle on a lanyard and a terry-cloth sweatband. Warm, encouraging, a bit dramatic. Keep him exactly like the reference. Six animation frames of one waving loop. Rollo stays in the same place and size in every frame; only his raised wing moves, from low to high and back. Transparent background. A sprite sheet: exactly 3 columns by 2 rows on an invisible even grid. Each item sits fully inside its own cell, centred, with wide empty space around it. Nothing touches, overlaps or crosses a cell edge. No grid lines, no frames, no shadows between cells. Items in order, left to right, top to bottom: wing low; wing rising; wing high; wing higher, tilted out; wing high; wing rising. No text, letters or numbers anywhere."
+  }
+ }
 }

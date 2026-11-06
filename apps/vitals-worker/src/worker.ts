@@ -1,15 +1,17 @@
 /**
- * SDK worker: the only process that touches SmartSpectra native code. The supervisor restarts it
- * if it dies. Every SDK call is documented in docs/SDK_NOTES.md.
+ * One SmartSpectra session in its own process: the only code that touches SDK native code. A crash
+ * here can't take down the API. Frames arrive on a private localhost socket, are handed to the SDK
+ * and discarded. Nothing here writes frames anywhere. Every SDK call is documented in docs/SDK_NOTES.md.
  */
 import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
 import { MetricsNormalizer, type SdkMetrics } from '@rollcall/signals';
+import sharp from 'sharp';
 import { WebSocketServer } from 'ws';
 import {
-  FRAMES_PORT,
   FRAME_HEADER_BYTES,
   FrameClock,
+  JPEG_FORMAT,
   mergeFrames,
   parseFrameHeader,
   type WorkerMessage,
@@ -17,7 +19,6 @@ import {
 
 interface SdkInstance {
   on(event: string, callback: (...args: never[]) => void): SdkInstance;
-  useCamera(selection: unknown, options?: unknown): SdkInstance;
   useCustomInput(transform?: number): SdkInstance;
   start(): void;
   stopAsync(): Promise<void>;
@@ -33,8 +34,8 @@ interface SdkInstance {
 }
 interface SdkModule {
   SmartSpectraSDK: { new (options: Record<string, unknown>): SdkInstance };
-  CameraSelection: { default: unknown };
   ProcessingStatus: { kStarting: number; kRunning: number; kError: number };
+  PixelFormat: { kRGB: number };
   breathingMetrics: number[];
   cardioMetrics: number[];
   faceMetrics: number[];
@@ -77,17 +78,12 @@ function loadSdk(): { sdk: SdkModule; decode: (buf: Buffer) => unknown } | null 
 async function main(): Promise<void> {
   const apiKey = process.env.SMARTSPECTRA_API_KEY;
   if (!apiKey) {
-    send({
-      type: 'status',
-      state: 'no-key',
-      detail: 'Set SMARTSPECTRA_API_KEY in .env (Replay and Sim modes need no key).',
-    });
+    send({ type: 'status', state: 'no-key', detail: 'SMARTSPECTRA_API_KEY is not set.' });
     return;
   }
   const loaded = loadSdk();
   if (!loaded) return;
   const { sdk: mod, decode } = loaded;
-  const inputMode = process.env.HUSH_INPUT === 'camera' ? 'camera' : 'frames';
 
   const sdk = new mod.SmartSpectraSDK({
     apiKey,
@@ -95,12 +91,13 @@ async function main(): Promise<void> {
     requestedMetrics: [...mod.breathingMetrics, ...mod.cardioMetrics, ...mod.faceMetrics],
   });
 
-  let frameSize: { width: number; height: number } | null = null;
+  let frameSizeKnown = false;
   let acceptsFrames = false;
   let lastValidation: number | null = null;
   let sendFailureReported = false;
-  let normalizer = new MetricsNormalizer(frameSize);
+  const normalizer = new MetricsNormalizer();
   const startedAt = performance.now();
+  const now = (): number => Math.round(performance.now() - startedAt);
   let pending: ReturnType<MetricsNormalizer['toFrame']> | null = null;
 
   sdk.on('processingStatus', ((status: number) => {
@@ -118,7 +115,7 @@ async function main(): Promise<void> {
   }) as never);
   sdk.on('validationStatus', ((code: number, _ts: number, hint: string) => {
     normalizer.setValidation(code, hint);
-    // The SDK repeats this for every frame. The game only needs to hear about changes.
+    // The SDK repeats this for every frame. Callers only need to hear about changes.
     if (code === lastValidation) return;
     lastValidation = code;
     send({ type: 'validation', code, hint });
@@ -126,66 +123,85 @@ async function main(): Promise<void> {
   sdk.on('metrics', ((buf: Buffer) => {
     const decoded = decode(buf);
     if (Buffer.isBuffer(decoded)) return;
-    const frame = normalizer.toFrame(
-      decoded as SdkMetrics,
-      Math.round(performance.now() - startedAt),
-    );
-    pending = mergeFrames(pending, frame);
+    pending = mergeFrames(pending, normalizer.toFrame(decoded as SdkMetrics, now()));
   }) as never);
   sdk.on('error', ((code: number, message: string, retryable: boolean) => {
     send({ type: 'error', code, message, retryable });
-    // A session in kError stays there, so a network blip would end Live mode for good. Exiting lets
-    // the supervisor start a fresh worker, and it gives up after repeated failures.
+    // A session in kError stays there, so exit and let the broker decide whether to start another.
     if (code !== KEY_REJECTED && code !== OUT_OF_CREDIT && code !== INVALID_STATE) {
       setTimeout(() => process.exit(1), 200);
     }
   }) as never);
 
+  // The SDK sends no metrics until it finds a face (probed), so a heartbeat carries the validation
+  // state, or the check-in could never tell the athlete what's wrong.
   setInterval(() => {
-    if (pending) {
-      send({ type: 'frame', frame: pending });
-      pending = null;
-    }
+    send({ type: 'frame', frame: pending ?? normalizer.heartbeat(now()) });
+    pending = null;
   }, 100);
 
-  if (inputMode === 'camera') {
-    sdk.useCamera(mod.CameraSelection.default);
-    sdk.start();
-  } else {
-    sdk.useCustomInput();
-    sdk.start();
-    const server = new WebSocketServer({ host: '127.0.0.1', port: FRAMES_PORT, maxPayload: 16e6 });
-    const clock = new FrameClock();
-    server.on('connection', (socket) => {
-      socket.on('message', (data: Buffer) => {
-        if (!acceptsFrames) return;
-        const header = parseFrameHeader(data);
-        if (!header) return;
-        if (!frameSize || frameSize.width !== header.width) {
-          frameSize = { width: header.width, height: header.height };
-          normalizer = new MetricsNormalizer(frameSize);
-        }
-        const timestampUs = clock.next(header.timestampUs);
+  const server = new WebSocketServer({ host: '127.0.0.1', port: 0, maxPayload: 16e6 });
+  await new Promise<void>((resolve) => server.once('listening', resolve));
+  const clock = new FrameClock();
+
+  const push = (buf: Uint8Array, w: number, h: number, stride: number, fmt: number, ts: number): void => {
+    if (!frameSizeKnown) {
+      frameSizeKnown = true;
+      normalizer.setFrameSize({ width: w, height: h });
+    }
+    try {
+      sdk.sendFrame(buf, w, h, stride, fmt, ts);
+    } catch (err) {
+      // One bad frame must not end the session. Say so once, not 30 times a second.
+      if (!sendFailureReported) {
+        sendFailureReported = true;
+        send({ type: 'status', state: 'frame-rejected', detail: (err as Error).message });
+      }
+    }
+  };
+
+  server.on('connection', (socket) => {
+    // JPEG decoding is asynchronous, so frames go through a queue to stay in order.
+    let queue: Promise<void> = Promise.resolve();
+    let queued = 0;
+    socket.on('message', (data: Buffer) => {
+      if (!acceptsFrames) return;
+      const header = parseFrameHeader(data);
+      if (!header) return;
+      const timestampUs = clock.next(header.timestampUs);
+      const body = data.subarray(FRAME_HEADER_BYTES);
+      if (header.pixelFormat !== JPEG_FORMAT) {
+        push(body, header.width, header.height, header.stride, header.pixelFormat, timestampUs);
+        return;
+      }
+      // Late frames are worthless, so fall behind by dropping rather than queueing without limit.
+      if (queued > 5) return;
+      queued++;
+      queue = queue.then(async () => {
         try {
-          sdk.sendFrame(
-            data.subarray(FRAME_HEADER_BYTES),
-            header.width,
-            header.height,
-            header.stride,
-            header.pixelFormat,
-            timestampUs,
-          );
-        } catch (err) {
-          // One bad frame must not end the session. Say so once, not 30 times a second.
-          if (!sendFailureReported) {
-            sendFailureReported = true;
-            send({ type: 'status', state: 'frame-rejected', detail: (err as Error).message });
-          }
+          const { data: rgb, info } = await sharp(body)
+            .removeAlpha()
+            .raw()
+            .toBuffer({ resolveWithObject: true });
+          push(rgb, info.width, info.height, info.width * 3, mod.PixelFormat.kRGB, timestampUs);
+        } catch {
+          /* A corrupt frame is skipped. */
+        } finally {
+          queued--;
         }
       });
     });
-  }
-  send({ type: 'status', state: 'starting', detail: inputMode });
+  });
+
+  const address = server.address();
+  send({
+    type: 'ready',
+    framesPort: typeof address === 'object' && address ? address.port : 0,
+  });
+
+  sdk.useCustomInput();
+  sdk.start();
+  send({ type: 'status', state: 'starting' });
 
   const shutdown = async (): Promise<void> => {
     try {

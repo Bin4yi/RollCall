@@ -269,3 +269,16 @@ describe('Recorder', () => {
     expect(parseSession(r.toJsonl()).frames[0]?.pulse?.bpm).toBe(70);
   });
 });
+
+describe('MetricsNormalizer.heartbeat', () => {
+  it('carries validation state before the SDK has metrics', () => {
+    const n = new MetricsNormalizer();
+    n.setValidation(1, 'No face found.');
+    expect(n.heartbeat(500)).toEqual({
+      t: 500,
+      source: 'live',
+      facePresent: false,
+      quality: { ok: false, reason: 'No face found.', code: 1 },
+    });
+  });
+});
