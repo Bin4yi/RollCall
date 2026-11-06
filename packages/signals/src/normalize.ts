@@ -27,7 +27,15 @@ export interface SdkMetrics {
   cardio?: {
     pulseRate?: SdkMeasurement[];
     arterialPressureTrace?: SdkMeasurement[];
-    hrv?: { rmssd?: number; confidence?: number; stable?: boolean; timestamp?: unknown }[];
+    hrv?: {
+      rmssd?: number;
+      sdnn?: number;
+      meanNn?: number;
+      baevsky?: number;
+      confidence?: number;
+      stable?: boolean;
+      timestamp?: unknown;
+    }[];
   };
   face?: {
     landmarks?: { value?: { x?: number; y?: number }[]; timestamp?: unknown }[];
@@ -159,7 +167,13 @@ export class MetricsNormalizer {
 
     const hrv = metrics.cardio?.hrv?.at(-1);
     if (hrv?.rmssd !== undefined) {
-      frame.hrv = { value: hrv.rmssd, unit: 'ms', conf: conf01(hrv.confidence) };
+      frame.hrv = {
+        rmssd: hrv.rmssd,
+        sdnn: hrv.sdnn,
+        meanNn: hrv.meanNn,
+        baevsky: hrv.baevsky,
+        conf: conf01(hrv.confidence),
+      };
     }
 
     const face = metrics.face;

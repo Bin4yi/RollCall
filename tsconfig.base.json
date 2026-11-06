@@ -11,9 +11,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "skipLibCheck": true,
-    "composite": true,
-    "emitDeclarationOnly": true,
-    "declaration": true,
-    "outDir": "dist"
+    "noEmit": true
   }
 }

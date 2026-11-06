@@ -204,6 +204,12 @@ importers:
         specifier: ^8.18.0
         version: 8.18.2
 
+  packages/readiness:
+    dependencies:
+      '@rollcall/signals':
+        specifier: workspace:*
+        version: link:../signals
+
   packages/signals:
     dependencies:
       zod:

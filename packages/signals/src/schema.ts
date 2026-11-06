@@ -7,7 +7,7 @@ const waveform = z.object({
   stable: z.boolean().optional(),
 });
 
-/** The one signal contract between every source and the engine. See docs/SDK_NOTES.md. */
+/** The one signal contract between every source and the check-in logic. See docs/SDK_NOTES.md. */
 export const VitalsFrameSchema = z.object({
   t: z.number().nonnegative(),
   source: z.enum(['live', 'replay', 'sim']),
@@ -32,8 +32,16 @@ export const VitalsFrameSchema = z.object({
     })
     .optional(),
   breathTrace: waveform.optional(),
+  /** SDK `cardio.hrv[]`. Units are not stated in the SDK docs; see docs/SDK_NOTES.md. */
   hrv: z
-    .object({ value: z.number(), unit: z.string(), conf: z.number().min(0).max(1).optional() })
+    .object({
+      rmssd: z.number(),
+      sdnn: z.number().optional(),
+      meanNn: z.number().optional(),
+      /** Baevsky Stress Index. Only meaningful against the same person's own usual. */
+      baevsky: z.number().optional(),
+      conf: z.number().min(0).max(1),
+    })
     .optional(),
   expression: z.record(z.string(), z.number()).optional(),
   talking: z.boolean().optional(),
@@ -52,7 +60,7 @@ export const VitalsFrameSchema = z.object({
 export type VitalsFrame = z.infer<typeof VitalsFrameSchema>;
 export type SourceKind = VitalsFrame['source'];
 
-/** Parse JSONL text. Malformed lines are skipped and counted, never thrown at the game. */
+/** Parse JSONL text. Malformed lines are skipped and counted, never thrown at the caller. */
 export function parseSession(jsonl: string): { frames: VitalsFrame[]; skipped: number } {
   const frames: VitalsFrame[] = [];
   let skipped = 0;

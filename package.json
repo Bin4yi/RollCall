@@ -3,7 +3,9 @@
   "private": true,
   "type": "module",
   "packageManager": "pnpm@12.18.0",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "pnpm --parallel --filter @rollcall/api --filter @rollcall/web dev",
     "build": "pnpm --filter @rollcall/web build",
@@ -12,7 +14,7 @@
     "sessions:gen": "tsx tools/seed/gen-sessions.ts",
     "seed": "tsx tools/seed/seed.ts",
     "assets:forge": "tsx tools/asset-forge/forge.ts",
-    "typecheck": "tsc -b --pretty",
+    "typecheck": "pnpm -r --workspace-concurrency=4 typecheck",
     "lint": "eslint .",
     "format": "prettier --write .",
     "test": "vitest run",

@@ -29,6 +29,9 @@ export interface BodyState {
   /** 0..1 measurement confidence, standing in for lighting and framing quality. */
   signalQuality: number;
   qualityReason?: string;
+  qualityCode?: number;
+  rmssd: number;
+  baevsky: number;
 }
 
 export const restingBody = (): BodyState => ({
@@ -41,6 +44,8 @@ export const restingBody = (): BodyState => ({
   headMotion: 0.002,
   fear: 0,
   signalQuality: 0.9,
+  rmssd: 52,
+  baevsky: 85,
 });
 
 const TRACE_HZ = 30;
@@ -120,8 +125,12 @@ export class BodySynth {
       quality: present
         ? quality >= 0.45
           ? { ok: true }
-          : { ok: false, reason: b.qualityReason ?? 'Add light in front of your face.' }
-        : { ok: false, reason: 'No face found. Face the camera.' },
+          : {
+              ok: false,
+              reason: b.qualityReason ?? 'Increase light on face.',
+              code: b.qualityCode ?? 5,
+            }
+        : { ok: false, reason: 'No face found.', code: 1 },
       talking: present && b.talking,
       blink: present && this.rng() < 0.03,
     };
@@ -144,7 +153,14 @@ export class BodySynth {
       hz: TRACE_HZ,
       stable: breathConf >= 0.45,
     };
-    frame.hrv = { value: 42, unit: 'ms', conf: elapsed < 60 ? 0 : quality };
+    const nn = 60000 / Math.max(30, this.pulseWindow);
+    frame.hrv = {
+      rmssd: round(b.rmssd, 1),
+      sdnn: round(b.rmssd * 1.25, 1),
+      meanNn: round(nn, 1),
+      baevsky: round(b.baevsky, 1),
+      conf: elapsed < 60 ? 0 : quality,
+    };
     frame.expression = { neutral: round(1 - b.fear, 2), fear: round(b.fear, 2), surprise: 0 };
     frame.head = { x: round(this.headX, 4), y: round(this.headY, 4), scale: 0.3 };
     return frame;
@@ -156,10 +172,7 @@ function round(v: number, places: number): number {
   return Math.round(v * m) / m;
 }
 
-/**
- * Keyboard simulation: ↑/↓ pulse, B panting, S slow breathing, T talk, F flinch, L lose face,
- * M move head. Keys are fed in with `key()`/`keyUp()` so this class stays DOM-free.
- */
+/** Simulated source driven by a BodyState that callers can change while it runs. */
 export class SimSource implements SignalSource {
   readonly kind = 'sim' as const;
   readonly label = 'SIM';
@@ -167,13 +180,10 @@ export class SimSource implements SignalSource {
   private bus: SignalBus | null = null;
   private readonly synth: BodySynth;
   private carry = 0;
-  private flinchLeft = 0;
-  private held = new Set<string>();
-  /** Target resting values the pulse drifts back towards when no key is held. */
-  private targetPulse = 70;
 
-  constructor(seed = 1) {
+  constructor(seed = 1, initial: Partial<BodyState> = {}) {
     this.synth = new BodySynth(seed);
+    Object.assign(this.synth.body, initial);
   }
 
   get body(): BodyState {
@@ -185,44 +195,13 @@ export class SimSource implements SignalSource {
     this.status = 'streaming';
   }
 
-  key(code: string): void {
-    this.held.add(code);
-    if (code === 'KeyF') this.flinchLeft = 0.6;
-    if (code === 'KeyL') this.synth.body.facePresent = !this.synth.body.facePresent;
-    if (code === 'KeyQ')
-      this.synth.body.signalQuality = this.synth.body.signalQuality > 0.5 ? 0.15 : 0.9;
-  }
-
-  keyUp(code: string): void {
-    this.held.delete(code);
-  }
-
   advance(dtMs: number): void {
     if (!this.bus) return;
     this.carry += dtMs;
     while (this.carry >= 100) {
       this.carry -= 100;
-      this.applyKeys();
       this.bus.publish(this.synth.step('sim'));
     }
-  }
-
-  private applyKeys(): void {
-    const b = this.synth.body;
-    if (this.held.has('ArrowUp')) this.targetPulse = Math.min(150, this.targetPulse + 1.5);
-    if (this.held.has('ArrowDown')) this.targetPulse = Math.max(50, this.targetPulse - 1.5);
-    b.pulseBpm += (this.targetPulse - b.pulseBpm) * 0.05;
-
-    const panting = this.held.has('KeyB');
-    const slow = this.held.has('KeyS');
-    const targetBreath = panting ? 30 : slow ? 7 : 14;
-    b.breathBpm += (targetBreath - b.breathBpm) * 0.08;
-    b.breathJitter = panting ? 0.3 : 0.04;
-    b.talking = this.held.has('KeyT');
-
-    this.flinchLeft = Math.max(0, this.flinchLeft - 0.1);
-    b.fear = this.flinchLeft > 0 ? 0.8 : 0;
-    b.headMotion = this.held.has('KeyM') || this.flinchLeft > 0 ? 0.05 : 0.002;
   }
 
   stop(): void {

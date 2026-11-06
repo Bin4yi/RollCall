@@ -85,19 +85,33 @@ describe('SimSource', () => {
     expect(got[305]?.breath?.conf).toBeGreaterThan(0.45);
   });
 
-  it('keys change the body', () => {
+  it('changing the body changes the frames', () => {
     const bus = new SignalBus();
     const got = collect(bus);
     const sim = new SimSource(7);
     sim.start(bus);
-    sim.key('KeyT');
-    sim.key('KeyL');
+    sim.body.talking = true;
+    sim.body.facePresent = false;
     sim.advance(200);
     expect(got.at(-1)?.facePresent).toBe(false);
-    sim.key('KeyL');
+    sim.body.facePresent = true;
     sim.advance(100);
     expect(got.at(-1)?.talking).toBe(true);
     expect(got.at(-1)?.facePresent).toBe(true);
+  });
+
+  it('reports every HRV field once its 60 s window fills', () => {
+    const bus = new SignalBus();
+    const got = collect(bus);
+    const sim = new SimSource(7, { rmssd: 40, baevsky: 120 });
+    sim.start(bus);
+    sim.advance(61_000);
+    expect(got[100]?.hrv?.conf).toBe(0);
+    const { rmssd, baevsky, sdnn, meanNn, conf } = got.at(-1)!.hrv!;
+    expect([rmssd, baevsky]).toEqual([40, 120]);
+    expect(sdnn).toBeGreaterThan(0);
+    expect(meanNn).toBeGreaterThan(0);
+    expect(conf).toBeGreaterThan(0.5);
   });
 });
 
