@@ -34,3 +34,6 @@ recordings/
 *.log
 .DS_Store
 Thumbs.db
+
+# Generated test clips: large, and kept out of git until chosen for the demo
+data/pose-videos/
