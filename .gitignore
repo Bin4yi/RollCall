@@ -38,3 +38,6 @@ Thumbs.db
 # Generated test clips: large, and kept out of git until chosen for the demo
 data/pose-videos/
 video/
+
+# The DEV post is drafted locally and published on DEV
+docs/devpost.md
