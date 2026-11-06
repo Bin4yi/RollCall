@@ -4,7 +4,7 @@ Checked 2026-11-06 against `Presage-Security/SmartSpectra` commit `b8e8194` (202
 
 **Dev machine:** Windows 11 Home, Intel i7-1195G7, Iris Xe + GeForce MX350, Node 24.16, one built-in webcam.
 
-**Verified live so far:** a real session reached `kRunning` on the built-in webcam at 30 fps, with talking detection and breathing samples arriving. **No pulse, breathing rate or HRV value has been seen from a real person yet.** See [Open questions](#open-questions).
+**Verified live so far:** a real session reached `kRunning` on the built-in webcam at 30 fps, with talking detection and breathing samples arriving. The rewritten worker then ran through the whole app against the real SDK with a fake camera, on raw and JPEG frames, and its "no face" validation reached the check-in screen. **No pulse, breathing rate or HRV value has been seen from a real person yet.** See [Open questions](#open-questions).
 
 ## Facts the brief asked to verify
 
@@ -13,7 +13,7 @@ Checked 2026-11-06 against `Presage-Security/SmartSpectra` commit `b8e8194` (202
 | Pulse: 12 s average, 40–110 bpm, with confidence | **Confirmed** | [model cards](https://github.com/Presage-Security/SmartSpectra/blob/main/docs/model-cards-and-limitations.md) |
 | Breathing: 30 s average, 5–40/min, with confidence | **Confirmed** | same |
 | HRV: 60 s window, mean NN, RMSSD, SDNN, Baevsky | **Confirmed.** Fields are `rmssd`, `sdnn`, `meanNn`, `baevsky`, `confidence`, `stable`. Units are **not stated** | [metrics.md](https://github.com/Presage-Security/SmartSpectra/blob/main/nodejs/docs/metrics.md), [measurement-quality.md](https://github.com/Presage-Security/SmartSpectra/blob/main/docs/measurement-quality.md) |
-| Stress index read against the user's own baseline | Taken from the brief. I didn't find this wording in the pages I read, so treat it as our rule | not found |
+| Stress index read against the user's own baseline | **Confirmed**: "Interpret it relative to a subject's own baseline rather than as an absolute score" | [model cards](https://github.com/Presage-Security/SmartSpectra/blob/main/docs/model-cards-and-limitations.md) |
 | Breathing traces, lower needs the waistline | **Confirmed** | [data-types.md](https://github.com/Presage-Security/SmartSpectra/blob/main/docs/data-types.md) |
 | Pulse waveform is relative, not blood pressure | **Confirmed**: uncalibrated, unitless | same |
 | 478 landmarks, blink, talking, 8 expressions | **Confirmed** | same |
@@ -75,7 +75,9 @@ Validation codes, from the SDK's `index.d.ts`: 1 no face, 2 multiple faces, 3 no
 - **`sendFrame()` throws outside `kStarting`/`kRunning`** with "not in a valid state". Uncaught, it kills the process. The worker gates and catches.
 - **A stall over 2 s ends the session unless handled.** The SDK logs `timestamp gap ... exceeds 2 s threshold` and rejects the frame, and its reference doesn't move, so all later frames fail too. `FrameClock` closes up stalls.
 - **The SDK needs a steady connection.** Its requests time out after about 3 s (`Connection timed out after 3003 milliseconds`). `Usage verification failed. Status code: 0` repeats, then raises `kNetworkError` (5), which cancels model downloads. On Wi-Fi with up to 50% packet loss, sessions failed about every 15 s. Presage's model cache folders stayed empty, so models may be downloading again each start. Unproven whether the downloads were themselves saturating the link.
-- **A session in `kError` stays there.** The worker exits and the broker restarts it, up to 3 times.
+- **A session in `kError` stays there.** The worker exits and the broker restarts it, up to 6 times. A restart loses the measurement windows, so the check-in resets to framing.
+- **`kProcessingFailed` (8) about every 15 s with no face in view.** Seen with Chromium's fake camera on a healthy connection, four times in a row. The docs don't describe this code. A session with a real face ran for over a minute without it, so "no face for 15 s" is my best guess, not a documented rule. It may also explain part of the earlier loop I put down to the network. `Model load failed ... Callback aborted` then appears when a session stops mid-download, so it's likely a result rather than a cause.
+- **Validation before the first event is unknown, not OK.** Assuming OK let a restarted session start counting with nobody in frame. The normaliser now starts as "camera tuning".
 - **No metrics until a face is found.** With no face, only validation events arrive, so the worker sends heartbeat frames carrying the validation state.
 - **Rejected keys:** a 401 is logged but doesn't reliably raise `error`, so the broker reads the worker's stderr.
 - `decodeMetrics` must come from `@smartspectra/node-sdk/messages` ([headless-testing-in-ci.md](https://github.com/Presage-Security/SmartSpectra/blob/main/docs/headless-testing-in-ci.md)).
@@ -96,4 +98,5 @@ Answer these on the first good live session:
 - [ ] Does iPhone Safari keep up at about 30 fps through the canvas path? Only Chromium has been tested
 - [ ] Credits used per check-in (compare the portal before and after)
 - [ ] Do models cache after one complete download, and does that make weak connections workable?
+- [ ] Does `kProcessingFailed` go away with a real face in view?
 - [ ] Do Presage's terms allow server use?

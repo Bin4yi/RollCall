@@ -271,6 +271,13 @@ describe('Recorder', () => {
 });
 
 describe('MetricsNormalizer.heartbeat', () => {
+  it('is not OK until the SDK has reported something', () => {
+    const n = new MetricsNormalizer();
+    expect(n.heartbeat(0).quality).toEqual({ ok: false, code: 10 });
+    n.toFrame({}, 100);
+    expect(n.heartbeat(200).quality).toEqual({ ok: true });
+  });
+
   it('carries validation state before the SDK has metrics', () => {
     const n = new MetricsNormalizer();
     n.setValidation(1, 'No face found.');

@@ -203,6 +203,8 @@ export function attachSockets(server: Server, db: Db, env: Env, today: () => str
         fail(friendly);
         return;
       }
+      // A restarted SDK has lost its measurement windows, so the seconds so far no longer count.
+      if (state === 'restarting') session.restart();
       send(ws, { type: 'status', state });
     };
 

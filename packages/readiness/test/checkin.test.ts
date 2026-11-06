@@ -74,6 +74,18 @@ describe('CheckinSession', () => {
     expect(run(session, 1, (f) => ({ ...f, facePresent: false }), synth).pause).toBe('no-face');
   });
 
+  it('starts again from framing when the SDK restarts, keeping no old readings', () => {
+    const session = new CheckinSession();
+    const synth = new BodySynth(3);
+    run(session, 40, undefined, synth);
+    expect(session.progress().seconds).toBeGreaterThan(30);
+    session.restart();
+    expect(session.progress().phase).toBe('framing');
+    expect(session.progress().seconds).toBe(0);
+    expect(session.result().pulse).toBeUndefined();
+    expect(run(session, 80, undefined, synth).phase).toBe('done');
+  });
+
   it('times out instead of running forever', () => {
     const session = new CheckinSession();
     const p = run(session, 185, (f) => ({ ...f, facePresent: false }));

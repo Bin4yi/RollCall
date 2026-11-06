@@ -18,7 +18,8 @@ export interface VitalsStream {
 }
 
 const WORKER = resolve(REPO_ROOT, 'apps/vitals-worker/src/worker.ts');
-const MAX_RESTARTS = 3;
+/** The SDK stopped about every 15 s with no face in view (probed), so this allows about 90 s to get framed. */
+const MAX_RESTARTS = 6;
 const START_TIMEOUT_MS = 45_000;
 const AUTH_FAILED = /Invalid or missing API key|Status code: 401|API key or OAuth setup is correct/;
 const LOG_NOISE = /inference_feedback_manager|absl::InitializeLog|timestamp gap/;

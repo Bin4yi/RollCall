@@ -39,7 +39,7 @@ Replay and sim go through the same `CheckinSession`, on the server, so they beha
 
 ## Why a separate process per session
 
-The SDK's native state is process-global, and a native crash must not end anyone else's check-in. A worker in `kError` exits, and the broker starts another, up to 3 times. `MAX_LIVE_SESSIONS` limits how many run at once.
+The SDK's native state is process-global, and a native crash must not end anyone else's check-in. A worker in `kError` exits, and the broker starts another, up to 6 times. A restart loses the SDK's measurement windows, so the check-in goes back to framing and its clock resets. `MAX_LIVE_SESSIONS` limits how many run at once.
 
 ## Frame formats
 

@@ -304,7 +304,8 @@ export function DetailPage({ session }: { session: CoachSession }) {
           </Suspense>
           <Sessions detail={detail} />
         </div>
-        <div>
+        {/* On a phone the decision comes first: the reasons above it are usually enough. */}
+        <div className="order-first lg:order-none">
           <Decide detail={detail} onSent={load} />
           <Notes key={athlete.notes} detail={detail} />
           {detail.messages.length > 0 && (

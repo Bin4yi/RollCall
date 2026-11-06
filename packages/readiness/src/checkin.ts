@@ -96,6 +96,22 @@ export class CheckinSession {
     this.target = kind === 'settle' ? CHECKIN.settleSeconds : CHECKIN.morningSeconds;
   }
 
+  /**
+   * The SDK restarted, so its measurement windows are gone. Back to framing with a clean slate:
+   * every reading must have a full, unbroken window behind it.
+   */
+  restart(): void {
+    if (this.phase === 'done' || this.phase === 'timed-out') return;
+    this.phase = 'framing';
+    this.good = 0;
+    this.framingOk = 0;
+    this.talkRun = 0;
+    this.pulses.length = 0;
+    this.breaths.length = 0;
+    this.latestHrv = null;
+    this.outOfRange = false;
+  }
+
   ingest(frame: VitalsFrame): CheckinProgress {
     const dt = this.lastT === null ? 0 : Math.max(0, (frame.t - this.lastT) / 1000);
     this.lastT = frame.t;

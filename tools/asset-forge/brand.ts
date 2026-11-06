@@ -12,7 +12,6 @@ const OUT = resolve(ROOT, 'apps/web/public/brand');
 mkdirSync(OUT, { recursive: true });
 
 const INDIGO = '#2B2A6B';
-const CREAM = '#FFF6E9';
 
 const dawn = (w: number, h: number): Buffer =>
   Buffer.from(`<svg width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg">
@@ -91,6 +90,4 @@ await card(1000, 420, 'dev-cover.png');
 await card(1280, 720, 'youtube-thumb.png', 'Every athlete, checked in by sunrise.');
 await card(1080, 1620, 'poster.png', 'Every athlete, checked in by sunrise.');
 
-// A cream plate for anywhere the logo sits on the dark board header.
-await sharp({ create: { width: 8, height: 8, channels: 3, background: CREAM } }).png().toFile(resolve(OUT, 'cream.png'));
 console.log('Brand kit written to', OUT);

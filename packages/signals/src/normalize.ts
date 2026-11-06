@@ -108,7 +108,12 @@ export class MetricsNormalizer {
   private lastTraceTs = -Infinity;
   private plethHz = 30;
   private traceHz = 30;
-  private validation: { ok: boolean; reason?: string; code?: number } = { ok: true };
+  /**
+   * Not OK until the SDK says otherwise (code 10 is "camera tuning"). Assuming OK let a freshly
+   * restarted session count seconds with nobody in front of the camera (probed).
+   */
+  private validation: { ok: boolean; reason?: string; code?: number } = { ok: false, code: 10 };
+  private validationKnown = false;
   private facePresent = true;
 
   constructor(private frameSize: { width: number; height: number } | null = null) {}
@@ -119,6 +124,7 @@ export class MetricsNormalizer {
 
   /** Feed `validationStatus` events; code 0 is kOk and code 1 is kNoFaceFound. */
   setValidation(code: number, hint: string): void {
+    this.validationKnown = true;
     this.validation = code === 0 ? { ok: true } : { ok: false, reason: hint, code };
     this.facePresent = code !== 1;
   }
@@ -129,6 +135,8 @@ export class MetricsNormalizer {
   }
 
   toFrame(metrics: SdkMetrics, tMs: number): VitalsFrame {
+    // Metrics flowing with no complaint from the SDK means conditions are fine.
+    if (!this.validationKnown) this.validation = { ok: true };
     const frame: VitalsFrame = {
       t: tMs,
       source: 'live',

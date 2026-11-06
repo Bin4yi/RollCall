@@ -32,6 +32,8 @@ test.describe('Judge Mode', () => {
     await page.goto('/');
     await expect(page.getByRole('heading', { name: 'Every athlete, checked in by sunrise.' })).toBeVisible();
     await expect(page.getByText('not a medical device')).toBeVisible();
+    // Let the logo finish fading in.
+    await page.waitForTimeout(800);
     await shot(page, 'landing', info.project.name);
     await noA11yProblems(page, 'landing');
   });
