@@ -428,4 +428,18 @@ export const CATALOG: Sheet[] = [
     maxSide: 1024,
     referenceOnly: true,
   },
+  {
+    // Background for the DEV banner and YouTube thumbnail. Words are added in code, in the real brand font.
+    id: 'promo_wide',
+    prompt: `${STYLE} ${ROLLO} Wide promotional scene for a phone app, matching the reference character. On the right side of the frame, a smartphone propped on a low wooden post at a running track at dawn, its screen glowing with a big halftone rising sun and a heartbeat wave. Rollo stands beside the phone, excited, pointing a wing at it. A huge halftone sun rises behind them, and the horizon line is a heartbeat wave. The entire left half of the image is calm open sky with soft rays and nothing else in it. Bold, simple shapes that read at small sizes. ${NO_TEXT}`,
+    size: '1536x1024',
+    quality: 'medium',
+    transparent: false,
+    cols: 0,
+    rows: 0,
+    sprites: [{ id: 'promo_wide', alt: '' }],
+    refs: ['rollo_sheet'],
+    maxSide: 1536,
+    referenceOnly: true,
+  },
 ];
