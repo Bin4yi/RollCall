@@ -53,6 +53,26 @@ A state machine on one key joint angle, per exercise (`packages/pose/src/exercis
 - **Logic:** unit tests on generated stick-figure sessions, which are clearly labelled synthetic. They prove the maths and state machines, not accuracy on a real body.
 - **Real MediaPipe, live path:** `apps/web/e2e/live-pose.spec.ts` feeds a generated photo of a fictional person, slid up and down, through Chromium's fake camera. The model loads under the page's security policy, finds the whole body, detects jumps, and only numbers are saved. Software rendering here gave about 3 fps, so every jump was correctly rejected as "too few frames". That also shows the app refuses to measure when the frame rate is too low.
 - **Real MediaPipe, virtual 30 fps clock:** the same photo through the real model, frame by frame. A true 500 ms flight read **481 and 483 ms**: a small, consistent under-read (about 7% in height, because the threshold sits above the floor), with about 0.4% between jumps. Both passed the checks. A sliding photo has no knee bend or arm swing, so this checks landmark noise, not real jumps.
+- **Real MediaPipe on AI-generated clips (16 clips, 10 s, 24 fps):** run with `extract-poses.spec.ts`, scored by `pnpm videos:report`. AI video doesn't follow real physics or timing, so this checks tracking and counting, never accuracy.
+
+  | Clip | Expected | Got |
+  |---|---|---|
+  | Good jumps | Valid | 2 valid |
+  | Hands off hips | Rejected | Rejected, correct reason |
+  | Tucked landing | Tucked | Rejected, but as "methods disagree" |
+  | Side squats, goblet squats | 6 reps | 6 and 6 |
+  | Shallow squats | Partials or depth cue | 2 reps with depth cue, 2 partials |
+  | Push-ups | 6 reps, fatigue stop | 5 reps and 1 partial, fatigue stop at rep 5 |
+  | Balance | Timed, with sway | Timed, with sway |
+  | Plank | Hold, sag | Held 7.3 s, 15% sag, ankles often not seen |
+  | **Lunges** | 6 reps | **2** |
+  | **Glute bridges** | 6 reps | **0** |
+  | **Overhead press** | 6 reps | **1, plus 6 partials** |
+  | **Knees caving** | Flagged | **Not flagged** (depth was) |
+  | **Sagging push-ups** | Flagged | **Not flagged** |
+  | **Bad framing** | "Feet cut off" hint | **Hint never fired.** The clip's feet are in frame, so this may be the clip, not the code |
+
+  So lunge, bridge, press and the two form checks don't work on real landmarks yet, even though they pass on the stick figure. The demo video leaves them out.
 - **Not tested:** a real person jumping or training, reps on real landmarks, real phones, real frame rates, and how well any threshold here suits real bodies. Record sessions at `/record-pose` to change that.
 
 ## Approach credit
