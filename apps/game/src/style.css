@@ -366,6 +366,10 @@ input[type='range'] {
   color: var(--amber);
 }
 
+.subtitle .tape {
+  color: #fff;
+}
+
 .subtitle .lull {
   color: var(--ink);
 }
@@ -493,6 +497,10 @@ input[type='range'] {
 .report button:hover:not(:disabled) {
   background: #443b29;
   border-color: #443b29;
+}
+
+.report .notice {
+  color: #4a412f;
 }
 
 .report .legend {

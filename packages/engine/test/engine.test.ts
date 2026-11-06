@@ -650,6 +650,31 @@ describe('Run', () => {
     expect(run.task!.left).toBeCloseTo(left, 5);
   });
 
+  it('pressing hide repeatedly does not delay getting into cover', () => {
+    const run = start();
+    expect(run.hide()).toBe(true);
+    expect(run.hide()).toBe(false);
+    for (let i = 0; i < 15 && !run.hidden; i++) {
+      run.hide();
+      run.tick(DT);
+    }
+    expect(run.hidden).toBe(true);
+  });
+
+  it('the autopilot is in cover when the Listener arrives', () => {
+    const run = new Run(config, { difficulty: 'standard', seed: 2 });
+    const next = liveSynth(() => {}, 2);
+    const hiddenAtStart: boolean[] = [];
+    for (let i = 0; i < 4000 && !run.finished; i++) {
+      run.ingest(next());
+      autopilot(run);
+      for (const e of run.tick(DT))
+        if (e.kind === 'encounter_start') hiddenAtStart.push(run.hidden);
+    }
+    expect(hiddenAtStart.length).toBeGreaterThan(0);
+    expect(hiddenAtStart.every(Boolean)).toBe(true);
+  });
+
   it('cannot move during an encounter', () => {
     const run = start();
     run.listener.forceSearch('desk', 20);

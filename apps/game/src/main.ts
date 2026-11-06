@@ -596,8 +596,7 @@ class GameSession {
     return { distance, pan };
   }
 
-  private say(kind: 'listener' | 'lull', text: string, seconds = 5): void {
-    if (!settings.subtitles && kind === 'lull') return;
+  private say(kind: 'listener' | 'lull' | 'tape', text: string, seconds = 5): void {
     if (settings.subtitles) {
       const line = el('span', {
         className: kind,
@@ -759,7 +758,7 @@ class GameSession {
       this.tapeClock += dt;
       if (this.tapeLine !== index + 1) {
         this.tapeLine = index + 1;
-        this.say('lull', `[${tape.title}] "${tape.lines[index]}"`, 12);
+        this.say('tape', `[${tape.title}] "${tape.lines[index]}"`, 12);
       }
     } else {
       this.tapeLine = 0;
@@ -916,9 +915,11 @@ class GameSession {
     if (this.taskEl) {
       const text = moving
         ? `Walking to ${ROOM_NAMES[moving]}...`
-        : task
-          ? `${task.kind === 'tape' ? 'Tape playing' : 'Working the fuse loose'}: ${Math.ceil(task.left)} s`
-          : '';
+        : run.isHiding
+          ? 'Getting into cover...'
+          : task
+            ? `${task.kind === 'tape' ? 'Tape playing' : 'Working the fuse loose'}: ${Math.ceil(task.left)} s`
+            : '';
       this.taskEl.hidden = !text;
       this.taskEl.textContent = text;
     }
@@ -1173,13 +1174,15 @@ async function main(): Promise<void> {
     ),
   );
   await assets.preload(PRELOAD_IDS);
+  scene.buildHud();
   scene.setHudVisible(false);
 
   window.addEventListener('keydown', (e) => session?.key(e));
   window.addEventListener('keyup', (e) => session?.keyUp(e));
   let last = performance.now();
   const frame = (now: number): void => {
-    const dtMs = Math.min(250, now - last);
+    // Allow bigger steps at test speeds, where software rendering can drop to a few fps.
+    const dtMs = Math.min(SPEED > 1 ? 1000 : 250, now - last);
     last = now;
     if (endingDraw) endingDraw(dtMs / 1000);
     else if (session) session.update(dtMs);

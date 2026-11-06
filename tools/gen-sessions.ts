@@ -65,9 +65,9 @@ const sessions: Record<string, { seconds: number; seed: number; script: Script }
     script: (b, s) => {
       const cycle = s % 150;
       const tense = s > 60 && cycle > 90 && cycle < 110;
-      b.pulseBpm = tense ? 92 : 68 + 4 * Math.sin(s / 40);
-      b.breathBpm = tense ? 22 : cycle >= 110 ? 7 : 12;
-      b.breathJitter = tense ? 0.22 : 0.04;
+      b.pulseBpm = tense ? 77 : 68 + 3 * Math.sin(s / 40);
+      b.breathBpm = tense ? 16 : cycle >= 110 ? 7 : 12;
+      b.breathJitter = tense ? 0.12 : 0.04;
       b.headMotion = 0.003;
     },
   },

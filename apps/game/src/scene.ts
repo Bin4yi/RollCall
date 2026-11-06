@@ -30,7 +30,7 @@ const POV: Record<string, string> = {
   vent: 'pov_vent',
 };
 const FOREGROUND: Partial<Record<Room, { id: string; x: number; y: number; w: number }>> = {
-  control: { id: 'fg_console_edge', x: 800, y: 640, w: 1600 },
+  control: { id: 'fg_console_edge', x: 800, y: 830, w: 1500 },
   archive: { id: 'fg_shelf_end', x: 130, y: 400, w: 340 },
   boiler: { id: 'fg_pipes_valve', x: 1430, y: 140, w: 480 },
 };
@@ -223,10 +223,10 @@ export class GameScene {
     this.povMonster.blendMode = 'multiply';
     this.povMonster.visible = false;
     this.reel.visible = false;
-    this.buildHud();
   }
 
-  private buildHud(): void {
+  /** Call after preloading, so the HUD picks up real art rather than placeholders. */
+  buildHud(): void {
     const strip = new Sprite(this.assets.get('ui_oscilloscope_strip'));
     strip.width = STAGE_W;
     strip.height = HUD_H;
@@ -234,7 +234,7 @@ export class GameScene {
     this.hud.addChild(strip, this.scopeG, this.dialG, this.readouts, this.dialLabel);
     this.readouts.position.set(1085, 34);
     this.dialLabel.anchor.set(0.5);
-    this.dialLabel.position.set(1450, 150);
+    this.dialLabel.position.set(1450, 138);
     for (let i = 0; i < 3; i++) {
       const horn = new Sprite(this.assets.get('icon_horn'));
       horn.anchor.set(0.5);
@@ -569,8 +569,8 @@ export class GameScene {
     this.dialLabel.visible = this.hud.visible;
     if (!this.hud.visible) return;
     const cx = 1450;
-    const cy = 112;
-    const r = 88;
+    const cy = 92;
+    const r = 84;
     // The dial is drawn here because the meter art has a needle painted into it.
     g.circle(cx, cy, r).fill(0x12181d).stroke({ width: 4, color: 0x3a4246 });
     g.circle(cx, cy, r - 6).fill(0xeadfc0);

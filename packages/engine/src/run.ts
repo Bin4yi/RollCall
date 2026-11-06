@@ -133,6 +133,10 @@ export class Run {
     );
   }
 
+  get isHiding(): boolean {
+    return this.hiding !== null;
+  }
+
   get movingTo(): Room | null {
     return this.moving?.to ?? null;
   }
@@ -171,7 +175,10 @@ export class Run {
   }
 
   hide(): boolean {
-    if (!this.canAct || this.hidden || !HIDE_SPOTS[this.playerRoom]) return false;
+    // Already on the way into cover: pressing again mustn't restart the timer.
+    if (!this.canAct || this.hidden || this.hiding !== null || !HIDE_SPOTS[this.playerRoom]) {
+      return false;
+    }
     this.pauseTask();
     this.hiding = this.config.objectives.hideSeconds;
     return true;

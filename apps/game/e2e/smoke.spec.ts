@@ -13,7 +13,7 @@ test.describe('HUSH', () => {
     const errors: string[] = [];
     page.on('pageerror', (e) => errors.push(e.message));
 
-    await page.goto('/?source=replay&session=judge_tour_900s&bot=1&speed=20&seed=2');
+    await page.goto('/?source=replay&session=judge_tour_900s&bot=1&speed=40&seed=2');
     const badge = page.getByTestId('source-badge');
     await expect(badge).toContainText('REPLAY', { timeout: 60_000 });
     await expect(badge).toContainText('synthetic');

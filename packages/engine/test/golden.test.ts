@@ -4,7 +4,15 @@
  */
 import { describe, expect, it } from 'vitest';
 import type { VitalsFrame } from '@hush/signals';
-import { AcousticLock, Calibration, Listener, NoiseModel, type NoiseBreakdown } from '../src';
+import {
+  AcousticLock,
+  autopilot,
+  Calibration,
+  Listener,
+  NoiseModel,
+  Run,
+  type NoiseBreakdown,
+} from '../src';
 import { config, DT, loadSession } from './helpers';
 
 function calibrate() {
@@ -58,6 +66,25 @@ function scriptedEncounter(frames: VitalsFrame[], difficulty: 'standard'): 'surv
   }
   return 'survived';
 }
+
+describe('Judge Mode', () => {
+  it.each([1, 2, 3, 4, 5, 6])(
+    'the bundled tour can always be finished, since a viewer cannot affect it (seed %i)',
+    (seed) => {
+      const { frames } = loadSession('judge_tour_900s');
+      const run = new Run(config, { difficulty: 'standard', seed });
+      for (const frame of frames) {
+        run.ingest(frame);
+        autopilot(run);
+        run.tick(DT);
+        if (run.finished) break;
+      }
+      expect(run.phase).toBe('escaped');
+      // It should still show something happening.
+      expect(run.toLog().samples.some((s) => s.noise > 0.3)).toBe(true);
+    },
+  );
+});
 
 describe('golden sessions', () => {
   it('calm_60s: never caught in a scripted encounter', () => {
