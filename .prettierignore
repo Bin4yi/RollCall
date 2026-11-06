@@ -1,0 +1,5 @@
+assets/
+data/
+pnpm-lock.yaml
+dist/
+*.md
