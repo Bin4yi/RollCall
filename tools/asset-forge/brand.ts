@@ -86,8 +86,7 @@ await icon(16, 0.02, 'icon-16.png');
 writeFileSync(resolve(OUT, 'favicon.ico'), ico(await icon(32, 0.02, 'icon-32.png'), 32));
 
 await card(1200, 630, 'og.png', 'Heart and legs, checked by sunrise.');
-await card(1000, 420, 'dev-cover.png', 'Heart and legs, checked by sunrise.');
-await card(1280, 720, 'youtube-thumb.png', 'The fitness competition where resting can win.');
+// dev-cover.png and youtube-thumb.png come from promo.mjs.
 await card(1080, 1620, 'poster.png', 'Heart and legs, checked by sunrise.');
 
 console.log('Brand kit written to', OUT);
