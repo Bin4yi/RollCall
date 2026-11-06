@@ -9,6 +9,7 @@ import { WebSocketServer } from 'ws';
 import {
   FRAMES_PORT,
   FRAME_HEADER_BYTES,
+  FrameClock,
   mergeFrames,
   parseFrameHeader,
   type WorkerMessage,
@@ -33,11 +34,16 @@ interface SdkInstance {
 interface SdkModule {
   SmartSpectraSDK: { new (options: Record<string, unknown>): SdkInstance };
   CameraSelection: { default: unknown };
-  ProcessingStatus: { kRunning: number; kError: number };
+  ProcessingStatus: { kStarting: number; kRunning: number; kError: number };
   breathingMetrics: number[];
   cardioMetrics: number[];
   faceMetrics: number[];
 }
+
+/** SmartSpectraErrorCode values. Restarting can't fix these. */
+const INVALID_STATE = 1;
+const KEY_REJECTED = 2;
+const OUT_OF_CREDIT = 4;
 
 const send = (message: WorkerMessage): void => {
   process.send?.(message);
@@ -90,7 +96,8 @@ async function main(): Promise<void> {
   });
 
   let frameSize: { width: number; height: number } | null = null;
-  let sessionRunning = false;
+  let acceptsFrames = false;
+  let lastValidation: number | null = null;
   let sendFailureReported = false;
   let normalizer = new MetricsNormalizer(frameSize);
   const startedAt = performance.now();
@@ -103,11 +110,17 @@ async function main(): Promise<void> {
         : status === mod.ProcessingStatus.kError
           ? 'error'
           : `status-${status}`;
-    sessionRunning = status === mod.ProcessingStatus.kRunning;
+    // A custom-input session only reaches kRunning once it receives frames (probed), so frames
+    // have to start during kStarting. Before that, and after stopping, sendFrame throws.
+    acceptsFrames =
+      status === mod.ProcessingStatus.kStarting || status === mod.ProcessingStatus.kRunning;
     send({ type: 'status', state: name });
   }) as never);
   sdk.on('validationStatus', ((code: number, _ts: number, hint: string) => {
     normalizer.setValidation(code, hint);
+    // The SDK repeats this for every frame. The game only needs to hear about changes.
+    if (code === lastValidation) return;
+    lastValidation = code;
     send({ type: 'validation', code, hint });
   }) as never);
   sdk.on('metrics', ((buf: Buffer) => {
@@ -121,6 +134,11 @@ async function main(): Promise<void> {
   }) as never);
   sdk.on('error', ((code: number, message: string, retryable: boolean) => {
     send({ type: 'error', code, message, retryable });
+    // A session in kError stays there, so a network blip would end Live mode for good. Exiting lets
+    // the supervisor start a fresh worker, and it gives up after repeated failures.
+    if (code !== KEY_REJECTED && code !== OUT_OF_CREDIT && code !== INVALID_STATE) {
+      setTimeout(() => process.exit(1), 200);
+    }
   }) as never);
 
   setInterval(() => {
@@ -137,20 +155,17 @@ async function main(): Promise<void> {
     sdk.useCustomInput();
     sdk.start();
     const server = new WebSocketServer({ host: '127.0.0.1', port: FRAMES_PORT, maxPayload: 16e6 });
-    let lastTs = -1;
+    const clock = new FrameClock();
     server.on('connection', (socket) => {
       socket.on('message', (data: Buffer) => {
-        // sendFrame throws kInvalidState until the session is running (probed), so wait for it.
-        if (!sessionRunning) return;
+        if (!acceptsFrames) return;
         const header = parseFrameHeader(data);
         if (!header) return;
         if (!frameSize || frameSize.width !== header.width) {
           frameSize = { width: header.width, height: header.height };
           normalizer = new MetricsNormalizer(frameSize);
         }
-        // The SDK rejects non-monotonic timestamps; a reconnecting tab can restart its clock.
-        const timestampUs = Math.max(header.timestampUs, lastTs + 1);
-        lastTs = timestampUs;
+        const timestampUs = clock.next(header.timestampUs);
         try {
           sdk.sendFrame(
             data.subarray(FRAME_HEADER_BYTES),

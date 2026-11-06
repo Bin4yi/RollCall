@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   FRAME_HEADER_BYTES,
+  FrameClock,
   isAuthFailure,
   isLogNoise,
   mergeFrames,
@@ -8,6 +9,29 @@ import {
   safeSessionName,
   StartWatchdog,
 } from '../src/protocol';
+
+describe('FrameClock', () => {
+  it('leaves normal frame spacing alone', () => {
+    const clock = new FrameClock();
+    expect([0, 33_000, 66_000, 1_000_000].map((t) => clock.next(t))).toEqual([
+      0, 33_000, 66_000, 1_000_000,
+    ]);
+  });
+  it('closes up a stall, so the SDK does not reject every later frame', () => {
+    const clock = new FrameClock();
+    clock.next(1_000_000);
+    const resumed = clock.next(50_000_000);
+    expect(resumed - 1_000_000).toBeLessThan(2_000_000);
+    expect(clock.next(50_033_000) - resumed).toBe(33_000);
+  });
+  it('keeps moving forward when a reconnecting tab restarts its clock', () => {
+    const clock = new FrameClock();
+    clock.next(9_000_000);
+    const resumed = clock.next(100);
+    expect(resumed).toBeGreaterThan(9_000_000);
+    expect(clock.next(33_100)).toBeGreaterThan(resumed);
+  });
+});
 
 describe('parseFrameHeader', () => {
   it('reads the browser header', () => {

@@ -30,6 +30,31 @@ export function parseFrameHeader(data: Buffer): FrameHeader | null {
   return header.width > 0 && header.height > 0 ? header : null;
 }
 
+/** The SDK rejects frames more than 2 s after the last one it accepted (probed: kTimestampGap). */
+const MAX_FRAME_GAP_US = 1_500_000;
+const RESUME_STEP_US = 33_333;
+
+/**
+ * Keeps frame timestamps acceptable to the SDK. Each rejected frame leaves the SDK's last timestamp
+ * unchanged, so without this a single stall ends the session: every later frame is rejected too.
+ * Stalls and clock resets are closed up, while normal frame spacing passes through untouched.
+ */
+export class FrameClock {
+  private offset = 0;
+  private lastRaw: number | null = null;
+  private last = 0;
+
+  next(raw: number): number {
+    if (this.lastRaw !== null) {
+      const step = raw - this.lastRaw;
+      if (step <= 0 || step > MAX_FRAME_GAP_US) this.offset = this.last + RESUME_STEP_US - raw;
+    }
+    this.lastRaw = raw;
+    this.last = raw + this.offset;
+    return this.last;
+  }
+}
+
 /** Messages from the SDK worker up to the supervisor. */
 export type WorkerMessage =
   | { type: 'frame'; frame: VitalsFrame }

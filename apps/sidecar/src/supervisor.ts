@@ -39,11 +39,13 @@ const RESTART_DELAY_MS = 2000;
 const MAX_RAPID_RESTARTS = 5;
 const IDLE_STOP_MS = 10_000;
 const START_TIMEOUT_MS = 45_000;
+const STABLE_WORKER_MS = 60_000;
 
 const server = new WebSocketServer({ host: '127.0.0.1', port: VITALS_PORT });
 const wanted = new Set<WebSocket>();
 let worker: ChildProcess | null = null;
 let rapidRestarts = 0;
+let workerStartedAt = 0;
 let idleTimer: NodeJS.Timeout | null = null;
 const watchdog = new StartWatchdog(START_TIMEOUT_MS);
 let recording: { name: string; recorder: Recorder; until: number; startT?: number } | null = null;
@@ -55,6 +57,7 @@ const broadcast = (message: unknown): void => {
 
 function startWorker(): void {
   if (worker) return;
+  workerStartedAt = Date.now();
   watchdog.begin(Date.now());
   // Inherit tsx through execArgv so the forked worker can run TypeScript too.
   const child = fork(resolve(here, 'worker.ts'), [], {
@@ -72,7 +75,11 @@ function startWorker(): void {
     console.log(`[sidecar] worker exited (${code})`);
     if (wanted.size === 0) return;
     if (++rapidRestarts > MAX_RAPID_RESTARTS) {
-      broadcast({ type: 'status', state: 'failed', detail: 'SDK worker keeps stopping.' });
+      broadcast({
+        type: 'status',
+        state: 'failed',
+        detail: 'SmartSpectra keeps stopping. Check your internet connection, then try again.',
+      });
       return;
     }
     broadcast({ type: 'status', state: 'restarting' });
@@ -113,7 +120,9 @@ function stopWorker(): void {
 
 function onWorkerMessage(message: WorkerMessage): void {
   if (message.type === 'frame') {
-    rapidRestarts = 0;
+    // Only a worker that has stayed up counts as recovered. Resetting on any frame let a worker
+    // failing every 15 s restart forever, and each restart may spend trial credits.
+    if (Date.now() - workerStartedAt > STABLE_WORKER_MS) rapidRestarts = 0;
     addToRecording(message.frame);
     broadcast(message);
     return;

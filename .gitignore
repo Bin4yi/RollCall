@@ -18,6 +18,7 @@ coverage/
 *.tsbuildinfo
 playwright-report/
 test-results/
+recordings/
 apps/sidecar/runtime/node_modules/
 apps/sidecar/runtime/package-lock.json
 
