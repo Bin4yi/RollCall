@@ -5,7 +5,7 @@ export const FRAMES_PORT = 8766;
 
 /**
  * Binary frame header sent by the browser to the worker's frame socket.
- * Mirrors packages/signals/src/browser/frameCapture.ts.
+ * Mirrors apps/game/src/frameWorker.ts.
  * Layout (little endian): u32 width, u32 height, u32 stride, u32 pixelFormat, f64 timestampUs.
  */
 export const FRAME_HEADER_BYTES = 24;

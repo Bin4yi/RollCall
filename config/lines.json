@@ -1,0 +1,55 @@
+{
+  "whispers": {
+    "investigating": ["...something moved...", "...I heard that...", "...closer now..."],
+    "encounter_start": ["...where are you...", "...I know this room...", "...stay with me..."],
+    "pulse": ["...{pulse}...", "...{pulse}... I can count them..."],
+    "leaned_in": ["there you are", "I hear you breathing", "...so close..."],
+    "quieter": ["...quieter now...", "...fading...", "...where did you go..."],
+    "survived": ["...nothing...", "...next time..."],
+    "finale": ["...don't go...", "...I can still hear you..."]
+  },
+  "lull": {
+    "calibrate": "Sit comfortably. Face the lamp. Just breathe.",
+    "weak": "I can't read you well. A lamp in front of your face would help.",
+    "breathe": "Breathe. Holding it won't help you here.",
+    "hide": "It's coming. Hide, and breathe slowly.",
+    "encounter": "Stay still. Slow breaths. Follow my wings.",
+    "survived": "It's gone. Well done. Let your breathing settle.",
+    "paused": "It waits. It can't hear you while I can't see you.",
+    "finale": "The lock listens for calm. Three slow, even breaths.",
+    "corridor": "No cover out here. Don't linger.",
+    "tape": "Stay by the reel while it plays.",
+    "allTapes": "That's all three tapes. Now the fuse.",
+    "fuse": "Take it to the breaker in the corridor.",
+    "door": "Power's back. The blast door is at the end of the corridor."
+  },
+  "tapes": {
+    "control": {
+      "title": "Reel 14 · Dr. I. Vane · 2 March 1987",
+      "lines": [
+        "Kestrel Seven is quiet enough now that the array picks up the staff from two floors away.",
+        "Footfalls. Coughs. We can tell people apart by their heartbeats.",
+        "Today the array heard a fifth heartbeat in a room with four people in it.",
+        "Maintenance found nothing. I have asked them to check again."
+      ]
+    },
+    "archive": {
+      "title": "Reel 22 · Dr. I. Vane · 9 April 1987",
+      "lines": [
+        "It isn't in the rooms. It's in the recordings. It moves between the reels.",
+        "It doesn't see. We tested that. Lights, mirrors, nothing.",
+        "But drop your pen in the far wing and it turns, every horn at once.",
+        "Sit still and breathe slowly, and it walks straight past you. I have done it twice."
+      ]
+    },
+    "boiler": {
+      "title": "Reel 31 · Dr. I. Vane · undated",
+      "lines": [
+        "Everyone else has gone. I pulled the fuse so the blast door can't open for it.",
+        "The lock is keyed to a calm signature. Slow, even breaths. We built it as a joke.",
+        "It can't fake calm. It has never been calm.",
+        "If you can hear this, put the fuse back, and breathe. Please, just breathe."
+      ]
+    }
+  }
+}
