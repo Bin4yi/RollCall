@@ -17,6 +17,10 @@ Checked 2026-11-06 against the OpenAI docs and this account's `GET /v1/models`.
 
 **Real costs seen:** about $0.035 to $0.045 per medium-quality 1536x1024 sheet.
 
+## Second round: Legs, Train and Crews
+
+Ten more sheets brought the total to **$1.00 of the $2 cap** (`assets/spend.json`, 148 sprites): Rollo's jump and coaching poses, 15 exercise views, 24 crew emblems, 9 hex tiles, league badges and trophy, 6 camp buildings, an unlit and lit valley, and Rollo's idle loop. `test_person` is a test fixture only: it's never shipped or shown in the app. Tile lit and unlit looks come from one set, using an SVG filter. Crew flags appear as emblems at each home tile, and mist is drawn as dimmed tiles, so `crew_flag`, `fog_cloud` and `banner_frame` exist but aren't used yet.
+
 ## Budget: $2 for images
 
 The brief's default was `ASSET_MAX_USD=40` and a separate generation per asset. The owner set a **$2 maximum** during the build. So:

@@ -55,3 +55,9 @@ The SDK's native state is process-global, and a native crash must not end anyone
 - **Real and demo data** are separated by a `workspace` column on athletes, enforced in every coach query.
 - **Judge Mode** can't start the SDK, call the LLM or send a notification.
 - **Dates** use the server's calendar day (`APP_TIMEZONE`), so an evening settle check doesn't land on tomorrow's UTC date.
+
+## Legs, Train and Crews
+
+Pose work runs in the browser: `apps/web/src/pose/usePose.ts` feeds MediaPipe frames, or replay and sim frames, into pure classes from `packages/pose`. Only derived numbers go to the API, and a Content-Security-Policy in `index.html` limits where the page can send anything.
+
+`packages/crews` holds the pure rules for points, the map, seasons and camps. `packages/db/src/game.ts` applies them to stored rows: `awardPoints` is the only way into the append-only ledger, and no route accepts a reason or an amount. Each award re-settles the league's map for the day and emits a `league` event. `/ws/crew` tells that league's phones to fetch again, carrying no data itself, so what a member may see is decided in one place. An hourly job closes finished seasons.

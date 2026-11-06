@@ -17,7 +17,8 @@ Checked 2026-11-06 against the [Pose Landmarker web guide](https://developers.go
 
 ## How it's used
 
-- Runs **in the browser, on the phone**, lazy-loaded the first time Legs or Train opens. The app downloads the WASM from jsDelivr (pinned to the installed version) and the model from Google's storage. **Those downloads are the only network traffic: pose frames never leave the device**, only derived numbers.
+- Runs **in the browser, on the phone**, lazy-loaded the first time Legs or Train opens. The app downloads the WASM from jsDelivr (pinned to the installed version) and the model from Google's storage. **Pose frames never leave the device**, only derived numbers.
+- **MediaPipe has its own usage log.** Found by a test, not in the docs: version 1.2.2 POSTs to `https://odml.pa.googleapis.com/v1/log`. From reading `vision_bundle.mjs`, it holds the task type, running mode, OS family, library version, and counts and timings of inferences. No images or landmarks. It's on unconditionally, and neither the guide nor `vision.d.ts` shows an off switch. **Roll Call blocks it** with a `connect-src` Content-Security-Policy in `index.html`, which limits the page to its own server and the two download hosts. The library treats the refusal as a failed send and stops trying. `apps/web/e2e/live-pose.spec.ts` checks nothing else goes out. The policy lives in the page, so a self-hosted copy without it would send that log.
 - The camera asks for `frameRate: { ideal: 60 }` and takes what it gets. The real rate is measured and stored with each jump.
 - Frames are timestamped with `performance.now()`, and `requestVideoFrameCallback` paces detection where available.
 - Landmarks pass a **One Euro filter** (`packages/pose/src/filter.ts`), tuned quick because jump timing can't afford lag, then a **visibility gate** of 0.5. Frames missing what a measurement needs are ignored, never guessed.
@@ -50,9 +51,10 @@ A state machine on one key joint angle, per exercise (`packages/pose/src/exercis
 ## What has and hasn't been tested
 
 - **Logic:** unit tests on generated stick-figure sessions, which are clearly labelled synthetic. They prove the maths and state machines, not accuracy on a real body.
-- **Real MediaPipe:** see the "live pipeline" test in `apps/web/e2e/live-pose.spec.ts`, which feeds a generated photo of a person through Chromium's fake camera. It proves the model loads and landmarks flow through the real code path. A moving photo isn't a real jump.
-- **Not tested:** a real person jumping or training, real phones, real frame rates, and how well any threshold here suits real bodies. Record sessions at `/record-pose` to change that.
+- **Real MediaPipe, live path:** `apps/web/e2e/live-pose.spec.ts` feeds a generated photo of a fictional person, slid up and down, through Chromium's fake camera. The model loads under the page's security policy, finds the whole body, detects jumps, and only numbers are saved. Software rendering here gave about 3 fps, so every jump was correctly rejected as "too few frames". That also shows the app refuses to measure when the frame rate is too low.
+- **Real MediaPipe, virtual 30 fps clock:** the same photo through the real model, frame by frame. A true 500 ms flight read **481 and 483 ms**: a small, consistent under-read (about 7% in height, because the threshold sits above the floor), with about 0.4% between jumps. Both passed the checks. A sliding photo has no knee bend or arm swing, so this checks landmark noise, not real jumps.
+- **Not tested:** a real person jumping or training, reps on real landmarks, real phones, real frame rates, and how well any threshold here suits real bodies. Record sessions at `/record-pose` to change that.
 
 ## Approach credit
 
-Written fresh for this repo. No code or approach was adapted from RepForge or RepCheck, so no credit line is needed.
+Written fresh for this repo. Nothing was adapted from RepForge or RepCheck, so no credit line is needed.

@@ -1,5 +1,5 @@
 ---
-title: "Roll Call: every athlete, checked in by sunrise, no wearables"
+title: "Roll Call: heart and legs, checked by sunrise, and the fitness competition where resting can win"
 published: false
 tags: devchallenge, presagechallenge, webdev, ai
 cover_image: TODO upload apps/web/public/brand/dev-cover.png
@@ -15,11 +15,13 @@ Each morning an athlete opens a private link, props up their phone, sits still f
 
 **The coach decides, the AI only drafts, and the camera only measures.**
 
+Then it became a complete daily system. After the heart check, three jumps tracked on the phone give a leg-freshness reading. "Heart: Ready · Legs: 9% below usual" turns into a suggestion the athlete can take or leave. Train mode counts reps and notices when rep speed drops. And Crews, a team game, turns the whole thing into **the fitness competition where resting can win**.
+
 ## Demo
 
 TODO: embed the video.
 
-TODO: live link. "Try it now with demo data" needs no camera, no account and no keys, and everything in it is labelled DEMO DATA.
+TODO: live link. "Follow Amara's morning" needs no camera, no account and no keys, and everything in it is labelled DEMO DATA.
 
 ## Code
 
@@ -45,6 +47,18 @@ TODO: repo link.
 
 **Why never during exercise.** Pulse is validated for 40–110 bpm, so Roll Call doesn't report anything above that. The post-session settle check waits until you're seated and calm.
 
+### Why SmartSpectra and MediaPipe together
+
+Camera vital signs need you still, so SmartSpectra owns the seated moments: the morning check and the post-session settle. Pose tracking needs you moving, so MediaPipe owns the jumps and the reps, right on the phone. The heart check always comes first, because jumping raises the pulse. Pose frames never leave the device.
+
+### The jump-height method and its limits
+
+Height comes from flight time: h = g·t²/8. At 30 fps, one frame is about 15% of jump height, so a single number would be close to meaningless. Roll Call interpolates take-off and landing between frames, cross-checks against hip rise, rejects tucked landings that fake extra flight, takes the best of three, and only ever shows change against your own usual with a typical-error note. It has only been tested on generated movement so far. TODO: update this after real sessions.
+
+### Why Crews scores decisions, not performance
+
+Nobody is ranked on pulse, HRV, jump height, reps, weight or speed, so everyone starts equal. You earn points for how you respond to your own readings: going hard on a good day, or easing off on an off one. The biggest score in the game is for listening to your body. Scoring is server-side in an append-only ledger, and tests prove crew endpoints return no readings.
+
 ### What I learned the hard way
 
 TODO: keep what's true after your live sessions. Custom input only reaches `kRunning` once it receives frames, so waiting for "running" before sending deadlocks. A stall over 2 seconds makes the SDK reject every later frame unless timestamps are closed up. And the SDK's calls time out after about 3 seconds, so it needs a steady connection for the whole session.
@@ -60,6 +74,8 @@ Best Thoughtful Real-World Use. TODO: confirm this is still the category you wan
 - The SDK contacts Presage to check its key and usage and to load its models. SDK telemetry is off.
 - AI drafts see numbers and the coach's chosen action. Never names, video, notes or session titles, and a test enforces it.
 - Athletes can export or delete everything from their own page.
+- Pose frames for Legs and Train never leave the phone. Only derived numbers are saved.
+- Crews never see readings: only check-in status, plus points and streaks if each member allows it.
 - Roll Call is not a medical device. Readings are wellness estimates, for adults 18+. The coach makes every decision.
 
 ## Agent Session
