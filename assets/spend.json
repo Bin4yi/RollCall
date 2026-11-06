@@ -1,0 +1,59 @@
+{
+ "usd": 0.42539800000000005,
+ "calls": [
+  {
+   "id": "api-probe",
+   "quality": "low",
+   "usd": 0.11,
+   "at": "2026-11-06"
+  },
+  {
+   "id": "rollo_sheet",
+   "quality": "medium",
+   "usd": 0.03492,
+   "at": "2026-11-06T09:27:20.957Z"
+  },
+  {
+   "id": "rollo_poses",
+   "quality": "medium",
+   "usd": 0.041332,
+   "at": "2026-11-06T09:28:20.289Z"
+  },
+  {
+   "id": "avatars",
+   "quality": "medium",
+   "usd": 0.03602,
+   "at": "2026-11-06T09:28:57.684Z"
+  },
+  {
+   "id": "rollo_feel",
+   "quality": "medium",
+   "usd": 0.041207,
+   "at": "2026-11-06T09:29:39.934Z"
+  },
+  {
+   "id": "hero",
+   "quality": "medium",
+   "usd": 0.040732,
+   "at": "2026-11-06T09:30:14.515Z"
+  },
+  {
+   "id": "guide",
+   "quality": "medium",
+   "usd": 0.041242,
+   "at": "2026-11-06T09:30:54.547Z"
+  },
+  {
+   "id": "how",
+   "quality": "medium",
+   "usd": 0.044785,
+   "at": "2026-11-06T09:31:30.551Z"
+  },
+  {
+   "id": "sports",
+   "quality": "medium",
+   "usd": 0.03516,
+   "at": "2026-11-06T09:31:59.565Z"
+  }
+ ]
+}

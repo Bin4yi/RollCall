@@ -1,7 +1,13 @@
 packages:
   - apps/*
   - packages/*
+  - tools/*
 
-# esbuild ships its binary as an optional dependency, so its postinstall script isn't needed.
+# esbuild and sharp ship binaries as optional dependencies, so their scripts aren't needed.
 allowBuilds:
   esbuild: false
+  sharp: false
+  ffmpeg-static: true
+
+minimumReleaseAgeExclude:
+  - openai@7.52.0
