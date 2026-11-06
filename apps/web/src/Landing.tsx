@@ -13,11 +13,18 @@ const FACTS = [
 ];
 
 const EXAMPLE_BOARD: { name: string; avatar: AssetId; status: Status; reason: string }[] = [
-  { name: 'Amara', avatar: 'avatar_amara', status: 'check-in', reason: 'Pulse above usual · HRV below usual' },
+  { name: 'Mei', avatar: 'avatar_mei', status: 'check-in', reason: 'Pulse above usual · HRV below usual' },
   { name: 'Jonah', avatar: 'avatar_jonah', status: 'watch', reason: 'Breathing a little above usual' },
   { name: 'Hana', avatar: 'avatar_hana', status: 'ready', reason: 'Close to their usual' },
-  { name: 'Mei', avatar: 'avatar_mei', status: 'ready', reason: 'Close to their usual' },
+  { name: 'Amara', avatar: 'avatar_amara', status: 'ready', reason: 'Close to their usual' },
   { name: 'Tomasz', avatar: 'avatar_tomasz', status: 'waiting', reason: 'Not checked in yet today' },
+];
+
+const DAILY: { art: AssetId; when: string; title: string; tool: string; body: string }[] = [
+  { art: 'onboard_still', when: 'Morning, seated', title: 'Heart', tool: 'SmartSpectra', body: 'Pulse, breathing and HRV in 75 still seconds.' },
+  { art: 'jump_air', when: 'Morning, standing', title: 'Legs', tool: 'MediaPipe Pose', body: 'Three jumps timed by your phone, against your own usual.' },
+  { art: 'rollo_count', when: 'During training', title: 'Train', tool: 'MediaPipe Pose', body: 'Rollo counts your reps, gives gentle form cues and spots when rep speed drops.' },
+  { art: 'rollo_mug', when: 'After training', title: 'Settle', tool: 'SmartSpectra', body: 'A 60-second reading shows how each kind of session settles.' },
 ];
 
 const CHAT: { who: string; avatar: AssetId; text: string }[] = [
@@ -124,12 +131,12 @@ export function Landing() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
 
-  const startDemo = async (): Promise<void> => {
+  const startDemo = async (to = '/a/demo-amara?speed=4'): Promise<void> => {
     setBusy(true);
     setError('');
     try {
       await api('/api/demo/start', { method: 'POST' });
-      navigate('/coach');
+      navigate(to);
     } catch (err) {
       setError((err as Error).message);
       setBusy(false);
@@ -146,7 +153,6 @@ export function Landing() {
             alt=""
             eager
             className="hero-art absolute left-0 -z-20 w-full max-w-none object-cover"
-            style={{ height: undefined }}
           />
           <div aria-hidden className="hero-scrim absolute inset-0 -z-10" />
 
@@ -173,19 +179,19 @@ export function Landing() {
             <motion.div className="mx-auto flex max-w-4xl flex-col items-center text-center" initial={still ? false : { y: 16, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
               <p className="inline-flex items-center gap-2 rounded-full border-2 border-indigo bg-apricot px-3 py-1 text-sm font-bold text-ink">
                 <LogoMark size={22} />
-                No wearables. Just the phone camera.
+                No wearable, just your phone.
               </p>
               <h1 className="mt-3 max-w-[14em] text-[clamp(2.6rem,4.5vw,5rem)] font-extrabold leading-[1] tracking-tight text-balance text-indigo">
-                Every athlete, checked in by sunrise.
+                Heart and legs, checked by sunrise.
               </h1>
               <p className="mt-3 max-w-[38em] text-lg font-medium leading-snug text-ink">
-                A 30-second answer to <strong>who should train hard today?</strong> Each athlete checks in on their phone, and you see who’s off their own usual.
+                A morning check against your own usual, a training partner that counts your reps, and <strong>the fitness competition where resting can win.</strong>
               </p>
               <div className="mt-4 flex flex-col items-center gap-1.5">
                 <button className="btn btn-coral px-6 py-3 text-lg shadow-riso" onClick={() => void startDemo()} disabled={busy} data-testid="judge-mode">
-                  {busy ? 'Setting up the demo…' : 'Try it now with demo data'}
+                  {busy ? 'Setting up the demo…' : 'Follow Amara’s morning'}
                 </button>
-                <p className="text-sm font-semibold text-ink">No camera, no account.</p>
+                <p className="text-sm font-semibold text-ink">Demo data. No camera, no account.</p>
               </div>
               {error && (
                 <p role="alert" className="mt-2 font-semibold text-coral-ink">
@@ -227,6 +233,55 @@ export function Landing() {
               vectorEffect="non-scaling-stroke"
             />
           </svg>
+        </section>
+
+        {/* The whole day */}
+        <section aria-labelledby="day" className="mx-auto max-w-6xl px-4 pt-16 sm:px-6 lg:pt-24">
+          <h2 id="day" className="text-center text-4xl leading-tight text-indigo sm:text-5xl">
+            One daily system, the right tool for each moment
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-lg leading-relaxed">
+            Camera vital signs need you still. Pose tracking needs you moving. So Roll Call uses each one where it works best.
+          </p>
+          <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {DAILY.map((d, i) => (
+              <li key={d.title}>
+                <Reveal className="card flex h-full flex-col p-5" delay={i * 0.05}>
+                  <Art id={d.art} alt="" className="mx-auto h-32 w-auto" />
+                  <p className="mt-3 text-xs font-bold tracking-wide text-coral-ink uppercase">{d.when}</p>
+                  <h3 className="text-2xl text-indigo">{d.title}</h3>
+                  <p className="mt-1 flex-1 text-sm leading-relaxed">{d.body}</p>
+                  <p className="mt-3 text-xs font-semibold text-mute">{d.tool}</p>
+                </Reveal>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        {/* Crews */}
+        <section aria-labelledby="crews" className="mt-16 border-y-2 border-indigo lg:mt-24">
+          <div className="valley-reveal relative">
+            <Art id="valley_unlit" alt="" className="block w-full" />
+            <Art id="valley_lit" alt="" className="valley-lit absolute inset-0 w-full" />
+          </div>
+          <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[1.2fr_1fr] lg:gap-14">
+            <Reveal>
+              <h2 id="crews" className="text-4xl leading-tight text-indigo sm:text-5xl">
+                The fitness competition where resting can win
+              </h2>
+              <p className="mt-3 text-lg leading-relaxed">
+                Crews score smart decisions, never vitals or performance. Going hard on a good day earns points. So does easing off when your morning says to. Your crew’s points spread sunrise light across a shared valley, and nobody ever sees your numbers.
+              </p>
+              <ul className="mt-4 space-y-2 leading-relaxed">
+                <li><strong>+3</strong> for listening to your body, the biggest score in the game</li>
+                <li><strong>Consistency beats bursts:</strong> light fades only when a crew stops checking in</li>
+                <li><strong>Rest days keep streaks alive,</strong> and your camp never shrinks</li>
+              </ul>
+            </Reveal>
+            <Reveal delay={0.05}>
+              <Art id="rollo_crew" alt="" className="mx-auto w-64" />
+            </Reveal>
+          </div>
         </section>
 
         {/* The problem */}
@@ -286,9 +341,9 @@ export function Landing() {
           <Reveal>
             <figure className="card relative mx-auto max-w-md p-6 pt-5 shadow-riso">
               <figcaption className="flex items-center gap-3">
-                <Avatar name="Amara" avatar="avatar_amara" size={46} />
+                <Avatar name="Mei" avatar="avatar_mei" size={46} />
                 <span>
-                  <span className="block font-display text-xl font-bold text-indigo">Amara, today</span>
+                  <span className="block font-display text-xl font-bold text-indigo">Mei, today</span>
                   <span className="block text-xs font-semibold text-mute">Example with invented values</span>
                 </span>
               </figcaption>
@@ -307,7 +362,7 @@ export function Landing() {
                 ))}
                 <p className="text-xs font-semibold text-mute">
                   <span aria-hidden className="mr-1.5 inline-block h-2.5 w-6 rounded-full bg-teal/55 align-middle" />
-                  Amara’s usual, from the last two weeks
+                  Mei’s usual, from the last two weeks
                 </p>
               </div>
               <Art id="rollo_clipboard" alt="" className="absolute -bottom-8 -right-3 w-24 sm:-right-10 sm:w-32" />
@@ -377,12 +432,15 @@ export function Landing() {
           <div className="relative z-3 mx-auto max-w-2xl">
             <RolloWave size={140} />
             <h2 id="try" className="mt-2 text-4xl leading-tight text-indigo sm:text-5xl">
-              See tomorrow morning’s board now.
+              See a whole morning in two minutes.
             </h2>
-            <p className="mt-3 text-lg font-medium text-ink">Twelve fictional athletes, clearly labelled. Swap a session and send a note in under a minute.</p>
+            <p className="mt-3 text-lg font-medium text-ink">Twelve fictional athletes and four crews, clearly labelled. Heart, legs, a smart call, and a contested tile.</p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               <button className="btn btn-primary px-6 py-3 text-lg shadow-riso" onClick={() => void startDemo()} disabled={busy}>
-                {busy ? 'Setting up the demo…' : 'Try it now with demo data'}
+                {busy ? 'Setting up the demo…' : 'Follow Amara’s morning'}
+              </button>
+              <button className="btn px-6 py-3 text-lg" onClick={() => void startDemo('/coach')} disabled={busy} data-testid="judge-coach">
+                See the coach’s board
               </button>
               <Link to="/coach" className="btn px-6 py-3 text-lg">
                 Coach sign in

@@ -192,6 +192,31 @@ h3 {
   }
 }
 
+/* The valley lights up as the section scrolls in. Reduced motion just shows it lit. */
+.valley-lit {
+  height: 100% !important;
+  object-fit: cover;
+}
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes valley-sunrise {
+    0%,
+    15% {
+      opacity: 0;
+    }
+    60%,
+    100% {
+      opacity: 1;
+    }
+  }
+  .valley-lit {
+    animation: valley-sunrise linear both;
+    animation-duration: 8s;
+    animation-iteration-count: 1;
+    animation-timeline: view();
+    animation-range: entry 10% cover 55%;
+  }
+}
+
 @keyframes pulse-draw {
   from {
     stroke-dashoffset: 1;
@@ -205,10 +230,38 @@ h3 {
   animation: pulse-draw 7s linear infinite;
 }
 
+@keyframes confetti-fall {
+  from {
+    transform: translateY(-12vh) rotate(0);
+  }
+  to {
+    transform: translateY(110vh) rotate(540deg);
+  }
+}
+.confetti {
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 14px;
+  border-radius: 2px;
+  animation: confetti-fall 2.4s ease-in 1 both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .confetti {
+    display: none;
+  }
+}
+
 @keyframes wave-frames {
   to {
     background-position-x: calc(var(--frame) * -6);
   }
+}
+.idle-sprite {
+  width: var(--frame);
+  height: var(--frame);
+  background: url('/assets/anim/rollo_idle_sheet.webp') 0 0 / calc(var(--frame) * 6) 100% no-repeat;
+  animation: wave-frames 1.5s steps(6) infinite;
 }
 .wave-sprite {
   width: var(--frame);

@@ -1,12 +1,14 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- The page may only talk to its own server and the two hosts the pose tracker downloads from. This also blocks MediaPipe's usage log: see docs/MEDIAPIPE_NOTES.md. -->
+    <meta http-equiv="Content-Security-Policy" content="connect-src 'self' ws: wss: https://cdn.jsdelivr.net https://storage.googleapis.com" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#2B2A6B" />
-    <meta name="description" content="Every athlete, checked in by sunrise. No wearables. A morning readiness check-in for online coaches." />
+    <meta name="description" content="Heart and legs, checked by sunrise. No wearable, just your phone. The fitness competition where resting can win." />
     <meta property="og:title" content="Roll Call" />
-    <meta property="og:description" content="Every athlete, checked in by sunrise. No wearables." />
+    <meta property="og:description" content="Heart and legs, checked by sunrise. No wearable, just your phone." />
     <meta property="og:image" content="/brand/og.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="icon" href="/brand/favicon.ico" sizes="32x32" />
