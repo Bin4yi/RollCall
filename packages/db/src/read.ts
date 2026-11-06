@@ -11,6 +11,7 @@ import {
 import { and, eq, inArray } from 'drizzle-orm';
 import type { Db } from './index';
 import { athletes, checkins, messages, plans, type Workspace } from './schema';
+import { legsDays } from './schema-game';
 
 type CheckinRow = typeof checkins.$inferSelect;
 type AthleteRow = typeof athletes.$inferSelect;
@@ -61,11 +62,18 @@ const LEARNING_NEED = 5;
 const dayGap = (a: string, b: string): number =>
   Math.round((Date.parse(`${b}T00:00:00Z`) - Date.parse(`${a}T00:00:00Z`)) / 86_400_000);
 
-function assessmentFor(date: string, rows: CheckinRow[]): Assessment | null {
+function assessmentFor(date: string, rows: CheckinRow[], jumps: ReadonlyMap<string, number>): Assessment | null {
   const morning = rows.filter((r) => r.kind === 'morning');
   const today = morning.some((r) => r.date === date);
   if (!today) return null;
-  return assessHistory(morning.filter((r) => r.date <= date).map(toReading)).at(-1) ?? null;
+  return assessHistory(morning.filter((r) => r.date <= date).map((r) => withJump(r, jumps))).at(-1) ?? null;
+}
+
+function withJump(row: CheckinRow, jumps: ReadonlyMap<string, number>): DayReading {
+  const reading = toReading(row);
+  const jump = jumps.get(row.date);
+  if (jump !== undefined) reading.jump = jump;
+  return reading;
 }
 
 export async function loadBoard(db: Db, workspace: Workspace, date: string): Promise<Board> {
@@ -87,10 +95,13 @@ export async function loadBoard(db: Db, workspace: Workspace, date: string): Pro
         .where(and(inArray(messages.athleteId, ids), eq(messages.date, date)))
     : [];
 
+  const allLegs = ids.length ? await db.select().from(legsDays).where(inArray(legsDays.athleteId, ids)) : [];
+
   const rows = people.map((a): BoardRow => {
     const own = allCheckins.filter((c) => c.athleteId === a.id);
+    const jumps = new Map(allLegs.filter((l) => l.athleteId === a.id && l.bestM !== null).map((l) => [l.date, l.bestM!]));
     const morning = own.filter((c) => c.kind === 'morning');
-    const assessment = assessmentFor(date, own);
+    const assessment = assessmentFor(date, own, jumps);
     const plan = todayPlans.find((p) => p.athleteId === a.id);
     const last = morning.map((c) => c.date).sort().at(-1);
     const good = morning.filter((c) => c.pulse !== null || c.rmssd !== null).length;
@@ -141,9 +152,10 @@ export interface DetailPoint {
   feel: number | null;
   status: Status | null;
   intensity: string | null;
+  jump: number | null;
 }
 
-const METRIC_LIST: Metric[] = ['pulse', 'breath', 'rmssd', 'stress', 'sleep', 'feel'];
+const METRIC_LIST: Metric[] = ['pulse', 'breath', 'rmssd', 'stress', 'sleep', 'feel', 'jump'];
 
 export interface AthleteDetail {
   athlete: Omit<AthleteRow, 'token'> & { link: string };
@@ -170,7 +182,10 @@ export async function loadDetail(
   const planRows: PlanRow[] = await db.select().from(plans).where(eq(plans.athleteId, id));
   const sent = await db.select().from(messages).where(eq(messages.athleteId, id));
   const morning = own.filter((c) => c.kind === 'morning' && c.date <= date);
-  const assessed = assessHistory(morning.map(toReading));
+  const legs = await db.select().from(legsDays).where(eq(legsDays.athleteId, id));
+  const jumps = new Map(legs.filter((l) => l.bestM !== null).map((l) => [l.date, l.bestM!]));
+  const readings = morning.map((r) => withJump(r, jumps));
+  const assessed = assessHistory(readings);
   const statusOn = new Map(assessed.map((x) => [x.date, x.status]));
 
   const start = new Date(`${date}T00:00:00Z`);
@@ -190,10 +205,11 @@ export async function loadDetail(
       feel: c?.feel ?? null,
       status: statusOn.get(key) ?? null,
       intensity: planRows.find((p) => p.date === key)?.intensity ?? null,
+      jump: jumps.get(key) ?? null,
     });
   }
 
-  const baseline = computeBaseline(morning.map(toReading), date);
+  const baseline = computeBaseline(readings, date);
   const usual: AthleteDetail['usual'] = {};
   for (const m of METRIC_LIST) {
     const range = usualRange(baseline, m);

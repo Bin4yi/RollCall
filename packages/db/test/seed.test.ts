@@ -26,16 +26,21 @@ beforeAll(async () => {
 });
 
 describe('demo stories', () => {
-  it('reads "10 of 12 checked in, 2 to look at"', () => {
-    expect(board.summary).toBe('10 of 12 checked in, 2 to look at.');
+  it('reads "9 of 12 checked in, 2 to look at"', () => {
+    expect(board.summary).toBe('9 of 12 checked in, 2 to look at.');
   });
 
   it('puts the people who need attention first', () => {
-    expect(board.rows.slice(0, 2).map((r) => r.name)).toEqual(['Amara', 'Tomasz']);
+    expect(board.rows.slice(0, 2).map((r) => r.name)).toEqual(['Mei', 'Tomasz']);
   });
 
-  it('Amara is off her usual today, with plain reasons and intervals planned', () => {
-    const a = row('Amara');
+  it('Amara has not checked in yet: Judge Mode’s morning is hers', () => {
+    expect(row('Amara').status).toBe('waiting');
+    expect(row('Amara').plan?.intensity).toBe('hard');
+  });
+
+  it('Mei is off her usual today, with plain reasons and a hard session planned', () => {
+    const a = row('Mei');
     expect(a.status).toBe('check-in');
     expect(a.reasons.join(' ')).toMatch(/Pulse \d+ above usual/);
     expect(a.plan?.intensity).toBe('hard');

@@ -2,6 +2,7 @@ import { makeRng } from '@rollcall/signals';
 import { eq, inArray } from 'drizzle-orm';
 import { addDays, type Db } from './index';
 import { athletes, checkins, messages, plans, settings, type Intensity } from './schema';
+import { seedGame } from './seed-game';
 
 /**
  * Judge Mode's data: 12 fictional athletes and 28 days each, all invented. Deterministic for a given
@@ -70,11 +71,11 @@ const CHARACTERS: Character[] = [
     token: DEMO_TOKENS.amara,
     showNumbers: true,
     notes: 'Marathon in nine weeks. Tends to push through heavy weeks.',
-    // A heavy block dips, a coach-ordered easy week recovers it, and now a new block is starting.
+    // A heavy block dipped and a coach-ordered easy week recovered it. She hasn't checked in yet today:
+    // Judge Mode's morning is hers, ending Heart: Ready, Legs: 9% below usual.
     story: (d) => {
+      if (d === 0) return { skip: true };
       if (d >= 14 && d <= 18) return { pulse: 7, rmssd: -18, stress: 28, sleep: -0.8, feel: -1 };
-      if (d === 0) return { pulse: 9, rmssd: -24, stress: 42, breath: 2, sleep: -2.4, feel: -2 };
-      if (d === 1) return { pulse: 4, rmssd: -9, stress: 12, sleep: -0.8 };
       return {};
     },
     plan: (d) => {
@@ -131,7 +132,13 @@ const CHARACTERS: Character[] = [
     usual: { pulse: 54, breath: 12, rmssd: 74, stress: 58, sleep: 8.2 },
     feel: 4,
     token: 'demo-mei',
-    story: steady,
+    notes: 'New threshold block started this week.',
+    // Well off usual this morning, with a hard session planned: the coach's board leads with this.
+    story: (d) => {
+      if (d === 0) return { pulse: 9, rmssd: -24, stress: 42, breath: 2, sleep: -2.4, feel: -2 };
+      if (d === 1) return { pulse: 4, rmssd: -9, stress: 12, sleep: -0.8 };
+      return {};
+    },
     plan: weekly('Threshold set, 4 km', 'Technique, 3 km', 'Recovery swim, 2 km'),
     today: ['Threshold set, 4 km', 'hard'],
   },
@@ -326,4 +333,6 @@ export async function seedDemo(db: Db, today: string): Promise<void> {
     sentAt: `${addDays(today, -13)}T06:40:00Z`,
     readAt: `${addDays(today, -13)}T07:05:00Z`,
   });
+
+  await seedGame(db, today);
 }

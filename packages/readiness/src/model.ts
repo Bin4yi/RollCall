@@ -10,6 +10,8 @@ export interface DayReading {
   stress?: number;
   sleep?: number;
   feel?: number;
+  /** Best valid jump height of the day, an estimate in metres. Only ever compared with the person's own. */
+  jump?: number;
 }
 
 export type Status = 'ready' | 'watch' | 'check-in' | 'waiting' | 'learning';
@@ -66,6 +68,7 @@ const WORSE_WHEN: Record<Metric, 1 | -1> = {
   rmssd: -1,
   sleep: -1,
   feel: -1,
+  jump: -1,
 };
 
 /** A good check-in has at least one trusted camera reading. Taps alone don't teach the baseline. */
@@ -109,6 +112,7 @@ export function computeDeviations(reading: DayReading, baseline: Baseline): Devi
     const today = reading[metric];
     const b = baseline[metric];
     if (today === undefined || !b) continue;
+    if (metric === 'jump' && b.count < READINESS.jumpLearning) continue;
     const z =
       (toWorking(metric, today) - b.median) / (1.4826 * Math.max(b.mad, READINESS.madFloor[metric]));
     out.push({
@@ -150,6 +154,8 @@ export function reasonText(d: Deviation): string {
       return `Slept ${roundHalf(d.today)} h`;
     case 'feel':
       return `Feels ${Math.round(d.today)}/5`;
+    case 'jump':
+      return `Legs ${pct(d.today, d.usual)}% below usual`;
   }
 }
 

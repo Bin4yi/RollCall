@@ -1,14 +1,17 @@
 /** Every tunable number in the readiness model. */
-export const METRICS = ['pulse', 'rmssd', 'stress', 'breath', 'sleep', 'feel'] as const;
+export const METRICS = ['pulse', 'rmssd', 'stress', 'breath', 'sleep', 'feel', 'jump'] as const;
 export type Metric = (typeof METRICS)[number];
 
 export const READINESS = {
   baselineDays: 14,
   /** Good check-ins needed before an athlete gets a status sun. */
   learningCheckins: 5,
-  weights: { pulse: 0.3, rmssd: 0.25, stress: 0.15, breath: 0.15, sleep: 0.1, feel: 0.05 },
+  /** Valid Legs checks before jump height counts. */
+  jumpLearning: 5,
+  /** Missing metrics drop out and the rest renormalise, so a person with no Legs checks scores as before. */
+  weights: { pulse: 0.24, rmssd: 0.2, stress: 0.12, breath: 0.12, sleep: 0.08, feel: 0.04, jump: 0.2 },
   /** MAD floors, in each metric's working units, so a very steady person's z-scores can't explode. */
-  madFloor: { pulse: 2, rmssd: 0.08, stress: 12, breath: 1, sleep: 0.5, feel: 0.5 },
+  madFloor: { pulse: 2, rmssd: 0.08, stress: 12, breath: 1, sleep: 0.5, feel: 0.5, jump: 0.015 },
   /** A single metric can't dominate beyond this. */
   maxDeviation: 4,
   watch: { combined: 1, single: 2 },
