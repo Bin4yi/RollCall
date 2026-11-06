@@ -19,7 +19,8 @@
     "test": "vitest run",
     "test:e2e": "pnpm --filter @rollcall/web test:e2e",
     "assets:brand": "tsx tools/asset-forge/brand.ts",
-    "poses:gen": "tsx tools/seed/gen-poses.ts"
+    "poses:gen": "tsx tools/seed/gen-poses.ts",
+    "videos:report": "tsx tools/seed/report-videos.ts"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.0",
