@@ -42,7 +42,7 @@ export function Art({
       decoding="async"
       onError={() => setBroken(true)}
       className={className}
-      style={{ height: 'auto', ...style }}
+      style={style}
     />
   );
 }

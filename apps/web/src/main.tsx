@@ -9,6 +9,8 @@ import { Spinner } from './ui/kit';
 const AthleteApp = lazy(() => import('./athlete/AthleteApp'));
 const CoachApp = lazy(() => import('./coach/CoachApp'));
 const Recorder = lazy(() => import('./Recorder'));
+const PoseRecorder = lazy(() => import('./pose/PoseRecorder'));
+const JoinCrew = lazy(() => import('./crew/JoinCrew'));
 
 // No StrictMode: its double-run effects would start the SDK twice per check-in, spending trial credit.
 createRoot(document.getElementById('root')!).render(
@@ -22,6 +24,8 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/a/:token/*" element={<AthleteApp />} />
           <Route path="/coach/*" element={<CoachApp />} />
           <Route path="/record" element={<Recorder />} />
+          <Route path="/record-pose" element={<PoseRecorder />} />
+          <Route path="/join/:code" element={<JoinCrew />} />
           <Route path="*" element={<Landing />} />
         </Routes>
       </Suspense>

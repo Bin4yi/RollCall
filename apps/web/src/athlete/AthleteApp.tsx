@@ -1,9 +1,13 @@
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Route, Routes, useNavigate, useParams, useSearchParams } from 'react-router-dom';
+import { Link, NavLink, Route, Routes, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { api, ApiError, type AppConfig, type AthleteHome } from '../api';
 import { Art, Avatar, DemoBanner, Disclaimer, Problem, RolloWave, Spinner, type AssetId } from '../ui/kit';
+import { CampScreen, CrewScreen } from '../crew/Crews';
+import type { PoseMode } from '../pose/usePose';
+import { LegsScreen } from './Legs';
 import { skyFor, SunriseCanvas } from './Sunrise';
+import { TrainScreen } from './Train';
 import { useCheckin, type CheckinResult, type Progress } from './useCheckin';
 
 const POSE: Record<NonNullable<Progress['hint']>['pose'], AssetId> = {
@@ -46,15 +50,15 @@ function Consent({ home, token, onDone }: { home: AthleteHome; token: string; on
       <div className="card mt-5 space-y-4 p-5 text-sm leading-relaxed">
         <section>
           <h2 className="text-lg">What’s measured</h2>
-          <p>Your camera is used to estimate your resting pulse, breathing rate and heart-rate variability, and to notice if you’re talking or moving. You also tap in your sleep and how you feel.</p>
+          <p>Your camera is used to estimate your resting pulse, breathing rate and heart-rate variability, and to notice if you’re talking or moving. You also tap in your sleep and how you feel. If you use the Legs check or Train mode, a movement tracker runs on your phone to time jumps and count reps.</p>
         </section>
         <section>
           <h2 className="text-lg">What’s kept</h2>
-          <p>Video goes to the Roll Call server over an encrypted connection, is processed in memory and thrown away. It’s never saved. Only the numbers are stored. The measuring SDK from Presage contacts Presage’s servers to check its key and usage, and to load its models.</p>
+          <p>For the heart check-in, video goes to the Roll Call server over an encrypted connection, is processed in memory and thrown away. It’s never saved. Only the numbers are stored. The measuring SDK from Presage contacts Presage’s servers to check its key and usage, and to load its models. For Legs and Train, the video never leaves your phone at all: only the jump and rep numbers are saved.</p>
         </section>
         <section>
           <h2 className="text-lg">Who sees it</h2>
-          <p>Your coach sees your numbers and how they compare with your own usual. When they ask for a draft message, an AI service sees numbers only: never your name, your video or your coach’s notes.</p>
+          <p>Your coach sees your numbers and how they compare with your own usual. When they ask for a draft message, an AI service sees numbers only: never your name, your video or your coach’s notes. If you join a crew, teammates see whether you’ve checked in, and your points and streak if you allow it. Never your readings.</p>
         </section>
         <section>
           <h2 className="text-lg">Your choice</h2>
@@ -441,6 +445,119 @@ function Numbers({ home }: { home: AthleteHome }) {
   );
 }
 
+const CHOICE_WORDS: Record<string, string> = {
+  planned: 'As planned',
+  moderate: 'Keep it moderate',
+  upper: 'Easy upper body',
+  easy: 'Something easy',
+  rest: 'Rest today',
+};
+
+/** Heart and legs on two lines, Rollo's suggestion, and the person's own choice. */
+function TodayCall({ home, token, refresh }: { home: AthleteHome; token: string; refresh: () => void }) {
+  const { today } = home;
+  const [error, setError] = useState('');
+  if (!today.call) return null;
+  const send = (path: string, json?: unknown): void => {
+    setError('');
+    api(`/api/a/${token}${path}`, json === undefined ? { method: 'POST' } : { json })
+      .then(refresh)
+      .catch((err: ApiError) => setError(err.message));
+  };
+  const legsOffered = !today.legsDone;
+  return (
+    <section className="card mt-4 p-4" aria-labelledby="todays-call">
+      <h2 id="todays-call" className="text-2xl">
+        Today’s call
+      </h2>
+      <p className="mt-1 font-display text-lg font-bold" data-testid="call-lines">
+        {today.call.heart} · {today.call.legs}
+      </p>
+      {legsOffered && (
+        <div className="mt-3 flex items-center gap-3 rounded-xl bg-paper-2 p-3" data-testid="legs-offer">
+          <Art id="jump_air" alt="" className="h-16 w-auto" />
+          <div>
+            <p className="font-semibold">Want to check your legs too? 20 seconds.</p>
+            <Link to={`/a/${token}/legs${location.search}`} className="btn btn-coral mt-1 text-sm" data-testid="open-legs">
+              Check my legs
+            </Link>
+          </div>
+        </div>
+      )}
+      {error && (
+        <p role="alert" className="mt-2 font-semibold text-coral-ink">
+          {error}
+        </p>
+      )}
+      {!today.chosen ? (
+        <>
+          <p className="mt-3 leading-relaxed" data-testid="call-why">
+            {today.call.why}
+          </p>
+          <ul className="mt-3 space-y-2">
+            {today.call.options.map((o) => (
+              <li key={o.choice}>
+                <button
+                  className={`btn w-full justify-between text-left ${o.suggested ? 'btn-coral' : ''}`}
+                  data-testid={`choose-${o.choice}`}
+                  onClick={() => send('/call', { choice: o.choice })}
+                >
+                  <span>{o.label}</span>
+                  {o.suggested && <span className="shrink-0 rounded-full bg-paper px-2 py-0.5 text-xs font-bold text-ink">Rollo’s pick</span>}
+                </button>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-2 text-xs text-mute">Your call, always.{home.crew ? ' Your crew never sees your readings.' : ''}</p>
+        </>
+      ) : (
+        <div className="mt-3" data-testid="call-chosen">
+          <p className="font-semibold">You chose: {CHOICE_WORDS[today.chosen.choice] ?? today.chosen.choice}.</p>
+          {today.chosen.listened && (
+            <p className="mt-1 rounded-lg bg-teal/20 px-3 py-1.5 text-sm font-semibold text-teal-ink" data-testid="smart-call">
+              Listened to your body: +3 for your crew.
+            </p>
+          )}
+          {!today.chosen.done && (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {today.chosen.intensity !== 'rest' && (
+                <Link to={`/a/${token}/train${location.search}`} className="btn btn-primary" data-testid="start-session">
+                  Start session
+                </Link>
+              )}
+              <button className="btn" data-testid="call-done" onClick={() => send('/call/done')}>
+                {today.chosen.intensity === 'rest' ? 'I rested' : 'I did it without the camera'}
+              </button>
+            </div>
+          )}
+          {today.chosen.done && <p className="mt-1 text-sm font-semibold text-teal-ink">Done. Nicely followed through.</p>}
+        </div>
+      )}
+    </section>
+  );
+}
+
+function BottomNav({ crew, token }: { crew: boolean; token: string }) {
+  const link = ({ isActive }: { isActive: boolean }): string =>
+    `flex min-h-12 flex-1 items-center justify-center rounded-xl font-semibold no-underline ${isActive ? 'bg-indigo text-paper' : 'text-indigo'}`;
+  const q = location.search;
+  return (
+    <nav aria-label="Main" className="fixed inset-x-0 bottom-0 z-20 border-t-2 border-indigo bg-paper p-1.5">
+      <div className="mx-auto flex max-w-md gap-1">
+        <NavLink end to={`/a/${token}${q}`} className={link}>
+          Today
+        </NavLink>
+        <NavLink to={`/a/${token}/crew${q}`} className={link} data-testid="nav-crew">
+          {crew ? 'Crew' : 'Crews'}
+        </NavLink>
+        <NavLink to={`/a/${token}/camp${q}`} className={link} data-testid="nav-camp">
+          Camp
+        </NavLink>
+      </div>
+    </nav>
+  );
+}
+
 function Home({
   home,
   token,
@@ -458,7 +575,7 @@ function Home({
 }) {
   const earned = BADGES.filter((b) => home.streak >= b).at(-1);
   return (
-    <main id="content" className="mx-auto max-w-md px-4 py-6">
+    <main id="content" className="mx-auto max-w-md px-4 py-6 pb-24">
       <div className="flex items-center gap-3">
         <Avatar name={home.name} avatar={home.avatar} size={56} />
         <div>
@@ -488,9 +605,25 @@ function Home({
         </section>
       )}
 
+      {home.today.nudged && (
+        <section className="mt-4 flex items-center gap-3 rounded-2xl bg-apricot/50 p-3" data-testid="nudged">
+          <Art id="nudge_window" alt="" className="h-16 w-auto" />
+          <p className="font-semibold">Rollo’s waiting for you. Your crew gave you a nudge.</p>
+        </section>
+      )}
+
+      <TodayCall home={home} token={token} refresh={refresh} />
+
+      {home.today.gentleCard && (
+        <section className="mt-4 rounded-2xl bg-paper-2 p-4" data-testid="gentle-card">
+          <h2 className="text-lg">A few tough mornings</h2>
+          <p className="text-sm leading-relaxed">You’ve felt pretty flat for three days. Only you can see this. Go easy, and if it would help, talk to someone you trust.</p>
+        </section>
+      )}
+
       <Numbers home={home} />
 
-      {home.plan && (
+      {home.plan && (!home.today.chosen || home.today.chosen.choice === 'planned') && (
         <section className="card mt-4 flex items-center gap-3 p-4">
           <Art id={home.plan.intensity === 'rest' ? 'rollo_stretch' : home.plan.intensity === 'hard' ? 'rollo_sprint' : 'rollo_mug'} alt="" className="h-16 w-auto" />
           <div>
@@ -499,6 +632,34 @@ function Home({
               {home.plan.title}
             </p>
           </div>
+        </section>
+      )}
+
+      {home.crew && (
+        <Link to={`/a/${token}/crew${location.search}`} className="card mt-4 flex items-center gap-3 p-3 text-ink no-underline" data-testid="crew-card">
+          <Art id={home.crew.emblem as AssetId} alt="" className="h-14 w-14" />
+          <div className="min-w-0 flex-1">
+            <p className="font-display text-lg font-bold">{home.crew.name}</p>
+            <p className="text-sm text-mute">
+              {home.crew.checkedIn} of {home.crew.total} checked in. You’ve earned +{home.crew.todayPoints} today.
+            </p>
+          </div>
+        </Link>
+      )}
+
+      {home.insights.length > 0 && (
+        <section className="mt-4" aria-labelledby="insights">
+          <h2 id="insights" className="text-xl">
+            What Rollo has noticed
+          </h2>
+          <ul className="mt-2 space-y-2">
+            {home.insights.map((i) => (
+              <li key={i.id} className="card p-3" data-testid={`insight-${i.id}`}>
+                <p className="font-semibold leading-snug">{i.text}</p>
+                <p className="mt-1 text-xs text-mute">From {i.examples}. Just your own days compared with each other.</p>
+              </li>
+            ))}
+          </ul>
         </section>
       )}
 
@@ -551,6 +712,11 @@ function SettleDetails({ token, result, onDone }: { token: string; result: Check
   );
 }
 
+function MemberCamp({ token }: { token: string }) {
+  const { memberId } = useParams();
+  return <CampScreen token={token} memberId={memberId} />;
+}
+
 export default function AthleteApp() {
   const { token = '' } = useParams();
   const navigate = useNavigate();
@@ -559,6 +725,7 @@ export default function AthleteApp() {
   const [deleted, setDeleted] = useState(false);
   const [view, setView] = useState<'home' | 'onboarding' | 'checkin' | 'answers' | 'settle' | 'settle-details'>('home');
   const [settleResult, setSettleResult] = useState<CheckinResult | null>(null);
+  const [searchParams] = useSearchParams();
 
   const load = useCallback(() => {
     api<AthleteHome>(`/api/a/${token}`)
@@ -598,9 +765,71 @@ export default function AthleteApp() {
   };
 
   const startCheckin = (): void => setView(home.demo || seenOnboarding() ? 'checkin' : 'onboarding');
+  const requested = searchParams.get('mode');
+  const poseMode: PoseMode = requested === 'replay' || requested === 'sim' ? requested : home.demo ? 'replay' : 'live';
+  const poseSpeed = Math.min(30, Math.max(1, Number(searchParams.get('speed')) || 1));
+  const backHome = (): void => {
+    load();
+    navigate(`/a/${token}${location.search}`);
+  };
 
   return (
     <Routes>
+      <Route
+        path="legs"
+        element={
+          <>
+            {banner}
+            <LegsScreen token={token} mode={poseMode} speed={poseSpeed} poseSession={searchParams.get('poses')} onBack={backHome} onDone={backHome} />
+          </>
+        }
+      />
+      <Route
+        path="train"
+        element={
+          <TrainScreen
+            token={token}
+            home={home}
+            mode={poseMode}
+            speed={poseSpeed}
+            onDone={backHome}
+            onSettle={() => {
+              setView('settle');
+              backHome();
+            }}
+          />
+        }
+      />
+      <Route
+        path="crew"
+        element={
+          <>
+            {banner}
+            <CrewScreen token={token} />
+            <BottomNav crew={!!home.crew} token={token} />
+          </>
+        }
+      />
+      <Route
+        path="camp"
+        element={
+          <>
+            {banner}
+            <CampScreen token={token} checkedIn={home.checkedIn} />
+            <BottomNav crew={!!home.crew} token={token} />
+          </>
+        }
+      />
+      <Route
+        path="camp/:memberId"
+        element={
+          <>
+            {banner}
+            <MemberCamp token={token} />
+            <BottomNav crew={!!home.crew} token={token} />
+          </>
+        }
+      />
       <Route
         path="*"
         element={
@@ -654,7 +883,10 @@ export default function AthleteApp() {
               />
             )}
             {view === 'home' && (
-              <Home home={home} token={token} onStart={startCheckin} onSettle={() => setView('settle')} refresh={load} onDeleted={() => setDeleted(true)} />
+              <>
+                <Home home={home} token={token} onStart={startCheckin} onSettle={() => setView('settle')} refresh={load} onDeleted={() => setDeleted(true)} />
+                <BottomNav crew={!!home.crew} token={token} />
+              </>
             )}
           </>
         }

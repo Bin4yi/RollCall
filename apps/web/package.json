@@ -12,6 +12,8 @@
   "dependencies": {
     "@fontsource-variable/bricolage-grotesque": "^5.3.0",
     "@fontsource-variable/inter": "^5.3.0",
+    "@mediapipe/tasks-vision": "1.2.2",
+    "@rollcall/pose": "workspace:*",
     "@rollcall/readiness": "workspace:*",
     "motion": "^12.0.0",
     "react": "^19.3.1",
@@ -23,14 +25,14 @@
     "@axe-core/playwright": "^4.14.0",
     "@playwright/test": "^1.65.0",
     "@tailwindcss/vite": "^4.3.4",
+    "@types/node": "^24.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "@types/ws": "^8.18.0",
     "@vitejs/plugin-react": "^6.2.1",
+    "sharp": "^0.35.5",
     "tailwindcss": "^4.3.4",
     "vite": "^8.3.6",
-    "sharp": "^0.35.5",
-    "ws": "^8.22.1",
-    "@types/ws": "^8.18.0",
-    "@types/node": "^24.0.0"
+    "ws": "^8.22.1"
   }
 }
