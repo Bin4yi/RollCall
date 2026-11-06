@@ -144,6 +144,67 @@ h3 {
   clip-path: inset(50%);
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/*
+ * Phone and tablet: text, then the board, then the art with Rollo below it.
+ * Wide screens: the whole picture, with the words in the sky above the sun and the board over the track.
+ */
+.hero-art {
+  bottom: 0;
+  height: 430px;
+  object-position: 10% top;
+}
+.hero-scrim {
+  background: linear-gradient(to top, transparent 300px, var(--color-paper) 430px);
+}
+@media (min-width: 640px) {
+  .hero-art {
+    height: 520px;
+  }
+  .hero-scrim {
+    background: linear-gradient(to top, transparent 370px, var(--color-paper) 520px);
+  }
+}
+@media (min-width: 1280px) {
+  .hero {
+    --art-top: 112px;
+    height: calc(var(--art-top) + 50vw);
+  }
+  .hero-art {
+    top: var(--art-top);
+    bottom: auto;
+    height: auto;
+  }
+  .hero-scrim {
+    background: linear-gradient(to bottom, var(--color-paper) var(--art-top), transparent calc(var(--art-top) + 17vw));
+  }
+  .hero-board {
+    position: absolute;
+    top: calc(var(--art-top) + 17.5vw);
+    right: max(2.5rem, calc((100vw - 1400px) / 2 + 2.5rem));
+    width: clamp(410px, 28vw, 520px);
+    margin: 0;
+  }
+}
+
+@keyframes pulse-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.pulse-line {
+  stroke-dasharray: 1;
+  animation: pulse-draw 7s linear infinite;
+}
+
 @keyframes wave-frames {
   to {
     background-position-x: calc(var(--frame) * -6);
